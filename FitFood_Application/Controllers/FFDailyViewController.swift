@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FFDailyViewController.swift
 //  FitFood_Application
 //
 //  Created by Aleksandr.Grachev on 13.01.2023.
@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class FFDailyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        title = "Daily"
+        view.backgroundColor = .systemBackground
     }
 
 

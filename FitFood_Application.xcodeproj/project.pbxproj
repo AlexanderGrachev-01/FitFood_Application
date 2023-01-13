@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		F6B700EB297199390066B975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EA297199390066B975 /* AppDelegate.swift */; };
 		F6B700ED297199390066B975 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EC297199390066B975 /* SceneDelegate.swift */; };
-		F6B700EF297199390066B975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EE297199390066B975 /* ViewController.swift */; };
-		F6B700F2297199390066B975 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B700F0297199390066B975 /* Main.storyboard */; };
+		F6B700EF297199390066B975 /* FFDailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EE297199390066B975 /* FFDailyViewController.swift */; };
 		F6B700F42971993B0066B975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B700F32971993B0066B975 /* Assets.xcassets */; };
 		F6B700F72971993B0066B975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B700F52971993B0066B975 /* LaunchScreen.storyboard */; };
+		F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7010429719B900066B975 /* FFTabBarController.swift */; };
+		F6B701072971A0E60066B975 /* FFRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701062971A0E60066B975 /* FFRecipesViewController.swift */; };
+		F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701082971A1590066B975 /* FFAddingViewController.swift */; };
+		F6B7010B2971A18B0066B975 /* FFFastingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7010A2971A18B0066B975 /* FFFastingViewController.swift */; };
+		F6B7010D2971A1C70066B975 /* FFSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7010C2971A1C70066B975 /* FFSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F6B700E7297199390066B975 /* FitFood_Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFood_Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B700EA297199390066B975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6B700EC297199390066B975 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F6B700EE297199390066B975 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F6B700F1297199390066B975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6B700EE297199390066B975 /* FFDailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyViewController.swift; sourceTree = "<group>"; };
 		F6B700F32971993B0066B975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6B700F62971993B0066B975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6B700F82971993B0066B975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6B7010429719B900066B975 /* FFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTabBarController.swift; sourceTree = "<group>"; };
+		F6B701062971A0E60066B975 /* FFRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFRecipesViewController.swift; sourceTree = "<group>"; };
+		F6B701082971A1590066B975 /* FFAddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFAddingViewController.swift; sourceTree = "<group>"; };
+		F6B7010A2971A18B0066B975 /* FFFastingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFFastingViewController.swift; sourceTree = "<group>"; };
+		F6B7010C2971A1C70066B975 /* FFSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,67 @@
 		F6B700E9297199390066B975 /* FitFood_Application */ = {
 			isa = PBXGroup;
 			children = (
+				F6B700FE297199DB0066B975 /* APIClient */,
+				F6B7010129719A1A0066B975 /* Managers */,
+				F6B7010029719A0E0066B975 /* Models */,
+				F6B7010229719A480066B975 /* Views */,
+				F6B700FF297199F30066B975 /* Controllers */,
+				F6B7010329719A610066B975 /* Resources */,
+			);
+			path = FitFood_Application;
+			sourceTree = "<group>";
+		};
+		F6B700FE297199DB0066B975 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		F6B700FF297199F30066B975 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F6B700EE297199390066B975 /* FFDailyViewController.swift */,
+				F6B701062971A0E60066B975 /* FFRecipesViewController.swift */,
+				F6B701082971A1590066B975 /* FFAddingViewController.swift */,
+				F6B7010A2971A18B0066B975 /* FFFastingViewController.swift */,
+				F6B7010C2971A1C70066B975 /* FFSettingsViewController.swift */,
+				F6B7010429719B900066B975 /* FFTabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F6B7010029719A0E0066B975 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F6B7010129719A1A0066B975 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F6B7010229719A480066B975 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F6B7010329719A610066B975 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				F6B700EA297199390066B975 /* AppDelegate.swift */,
 				F6B700EC297199390066B975 /* SceneDelegate.swift */,
-				F6B700EE297199390066B975 /* ViewController.swift */,
-				F6B700F0297199390066B975 /* Main.storyboard */,
 				F6B700F32971993B0066B975 /* Assets.xcassets */,
 				F6B700F52971993B0066B975 /* LaunchScreen.storyboard */,
 				F6B700F82971993B0066B975 /* Info.plist */,
 			);
-			path = FitFood_Application;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +187,6 @@
 			files = (
 				F6B700F72971993B0066B975 /* LaunchScreen.storyboard in Resources */,
 				F6B700F42971993B0066B975 /* Assets.xcassets in Resources */,
-				F6B700F2297199390066B975 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +197,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6B700EF297199390066B975 /* ViewController.swift in Sources */,
+				F6B700EF297199390066B975 /* FFDailyViewController.swift in Sources */,
+				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
 				F6B700EB297199390066B975 /* AppDelegate.swift in Sources */,
+				F6B7010B2971A18B0066B975 /* FFFastingViewController.swift in Sources */,
 				F6B700ED297199390066B975 /* SceneDelegate.swift in Sources */,
+				F6B7010D2971A1C70066B975 /* FFSettingsViewController.swift in Sources */,
+				F6B701072971A0E60066B975 /* FFRecipesViewController.swift in Sources */,
+				F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F6B700F0297199390066B975 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F6B700F1297199390066B975 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F6B700F52971993B0066B975 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,10 +345,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJAQY24NC2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitFood_Application/Info.plist;
+				INFOPLIST_FILE = FitFood_Application/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,10 +373,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJAQY24NC2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitFood_Application/Info.plist;
+				INFOPLIST_FILE = FitFood_Application/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
