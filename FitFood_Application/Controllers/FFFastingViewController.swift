@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import SnapKit
 
 final class FFFastingViewController: UIViewController {
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Fasting"
-        view.backgroundColor = .systemBackground
+        configureViews()
     }
     
+    // MARK: - Layout
+    
+    private func configureViews() {
+        title = "Fasting"
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.addBottomBorder(with: .lightGray,
+                                                            height: 0.5)
+    }
 }

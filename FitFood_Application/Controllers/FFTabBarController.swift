@@ -14,19 +14,19 @@ final class FFTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpTabs()
+        configureTubs()
     }
     
     // MARK: - Tabs
     
-    private func setUpTabs() {
+    private func configureTubs() {
         let dailyVC = FFDailyViewController()
         let recipesVC = FFRecipesViewController()
         let addingVC = FFAddingViewController()
         let fastingVC = FFFastingViewController()
         let settingsVC = FFSettingsViewController()
         
-        dailyVC.navigationItem.largeTitleDisplayMode = .automatic
+        dailyVC.navigationItem.largeTitleDisplayMode = .never
         recipesVC.navigationItem.largeTitleDisplayMode = .automatic
         addingVC.navigationItem.largeTitleDisplayMode = .never
         fastingVC.navigationItem.largeTitleDisplayMode = .automatic
@@ -62,5 +62,7 @@ final class FFTabBarController: UITabBarController {
         
         setViewControllers([dailyNav,recipesNav, addingNav, fastingNav, settingsNav],
                            animated: true)
+        
+        tabBar.addTopBorder(with: .lightGray, height: 0.5)
     }
 }

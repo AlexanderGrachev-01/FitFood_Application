@@ -6,13 +6,22 @@
 //
 
 import UIKit
+import SnapKit
 
 final class FFAddingViewController: UIViewController {
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Food"
+        configureViews()
+    }
+    
+    // MARK: - Layout
+    
+    private func configureViews() {
+        title = "Recipes"
         view.backgroundColor = .systemBackground
     }
 }
