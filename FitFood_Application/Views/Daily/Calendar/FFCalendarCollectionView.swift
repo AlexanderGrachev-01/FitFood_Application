@@ -46,6 +46,7 @@ final class FFCalendarCollectionView: UICollectionView {
     private func configureLayout() {
         collectionLayout.minimumLineSpacing = 16
         collectionLayout.scrollDirection = .horizontal
+        collectionLayout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 19, right: 16)
     }
     
     private func configureCollection() {
@@ -53,7 +54,6 @@ final class FFCalendarCollectionView: UICollectionView {
         delegate = self
         dataSource = self
         
-        collectionLayout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 19, right: 16)
         backgroundColor = .systemBackground
         bounces = false
         showsHorizontalScrollIndicator = false
@@ -82,7 +82,6 @@ extension FFCalendarCollectionView: UICollectionViewDataSource {
                                       animated: false,
                                       scrollPosition: [])
         }
-        
         return cell
     }
     
@@ -93,7 +92,7 @@ extension FFCalendarCollectionView: UICollectionViewDataSource {
 
 extension FFCalendarCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        deselectItem(at: indexPath, animated: true)
+        
     }
 }
 
