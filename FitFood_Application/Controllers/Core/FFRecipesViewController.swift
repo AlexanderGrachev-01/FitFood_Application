@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import SnapKit
 
-final class FFRecipesViewController: UIViewController {
+final class FFRecipesViewController: BaseViewController {
     
     // MARK: - LifeCycle
     

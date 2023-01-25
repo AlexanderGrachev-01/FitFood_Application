@@ -10,13 +10,14 @@ import UIKit
 protocol CalendarDelegate: AnyObject {
     func maxLeftOffset()
     func maxRightOffset()
+    func cellWasSelected(date: FFDateModel)
 }
 
 final class FFCalendarCollectionView: UICollectionView {
     
     // MARK: - Constants
     
-    private let calendarCellHeight: CGFloat = 64
+    private let calendarCellHeight: CGFloat = 70
     
     private lazy var daysArr = [FFDateModel]()
     weak var calendarDelegate: CalendarDelegate?
@@ -92,7 +93,7 @@ extension FFCalendarCollectionView: UICollectionViewDataSource {
 
 extension FFCalendarCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        calendarDelegate?.cellWasSelected(date: daysArr[indexPath.row])
     }
 }
 
@@ -108,15 +109,15 @@ extension FFCalendarCollectionView: UICollectionViewDelegateFlowLayout {
 
 // MARK: - ScrollView
 
-extension FFCalendarCollectionView {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.x < collectionLayout.minimumLineSpacing {
+//extension FFCalendarCollectionView {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if scrollView.contentOffset.x < self.frame.width / 3 {
 //            calendarDelegate?.maxLeftOffset()
 //        }
-//        
-//        if scrollView.contentOffset.x > self.frame.width * 2 {
+//
+//        if scrollView.contentOffset.x >= self.frame.width * 2 {
 //            calendarDelegate?.maxRightOffset()
 //        }
-    }
-}
+//    }
+//}
 

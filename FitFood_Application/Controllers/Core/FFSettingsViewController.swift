@@ -1,14 +1,13 @@
 //
-//  FFFastingViewController.swift
+//  FFSettingsViewController.swift
 //  FitFood_Application
 //
 //  Created by Aleksandr.Grachev on 13.01.2023.
 //
 
 import UIKit
-import SnapKit
 
-final class FFFastingViewController: UIViewController {
+final class FFSettingsViewController: BaseViewController {
     
     // MARK: - LifeCycle
     
@@ -21,9 +20,7 @@ final class FFFastingViewController: UIViewController {
     // MARK: - Layout
     
     private func configureViews() {
-        title = "Fasting"
+        title = "Settings"
         view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.addBottomBorder(with: .lightGray,
-                                                            height: 0.5)
     }
 }

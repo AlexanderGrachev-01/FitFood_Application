@@ -13,9 +13,8 @@ final class FFCalendarCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Constants
     
-    private let dayOfWeekLabelTopOffset: CGFloat = 5
-    private let dateNumberLabelTopOffset: CGFloat = 3
-    private let dateNumberLabelBottomOffset: CGFloat = 9
+    private let dayOfWeekLabelTopOffset: CGFloat = 7
+    private let dateNumberLabelBottomOffset: CGFloat = 7
     
     private lazy var isToday = false
     
@@ -56,11 +55,9 @@ final class FFCalendarCollectionViewCell: UICollectionViewCell {
             if self.isSelected {
                 self.backgroundColor = .secondarySystemBackground
                 self.dateNumberLabel.textColor = .label
-            } else  if isToday {
-                self.backgroundColor = .clear
             } else {
                 self.backgroundColor = .clear
-                self.dateNumberLabel.textColor = .secondaryLabel
+                if !isToday { self.dateNumberLabel.textColor = .secondaryLabel }
             }
         }
     }
@@ -98,8 +95,7 @@ final class FFCalendarCollectionViewCell: UICollectionViewCell {
         addSubview(dateNumberLabel)
         
         dateNumberLabel.snp.makeConstraints {
-            $0.top.equalTo(dayOfWeekLabel.snp.bottom).offset(dateNumberLabelTopOffset)
-            $0.bottom.equalToSuperview().offset(dateNumberLabelBottomOffset)
+            $0.bottom.equalToSuperview().offset(-dateNumberLabelBottomOffset)
             $0.centerX.equalToSuperview()
         }
     }

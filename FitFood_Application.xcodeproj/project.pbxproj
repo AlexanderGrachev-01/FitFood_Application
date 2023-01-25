@@ -26,6 +26,14 @@
 		F6B701222974A2B90066B975 /* FFCalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701212974A2B90066B975 /* FFCalendarModel.swift */; };
 		F6B701262974A4030066B975 /* FFDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701252974A4030066B975 /* FFDateModel.swift */; };
 		F6B7012A2974B6060066B975 /* FFDailyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701292974B6060066B975 /* FFDailyTableView.swift */; };
+		F6EFDA17298188D200FC3CCB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDA16298188D200FC3CCB /* BaseViewController.swift */; };
+		F6EFDA192981906400FC3CCB /* FFAddingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDA182981906400FC3CCB /* FFAddingTableView.swift */; };
+		F6EFDA1B2981C11C00FC3CCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6EFDA1A2981C11C00FC3CCB /* GoogleService-Info.plist */; };
+		F6EFDA1E2981C2F300FC3CCB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F6EFDA1D2981C2F300FC3CCB /* FirebaseAnalytics */; };
+		F6EFDA202981C2F300FC3CCB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F6EFDA1F2981C2F300FC3CCB /* FirebaseAuth */; };
+		F6EFDA222981C2F300FC3CCB /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F6EFDA212981C2F300FC3CCB /* FirebaseDatabase */; };
+		F6EFDA242981C2F300FC3CCB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F6EFDA232981C2F300FC3CCB /* FirebaseFirestore */; };
+		F6EFDA262981C2F300FC3CCB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F6EFDA252981C2F300FC3CCB /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +57,9 @@
 		F6B701212974A2B90066B975 /* FFCalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFCalendarModel.swift; sourceTree = "<group>"; };
 		F6B701252974A4030066B975 /* FFDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDateModel.swift; sourceTree = "<group>"; };
 		F6B701292974B6060066B975 /* FFDailyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyTableView.swift; sourceTree = "<group>"; };
+		F6EFDA16298188D200FC3CCB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F6EFDA182981906400FC3CCB /* FFAddingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFAddingTableView.swift; sourceTree = "<group>"; };
+		F6EFDA1A2981C11C00FC3CCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +67,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6EFDA1E2981C2F300FC3CCB /* FirebaseAnalytics in Frameworks */,
+				F6EFDA202981C2F300FC3CCB /* FirebaseAuth in Frameworks */,
+				F6EFDA222981C2F300FC3CCB /* FirebaseDatabase in Frameworks */,
+				F6EFDA242981C2F300FC3CCB /* FirebaseFirestore in Frameworks */,
 				F6B701192971A82F0066B975 /* SnapKit in Frameworks */,
+				F6EFDA262981C2F300FC3CCB /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,12 +119,8 @@
 		F6B700FF297199F30066B975 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F6B700EE297199390066B975 /* FFDailyViewController.swift */,
-				F6B701062971A0E60066B975 /* FFRecipesViewController.swift */,
-				F6B701082971A1590066B975 /* FFAddingViewController.swift */,
-				F6B7010A2971A18B0066B975 /* FFFastingViewController.swift */,
-				F6B7010C2971A1C70066B975 /* FFSettingsViewController.swift */,
-				F6B7010429719B900066B975 /* FFTabBarController.swift */,
+				F6EFDA15298188A300FC3CCB /* Core */,
+				F6EFDA142981887D00FC3CCB /* Base */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -132,6 +144,7 @@
 		F6B7010229719A480066B975 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6EFDA13298185AC00FC3CCB /* Adding */,
 				F6B701282974B5D40066B975 /* Daily */,
 			);
 			path = Views;
@@ -146,6 +159,7 @@
 				F6B701112971A4E90066B975 /* Colors.xcassets */,
 				F6B700F52971993B0066B975 /* LaunchScreen.storyboard */,
 				F6B700F82971993B0066B975 /* Info.plist */,
+				F6EFDA1A2981C11C00FC3CCB /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -185,6 +199,35 @@
 			path = Daily;
 			sourceTree = "<group>";
 		};
+		F6EFDA13298185AC00FC3CCB /* Adding */ = {
+			isa = PBXGroup;
+			children = (
+				F6EFDA182981906400FC3CCB /* FFAddingTableView.swift */,
+			);
+			path = Adding;
+			sourceTree = "<group>";
+		};
+		F6EFDA142981887D00FC3CCB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F6EFDA16298188D200FC3CCB /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F6EFDA15298188A300FC3CCB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F6B700EE297199390066B975 /* FFDailyViewController.swift */,
+				F6B701062971A0E60066B975 /* FFRecipesViewController.swift */,
+				F6B701082971A1590066B975 /* FFAddingViewController.swift */,
+				F6B7010A2971A18B0066B975 /* FFFastingViewController.swift */,
+				F6B7010C2971A1C70066B975 /* FFSettingsViewController.swift */,
+				F6B7010429719B900066B975 /* FFTabBarController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,6 +246,11 @@
 			name = FitFood_Application;
 			packageProductDependencies = (
 				F6B701182971A82F0066B975 /* SnapKit */,
+				F6EFDA1D2981C2F300FC3CCB /* FirebaseAnalytics */,
+				F6EFDA1F2981C2F300FC3CCB /* FirebaseAuth */,
+				F6EFDA212981C2F300FC3CCB /* FirebaseDatabase */,
+				F6EFDA232981C2F300FC3CCB /* FirebaseFirestore */,
+				F6EFDA252981C2F300FC3CCB /* FirebaseStorage */,
 			);
 			productName = FitFood_Application;
 			productReference = F6B700E7297199390066B975 /* FitFood_Application.app */;
@@ -234,6 +282,7 @@
 			mainGroup = F6B700DE297199390066B975;
 			packageReferences = (
 				F6B701172971A82F0066B975 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F6EFDA1C2981C2F300FC3CCB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F6B700E8297199390066B975 /* Products */;
 			projectDirPath = "";
@@ -250,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6B701122971A4E90066B975 /* Colors.xcassets in Resources */,
+				F6EFDA1B2981C11C00FC3CCB /* GoogleService-Info.plist in Resources */,
 				F6B700F72971993B0066B975 /* LaunchScreen.storyboard in Resources */,
 				F6B700F42971993B0066B975 /* Assets.xcassets in Resources */,
 			);
@@ -265,6 +315,7 @@
 				F6B7011B2974727B0066B975 /* FFCalendarCollectionView.swift in Sources */,
 				F6B700EF297199390066B975 /* FFDailyViewController.swift in Sources */,
 				F6B701222974A2B90066B975 /* FFCalendarModel.swift in Sources */,
+				F6EFDA192981906400FC3CCB /* FFAddingTableView.swift in Sources */,
 				F6B7011E297475280066B975 /* FFCalendarCollectionViewCell.swift in Sources */,
 				F6B701202974A1FE0066B975 /* Date+ext.swift in Sources */,
 				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
@@ -275,6 +326,7 @@
 				F6B701162971A7520066B975 /* UIView+ext.swift in Sources */,
 				F6B701072971A0E60066B975 /* FFRecipesViewController.swift in Sources */,
 				F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */,
+				F6EFDA17298188D200FC3CCB /* BaseViewController.swift in Sources */,
 				F6B7012A2974B6060066B975 /* FFDailyTableView.swift in Sources */,
 				F6B701262974A4030066B975 /* FFDateModel.swift in Sources */,
 			);
@@ -496,6 +548,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F6EFDA1C2981C2F300FC3CCB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -503,6 +563,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F6B701172971A82F0066B975 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		F6EFDA1D2981C2F300FC3CCB /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6EFDA1C2981C2F300FC3CCB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F6EFDA1F2981C2F300FC3CCB /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6EFDA1C2981C2F300FC3CCB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F6EFDA212981C2F300FC3CCB /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6EFDA1C2981C2F300FC3CCB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		F6EFDA232981C2F300FC3CCB /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6EFDA1C2981C2F300FC3CCB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F6EFDA252981C2F300FC3CCB /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6EFDA1C2981C2F300FC3CCB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

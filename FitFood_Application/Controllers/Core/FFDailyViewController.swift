@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import SnapKit
 
-final class FFDailyViewController: UIViewController {
+final class FFDailyViewController: BaseViewController {
     
     // MARK: - Constants
     
@@ -19,15 +18,9 @@ final class FFDailyViewController: UIViewController {
     
     // MARK: - Subviews
     
-    private lazy var calendarView: FFCalendarCollectionView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
-    }(FFCalendarCollectionView())
-    
-    private let tableView: FFDailyTableView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
-    }(FFDailyTableView())
+    private lazy var calendarView = FFCalendarCollectionView()
+    private lazy var tableView = FFDailyTableView()
+    private lazy var collectionBottomSeparator = UIView()
 
     // MARK: - LifeCycle
     
@@ -50,12 +43,14 @@ final class FFDailyViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         configureCalendarView()
+        configureCollectionBottomSeparator()
         configureTableView()
     }
     
     private func configureCalendarView() {
         updateData(day: 0)
         calendarView.calendarDelegate = self
+        calendarView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(calendarView)
         
@@ -66,14 +61,27 @@ final class FFDailyViewController: UIViewController {
         }
     }
     
+    private func configureCollectionBottomSeparator() {
+        collectionBottomSeparator.backgroundColor = .lightGray
+        collectionBottomSeparator.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(collectionBottomSeparator)
+        
+        collectionBottomSeparator.snp.makeConstraints {
+            $0.top.equalTo(calendarView.snp.bottom)
+            $0.right.left.equalToSuperview()
+            $0.height.equalTo(0.5)
+        }
+    }
+    
     private func configureTableView() {
-        tableView.addTopBorder(with: .lightGray, height: 0.5)
         tableView.backgroundColor = .secondarySystemBackground
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints {
-            $0.top.equalTo(calendarView.snp.bottom)
+            $0.top.equalTo(collectionBottomSeparator.snp.bottom)
             $0.right.left.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
@@ -100,6 +108,10 @@ extension FFDailyViewController: CalendarDelegate {
     
     func maxRightOffset() {
         updateData(day: 7)
+    }
+    
+    func cellWasSelected(date: FFDateModel) {
+        print("Date: \(date.dateString)")
     }
 }
 
