@@ -7,6 +7,19 @@
 
 import UIKit
 
-final class FFPhoneNumberViewController: BaseViewController {
+final class FFPhoneNumberViewController: BaseAuthViewController {
     
+    // MARK: - layout
+    
+    override func configureViews() {
+        super.configureViews()
+        
+        subviewsSettings(buttonTitle: "Send code",
+                         isFirst: false,
+                         textFieldPlaceholder: "Enter phone number")
+    }
+    
+    override func buttonWasTapped(_ sender: Any) {
+        navigationController?.pushViewController(FFSmsCodeViewController(), animated: true)
+    }
 }

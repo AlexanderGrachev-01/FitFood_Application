@@ -38,6 +38,7 @@
 		F6EFDA2C2981CE4000FC3CCB /* FFWelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDA2B2981CE4000FC3CCB /* FFWelcomePageViewController.swift */; };
 		F6EFDA2E2981E22100FC3CCB /* FFPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDA2D2981E22100FC3CCB /* FFPhoneNumberViewController.swift */; };
 		F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDA2F2981E28200FC3CCB /* FFSmsCodeViewController.swift */; };
+		F6FF105C2982C68900BD72CF /* BaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF105B2982C68900BD72CF /* BaseAuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		F6EFDA2B2981CE4000FC3CCB /* FFWelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFWelcomePageViewController.swift; sourceTree = "<group>"; };
 		F6EFDA2D2981E22100FC3CCB /* FFPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		F6EFDA2F2981E28200FC3CCB /* FFSmsCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSmsCodeViewController.swift; sourceTree = "<group>"; };
+		F6FF105B2982C68900BD72CF /* BaseAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 				F6EFDA2B2981CE4000FC3CCB /* FFWelcomePageViewController.swift */,
 				F6EFDA2D2981E22100FC3CCB /* FFPhoneNumberViewController.swift */,
 				F6EFDA2F2981E28200FC3CCB /* FFSmsCodeViewController.swift */,
+				F6FF105B2982C68900BD72CF /* BaseAuthViewController.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				F6B700EB297199390066B975 /* AppDelegate.swift in Sources */,
 				F6B7010B2971A18B0066B975 /* FFFastingViewController.swift in Sources */,
 				F6B700ED297199390066B975 /* SceneDelegate.swift in Sources */,
+				F6FF105C2982C68900BD72CF /* BaseAuthViewController.swift in Sources */,
 				F6B7010D2971A1C70066B975 /* FFSettingsViewController.swift in Sources */,
 				F6EFDA292981C8B500FC3CCB /* AuthorizationManager.swift in Sources */,
 				F6B701162971A7520066B975 /* UIView+ext.swift in Sources */,
