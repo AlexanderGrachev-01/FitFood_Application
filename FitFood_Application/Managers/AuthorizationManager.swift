@@ -35,6 +35,7 @@ final class AuthorizationManager: AuthorizationProtocol {
         }
     }
     
+    
     func verifyCode(_ smsCode: String, completion: @escaping (Bool) -> Void) {
         guard let verificationID = verificationID else {
             completion(false)

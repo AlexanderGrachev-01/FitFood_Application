@@ -1,5 +1,5 @@
 //
-//  BaseAuthViewController.swift
+//  FFBaseAuthViewController.swift
 //  FitFood_Application
 //
 //  Created by Aleksandr.Grachev on 26.01.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseAuthViewController: BaseViewController {
+class FFBaseAuthViewController: UIViewController {
     
     // MARK: - Constans
     
@@ -157,12 +157,4 @@ class BaseAuthViewController: BaseViewController {
     
     @objc
     func buttonWasTapped(_ sender: Any) {}
-}
-
-extension FFPhoneNumberViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = CharacterSet.decimalDigits
-        let characterSet = CharacterSet(charactersIn: string)
-        return allowedCharacters.isSuperset(of: characterSet)
-    }
 }

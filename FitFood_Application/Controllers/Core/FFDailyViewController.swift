@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FFDailyViewController: BaseViewController {
+final class FFDailyViewController: FFBaseViewController {
     
     // MARK: - Constants
     

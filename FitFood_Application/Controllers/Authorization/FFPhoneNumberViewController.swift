@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FFPhoneNumberViewController: BaseAuthViewController {
+final class FFPhoneNumberViewController: FFBaseAuthViewController {
     
     // MARK: - LifeCycle
     
@@ -45,7 +45,7 @@ final class FFPhoneNumberViewController: BaseAuthViewController {
         
         var number = text
         number.removeFirst()
-        AuthorizationManager.shared.verifyPhone("+7\(text)") { [weak self] success in
+        AuthorizationManager.shared.verifyPhone("+78\(number)") { [weak self] success in
             guard success else { return }
             DispatchQueue.main.async {
                 self?.textField.resignFirstResponder()
@@ -58,7 +58,13 @@ final class FFPhoneNumberViewController: BaseAuthViewController {
 
 // MARK: - UITextFieldDelegate
 
-extension FFPhoneNumberViewController {
+extension FFPhoneNumberViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
+
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let count = textField.text?.count,
               count == 11 else {

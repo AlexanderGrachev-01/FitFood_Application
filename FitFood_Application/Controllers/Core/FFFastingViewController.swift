@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FFFastingViewController: BaseViewController {
+final class FFFastingViewController: FFBaseViewController {
     
     // MARK: - LifeCycle
     

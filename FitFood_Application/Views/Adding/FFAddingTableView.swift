@@ -11,7 +11,7 @@ class FFAddingTableView: UITableView {
     
 }
 
-// MARK: - DataSource
+// MARK: - UITableViewDataSource
 
 extension FFAddingTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,7 +25,7 @@ extension FFAddingTableView: UITableViewDataSource {
     
 }
 
-// MARK: - Delegate
+// MARK: - UITableViewDelegate
 
 extension FFAddingTableView: UITableViewDelegate {
     

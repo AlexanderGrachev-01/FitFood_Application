@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FFWelcomePageViewController: BaseAuthViewController {
+final class FFWelcomePageViewController: FFBaseAuthViewController {
     
     // MARK: - Constans
     

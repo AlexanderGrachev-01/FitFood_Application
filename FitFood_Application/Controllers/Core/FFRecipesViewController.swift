@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FFRecipesViewController: BaseViewController {
+final class FFRecipesViewController: FFBaseViewController {
     
     // MARK: - LifeCycle
     

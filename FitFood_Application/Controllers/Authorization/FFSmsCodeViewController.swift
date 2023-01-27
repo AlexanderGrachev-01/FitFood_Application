@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FFSmsCodeViewController: BaseAuthViewController {
+final class FFSmsCodeViewController: FFBaseAuthViewController {
     
     // MARK: - LifeCycle
     
@@ -26,6 +26,9 @@ final class FFSmsCodeViewController: BaseAuthViewController {
                          isFirst: false,
                          textFieldPlaceholder: "Enter code")
         textField.textContentType = .oneTimeCode
+        textField.delegate = self
+        button.isEnabled = false
+        button.alpha = 0.5
     }
     
     // MARK: - Action
@@ -52,7 +55,13 @@ final class FFSmsCodeViewController: BaseAuthViewController {
 
 // MARK: - UITextFieldDelegate
 
-extension FFSmsCodeViewController {
+extension FFSmsCodeViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
+
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let count = textField.text?.count,
               count == 6 else {

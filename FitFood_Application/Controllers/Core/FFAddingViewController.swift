@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FFAddingViewController: BaseViewController {
+final class FFAddingViewController: FFBaseViewController {
     
     // MARK: - Constant
     
@@ -59,10 +59,15 @@ final class FFAddingViewController: BaseViewController {
 extension FFAddingViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         segmentedControl.isHidden = true
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        
-        
+        //        guard let text = searchController.searchBar.text else {
+        //            return
+        //        }
+
     }
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension FFAddingViewController: UISearchControllerDelegate {
+    
 }
