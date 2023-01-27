@@ -30,7 +30,7 @@ final class FFTabBarController: UITabBarController {
         recipesVC.navigationItem.largeTitleDisplayMode = .automatic
         addingVC.navigationItem.largeTitleDisplayMode = .never
         fastingVC.navigationItem.largeTitleDisplayMode = .automatic
-        settingsVC.navigationItem.largeTitleDisplayMode = .automatic
+        settingsVC.navigationItem.largeTitleDisplayMode = .never
         
         let dailyNav = UINavigationController(rootViewController: dailyVC)
         let recipesNav = UINavigationController(rootViewController: recipesVC)

@@ -22,7 +22,7 @@ final class FFSmsCodeViewController: FFBaseAuthViewController {
     override func configureViews() {
         super.configureViews()
         
-        subviewsSettings(buttonTitle: "Send code",
+        subviewsSettings(buttonTitle: "Confirm code",
                          isFirst: false,
                          textFieldPlaceholder: "Enter code")
         textField.textContentType = .oneTimeCode

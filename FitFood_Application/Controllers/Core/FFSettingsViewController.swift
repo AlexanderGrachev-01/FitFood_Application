@@ -9,11 +9,11 @@ import UIKit
 import FirebaseAuth
 
 final class FFSettingsViewController: FFBaseViewController {
-    private var modules: [String] = ["Account", "Profile", "About FitFood"]
+    private var modules: [String] = ["", "Account",
+                                    "Units", "About app"]
+    private var images: [String] = ["", "iconLock", "iconUnits", "iconInfo"]
     
     // MARK: Constants
-    
-    private let settingCellHeight: CGFloat = 50
     
     private let logoutButtonBottomOffset = 30
     
@@ -41,9 +41,11 @@ final class FFSettingsViewController: FFBaseViewController {
     
     private func configureTableView() {
         tableView.isScrollEnabled = false
-        tableView.separatorStyle = .singleLine
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(FFUserInfoTableViewCell.self, forCellReuseIdentifier: FFUserInfoTableViewCell.identifier)
+        tableView.register(FFSettingsTableViewCell.self, forCellReuseIdentifier: FFSettingsTableViewCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
@@ -77,8 +79,16 @@ extension FFSettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "SettingTableViewCell")
-        return cell
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: FFUserInfoTableViewCell.identifier, for: indexPath) as! FFUserInfoTableViewCell
+            cell.configure(fullName: "Grachev Aleksander", gender: FFGender(rawValue: "Male")!)
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: FFSettingsTableViewCell.identifier, for: indexPath) as! FFSettingsTableViewCell
+            cell.configure(text: modules[indexPath.row], imageName: images[indexPath.row])
+            return cell
+        }
     }
 }
 
@@ -86,7 +96,16 @@ extension FFSettingsViewController: UITableViewDataSource {
 
 extension FFSettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        settingCellHeight
+        switch indexPath.row {
+        case 0:
+            return 92
+        default:
+            return 50
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

@@ -40,6 +40,8 @@
 		F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDA2F2981E28200FC3CCB /* FFSmsCodeViewController.swift */; };
 		F6FF105C2982C68900BD72CF /* FFBaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF105B2982C68900BD72CF /* FFBaseAuthViewController.swift */; };
 		F6FF106629843B9700BD72CF /* FFUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF106529843B9700BD72CF /* FFUserModel.swift */; };
+		F6FF10692984738100BD72CF /* FFUserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF10682984738100BD72CF /* FFUserInfoTableViewCell.swift */; };
+		F6FF106B2984842400BD72CF /* FFSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF106A2984842400BD72CF /* FFSettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		F6EFDA2F2981E28200FC3CCB /* FFSmsCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSmsCodeViewController.swift; sourceTree = "<group>"; };
 		F6FF105B2982C68900BD72CF /* FFBaseAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFBaseAuthViewController.swift; sourceTree = "<group>"; };
 		F6FF106529843B9700BD72CF /* FFUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFUserModel.swift; sourceTree = "<group>"; };
+		F6FF10682984738100BD72CF /* FFUserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFUserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		F6FF106A2984842400BD72CF /* FFSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,8 @@
 		F6FF1067298455B100BD72CF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F6FF10682984738100BD72CF /* FFUserInfoTableViewCell.swift */,
+				F6FF106A2984842400BD72CF /* FFSettingsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				F6EFDA2E2981E22100FC3CCB /* FFPhoneNumberViewController.swift in Sources */,
 				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
 				F6B700EB297199390066B975 /* AppDelegate.swift in Sources */,
+				F6FF10692984738100BD72CF /* FFUserInfoTableViewCell.swift in Sources */,
 				F6B7010B2971A18B0066B975 /* FFFastingViewController.swift in Sources */,
 				F6B700ED297199390066B975 /* SceneDelegate.swift in Sources */,
 				F6FF105C2982C68900BD72CF /* FFBaseAuthViewController.swift in Sources */,
@@ -390,6 +397,7 @@
 				F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */,
 				F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */,
 				F6EFDA17298188D200FC3CCB /* FFBaseViewController.swift in Sources */,
+				F6FF106B2984842400BD72CF /* FFSettingsTableViewCell.swift in Sources */,
 				F6EFDA2C2981CE4000FC3CCB /* FFWelcomePageViewController.swift in Sources */,
 				F6B7012A2974B6060066B975 /* FFDailyTableView.swift in Sources */,
 				F6B701262974A4030066B975 /* FFDateModel.swift in Sources */,
