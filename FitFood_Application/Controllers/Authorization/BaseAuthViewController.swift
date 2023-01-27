@@ -33,8 +33,8 @@ class BaseAuthViewController: BaseViewController {
     
     private lazy var backgroundImageView = UIImageView()
     private lazy var logoImageView = UIImageView()
-    private lazy var button = UIButton()
-    private lazy var textField = UITextField()
+    lazy var button = UIButton()
+    lazy var textField = UITextField()
     private lazy var textFieldUnderline = UIView()
     
     // MARK: - LifeCycle
@@ -83,6 +83,8 @@ class BaseAuthViewController: BaseViewController {
     private func configureTextField() {
         textField.borderStyle = .none
         textField.textColor = .white
+        textField.returnKeyType = .send
+        textField.keyboardType = .numberPad
         textField.font = .systemFont(ofSize: 26, weight: .bold)
         textField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(textField)
@@ -155,4 +157,12 @@ class BaseAuthViewController: BaseViewController {
     
     @objc
     func buttonWasTapped(_ sender: Any) {}
+}
+
+extension FFPhoneNumberViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
 }
