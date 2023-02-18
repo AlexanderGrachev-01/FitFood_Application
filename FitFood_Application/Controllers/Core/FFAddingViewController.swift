@@ -11,7 +11,7 @@ final class FFAddingViewController: FFBaseViewController {
     
     // MARK: - Constant
     
-    private let segmentsArray = ["Recent", "Favorites"]
+    private let segmentsArray = [Asset.Strings.recent, Asset.Strings.favorites]
     private let segmentedControlOffset = 16
     private let segmentedControlHeight = 32
     
@@ -31,8 +31,8 @@ final class FFAddingViewController: FFBaseViewController {
     // MARK: - Layout
     
     private func configureViews() {
-        title = "Lunch"
-        view.backgroundColor = .systemBackground
+        title = Asset.Strings.lunch
+        view.backgroundColor = Asset.Colors.secondaryBackground
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         

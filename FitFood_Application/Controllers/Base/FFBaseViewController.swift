@@ -9,5 +9,16 @@ import UIKit
 import SnapKit
 
 class FFBaseViewController: UIViewController {
+    // MARK: - Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configure()
+    }
+    
+    private func configure() {
+        view.backgroundColor = Asset.Colors.background
+        navigationController?.navigationBar.backgroundColor = Asset.Colors.secondaryBackground
+    }
 }

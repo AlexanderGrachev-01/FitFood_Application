@@ -39,13 +39,14 @@ class FFSettingsTableViewCell: UITableViewCell {
     // MARK: - Layout
     
     private func configureViews() {
+        backgroundColor = Asset.Colors.secondaryBackground
         configureLeftIcon()
         configureRightIcon()
         configureLabel()
     }
     
     private func configureRightIcon() {
-        rightImage.image = UIImage(named: "IconChevronRightGrey")
+        rightImage.image = Asset.Images.iconChevronRightGrey
         rightImage.translatesAutoresizingMaskIntoConstraints = false
         addSubview(rightImage)
         

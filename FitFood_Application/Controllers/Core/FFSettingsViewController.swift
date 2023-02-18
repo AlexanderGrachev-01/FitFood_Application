@@ -33,14 +33,14 @@ final class FFSettingsViewController: FFBaseViewController {
     // MARK: - Layout
     
     private func configureViews() {
-        title = "Settings"
-        view.backgroundColor = .systemBackground
+        title = Asset.Strings.settings
+        view.backgroundColor = Asset.Colors.secondaryBackground
         configureTableView()
         configureLogoutButton()
     }
     
     private func configureTableView() {
-        tableView.isScrollEnabled = false
+        tableView.backgroundColor = Asset.Colors.secondaryBackground
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
@@ -58,7 +58,7 @@ final class FFSettingsViewController: FFBaseViewController {
     }
     
     private func configureLogoutButton() {
-        logoutButton.setTitle("Log out", for: .normal)
+        logoutButton.setTitle(Asset.Strings.logOut, for: .normal)
         logoutButton.setTitleColor(.systemGray, for: .normal)
         logoutButton.addTarget(self, action: #selector(signOutAction), for: .touchUpInside)
         logoutButton.translatesAutoresizingMaskIntoConstraints = false

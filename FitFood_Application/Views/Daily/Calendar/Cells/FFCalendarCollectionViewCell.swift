@@ -53,7 +53,7 @@ final class FFCalendarCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             if self.isSelected {
-                self.backgroundColor = .secondarySystemBackground
+                self.backgroundColor = Asset.Colors.selectedDate
                 self.dateNumberLabel.textColor = .label
             } else {
                 self.backgroundColor = .clear

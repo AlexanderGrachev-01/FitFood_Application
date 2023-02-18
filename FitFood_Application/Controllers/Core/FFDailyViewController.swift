@@ -19,7 +19,6 @@ final class FFDailyViewController: FFBaseViewController {
     // MARK: - Subviews
     
     private lazy var calendarView = FFCalendarCollectionView()
-    private lazy var tableView = FFDailyTableView()
     private lazy var collectionBottomSeparator = UIView()
 
     // MARK: - LifeCycle
@@ -39,12 +38,10 @@ final class FFDailyViewController: FFBaseViewController {
     // MARK: - Layout
     
     private func configureViews() {
-        title = "Daily"
-        view.backgroundColor = .systemBackground
+        title = Asset.Strings.daily
         
         configureCalendarView()
         configureCollectionBottomSeparator()
-        configureTableView()
     }
     
     private func configureCalendarView() {
@@ -62,7 +59,7 @@ final class FFDailyViewController: FFBaseViewController {
     }
     
     private func configureCollectionBottomSeparator() {
-        collectionBottomSeparator.backgroundColor = .lightGray
+        collectionBottomSeparator.backgroundColor = Asset.Colors.separator
         collectionBottomSeparator.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(collectionBottomSeparator)
@@ -71,19 +68,6 @@ final class FFDailyViewController: FFBaseViewController {
             $0.top.equalTo(calendarView.snp.bottom)
             $0.right.left.equalToSuperview()
             $0.height.equalTo(0.5)
-        }
-    }
-    
-    private func configureTableView() {
-        tableView.backgroundColor = .secondarySystemBackground
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(tableView)
-        
-        tableView.snp.makeConstraints {
-            $0.top.equalTo(collectionBottomSeparator.snp.bottom)
-            $0.right.left.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
     

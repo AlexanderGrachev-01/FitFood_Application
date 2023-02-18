@@ -56,7 +56,7 @@ class FFBaseAuthViewController: UIViewController {
     }
     
     private func configureBackgroundImage() {
-        backgroundImageView.image = UIImage(named: "FFAuthBackground")
+        backgroundImageView.image = Asset.Images.authBackground
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(backgroundImageView)
@@ -67,7 +67,7 @@ class FFBaseAuthViewController: UIViewController {
     }
     
     private func configureLogoImage() {
-        logoImageView.image = UIImage(named: "FFLogo")
+        logoImageView.image = Asset.Images.logo
         logoImageView.contentMode = .scaleAspectFill
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(logoImageView)

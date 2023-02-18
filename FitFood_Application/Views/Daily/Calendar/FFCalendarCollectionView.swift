@@ -55,7 +55,7 @@ final class FFCalendarCollectionView: UICollectionView {
         delegate = self
         dataSource = self
         
-        backgroundColor = .systemBackground
+        backgroundColor = Asset.Colors.secondaryBackground
         bounces = false
         showsHorizontalScrollIndicator = false
         translatesAutoresizingMaskIntoConstraints = false

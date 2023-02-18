@@ -20,9 +20,8 @@ final class FFRecipesViewController: FFBaseViewController {
     // MARK: - Layout
     
     private func configureViews() {
-        title = "Recipes"
-        view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.addBottomBorder(with: .lightGray,
+        title = Asset.Strings.recipes
+        navigationController?.navigationBar.addBottomBorder(with: Asset.Colors.separator,
                                                             height: 0.5)
     }
 }

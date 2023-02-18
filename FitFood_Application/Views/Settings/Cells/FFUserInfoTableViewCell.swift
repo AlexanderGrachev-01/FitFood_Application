@@ -41,13 +41,14 @@ class FFUserInfoTableViewCell: UITableViewCell {
     // MARK: - Layout
     
     private func configureViews() {
+        backgroundColor = Asset.Colors.secondaryBackground
         configureUserIcon()
         configureNameLabel()
         configureGenderLabel()
     }
     
     private func configureUserIcon() {
-        userIcon.image = UIImage(named: "iconPerson")
+        userIcon.image = Asset.Images.iconPerson
         userIcon.image?.withTintColor(.label)
         userIcon.translatesAutoresizingMaskIntoConstraints = false
         addSubview(userIcon)
