@@ -9,6 +9,7 @@ import UIKit
 
 enum Asset {
     enum Colors {
+        static let white: UIColor = .white
         static let background = UIColor(named: "background") ?? UIColor()
         static let secondaryBackground = UIColor(named: "secondaryBackground") ?? UIColor()
         static let separator = UIColor(named: "separator") ?? UIColor()
@@ -29,6 +30,7 @@ enum Asset {
     }
     
     enum Images {
+        static let backButton = UIImage(named: "backButton")
         static let authBackground = UIImage(named: "authBackground")
         static let launchBackground = UIImage(named: "launchBackground")
         static let iconChevronRightGrey = UIImage(named: "iconChevronRightGrey")

@@ -8,23 +8,33 @@
 import UIKit
 
 final class FFWelcomePageViewController: FFBaseAuthViewController {
-    
-    // MARK: - Constans
-    
-    private let warningLabelBottomOffset = 16
-    
     // MARK: - Subviews
     
     private lazy var warningLabel = UILabel()
     
-    // MARK: - Layout
+    // MARK: - Lifecycle
     
-    override func configureViews() {
-        super.configureViews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        subviewsSettings(buttonTitle: "Sign in",
-                         isFirst: true,
-                         textFieldPlaceholder: nil)
+        configureSubviews()
+    }
+    
+    // MARK: - Action
+    
+    override func buttonWasTapped(_ sender: Any) {
+        navigationController?.pushViewController(FFPhoneNumberViewController(), animated: true)
+    }
+}
+    
+// MARK: - Layout
+    
+private extension FFWelcomePageViewController {
+    func configureSubviews() {
+        subviewsSettings(
+            buttonTitle: "Sign in",
+            isFirst: true,
+            textFieldPlaceholder: nil)
         configureWarningLabel()
     }
     
@@ -34,15 +44,15 @@ final class FFWelcomePageViewController: FFBaseAuthViewController {
         warningLabel.textColor = .lightGray
         warningLabel.numberOfLines = 2
         view.addSubview(warningLabel)
-        
         warningLabel.snp.makeConstraints {
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-warningLabelBottomOffset)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-Constans.warningLabelBottomOffset)
             $0.centerX.equalToSuperview()
         }
-        
     }
-    
-    override func buttonWasTapped(_ sender: Any) {
-        navigationController?.pushViewController(FFPhoneNumberViewController(), animated: true)
+}
+
+private extension FFWelcomePageViewController {
+    enum Constans {
+        static let warningLabelBottomOffset = 16
     }
 }

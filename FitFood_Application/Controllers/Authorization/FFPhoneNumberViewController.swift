@@ -8,27 +8,18 @@
 import UIKit
 
 final class FFPhoneNumberViewController: FFBaseAuthViewController {
-    
     // MARK: - LifeCycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureSubviews()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         textField.becomeFirstResponder()
-    }
-    
-    // MARK: - layout
-    
-    override func configureViews() {
-        super.configureViews()
-        
-        subviewsSettings(buttonTitle: "Send code",
-                         isFirst: false,
-                         textFieldPlaceholder: "Enter phone number")
-        textField.textContentType = .telephoneNumber
-        textField.delegate = self
-        button.isEnabled = false
-        button.alpha = 0.5
     }
     
     // MARK: - Actions
@@ -53,6 +44,22 @@ final class FFPhoneNumberViewController: FFBaseAuthViewController {
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
         }
+    }
+}
+    
+// MARK: - layout
+
+private extension FFPhoneNumberViewController {
+    func configureSubviews() {
+        subviewsSettings(
+            buttonTitle: "Send code",
+            isFirst: false,
+            textFieldPlaceholder: "Enter phone number"
+        )
+        textField.textContentType = .telephoneNumber
+        textField.delegate = self
+        button.isEnabled = false
+        button.alpha = 0.5
     }
 }
 

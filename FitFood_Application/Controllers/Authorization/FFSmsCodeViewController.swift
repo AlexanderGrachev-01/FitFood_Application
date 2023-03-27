@@ -8,27 +8,18 @@
 import UIKit
 
 final class FFSmsCodeViewController: FFBaseAuthViewController {
-    
     // MARK: - LifeCycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureSubviews()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         textField.becomeFirstResponder()
-    }
-    
-    // MARK: - layout
-    
-    override func configureViews() {
-        super.configureViews()
-        
-        subviewsSettings(buttonTitle: "Confirm code",
-                         isFirst: false,
-                         textFieldPlaceholder: "Enter code")
-        textField.textContentType = .oneTimeCode
-        textField.delegate = self
-        button.isEnabled = false
-        button.alpha = 0.5
     }
     
     // MARK: - Action
@@ -50,6 +41,22 @@ final class FFSmsCodeViewController: FFBaseAuthViewController {
                 UIApplication.shared.windows.first?.rootViewController = FFTabBarController()
             }
         }
+    }
+}
+
+// MARK: - layout
+
+private extension FFSmsCodeViewController {
+    func configureSubviews() {
+        subviewsSettings(
+            buttonTitle: "Confirm code",
+            isFirst: false,
+            textFieldPlaceholder: "Enter code"
+        )
+        textField.textContentType = .oneTimeCode
+        textField.delegate = self
+        button.isEnabled = false
+        button.alpha = 0.5
     }
 }
 

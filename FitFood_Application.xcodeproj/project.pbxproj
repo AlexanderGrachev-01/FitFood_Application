@@ -93,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6622A4429D21E3E0097694F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F6FF105B2982C68900BD72CF /* FFBaseAuthViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		F6B700DE297199390066B975 = {
 			isa = PBXGroup;
 			children = (
@@ -247,10 +255,10 @@
 		F6EFDA2A2981CDEE00FC3CCB /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				F6622A4429D21E3E0097694F /* Base */,
 				F6EFDA2B2981CE4000FC3CCB /* FFWelcomePageViewController.swift */,
 				F6EFDA2D2981E22100FC3CCB /* FFPhoneNumberViewController.swift */,
 				F6EFDA2F2981E28200FC3CCB /* FFSmsCodeViewController.swift */,
-				F6FF105B2982C68900BD72CF /* FFBaseAuthViewController.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
