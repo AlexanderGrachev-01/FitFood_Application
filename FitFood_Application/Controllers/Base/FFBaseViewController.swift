@@ -18,7 +18,7 @@ class FFBaseViewController: UIViewController {
     }
     
     private func configure() {
-        view.backgroundColor = Asset.Colors.background
+        view.backgroundColor = Asset.Colors.secondaryBackground
         navigationController?.navigationBar.backgroundColor = Asset.Colors.secondaryBackground
     }
 }

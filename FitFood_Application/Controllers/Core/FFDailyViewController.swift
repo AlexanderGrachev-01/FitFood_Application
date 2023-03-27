@@ -43,15 +43,14 @@ private extension FFDailyViewController {
         
         configureCalendarView()
         configureCollectionBottomSeparator()
+        configureCollectionView()
     }
     
     func configureCalendarView() {
         updateData(day: 0)
         calendarView.calendarDelegate = self
         calendarView.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(calendarView)
-        
         calendarView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.width.equalToSuperview()
@@ -62,9 +61,7 @@ private extension FFDailyViewController {
     func configureCollectionBottomSeparator() {
         collectionBottomSeparator.backgroundColor = Asset.Colors.separator
         collectionBottomSeparator.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(collectionBottomSeparator)
-        
         collectionBottomSeparator.snp.makeConstraints {
             $0.top.equalTo(calendarView.snp.bottom)
             $0.right.left.equalToSuperview()
@@ -73,7 +70,25 @@ private extension FFDailyViewController {
     }
     
     func configureCollectionView() {
-        
+        collectionView.register(FFDailyStatCollectionViewCell.self,
+                                forCellWithReuseIdentifier: FFDailyStatCollectionViewCell.identifier)
+        collectionView.register(FFDailyWaterStatCollectionViewCell.self,
+                                forCellWithReuseIdentifier: FFDailyWaterStatCollectionViewCell.identifier)
+        collectionView.register(FFDailyStepsStatCollectionViewCell.self,
+                                forCellWithReuseIdentifier: FFDailyStepsStatCollectionViewCell.identifier)
+        collectionView.register(FFDailyFastingTimerCollectionViewCell.self,
+                                forCellWithReuseIdentifier: FFDailyFastingTimerCollectionViewCell.identifier)
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.backgroundColor = Asset.Colors.background
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(collectionBottomSeparator.snp.bottom)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
     }
 }
     
@@ -97,24 +112,86 @@ extension FFDailyViewController: UICollectionViewDelegate {
     
 }
 
-// MARK: - UICollectionViewDelegate
+// MARK: - UICollectionViewDataSource
 
 extension FFDailyViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        0
+        4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        UICollectionViewCell()
+        switch indexPath.row {
+        case 0:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: FFDailyStatCollectionViewCell.identifier,
+                for: indexPath
+            ) as? FFDailyStatCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            return cell
+        case 1:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: FFDailyWaterStatCollectionViewCell.identifier,
+                for: indexPath
+            ) as? FFDailyWaterStatCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            return cell
+        case 2:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: FFDailyStepsStatCollectionViewCell.identifier,
+                for: indexPath
+            ) as? FFDailyStepsStatCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            return cell
+        case 3:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: FFDailyFastingTimerCollectionViewCell.identifier,
+                for: indexPath
+            ) as? FFDailyFastingTimerCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
     }
-    
-    
 }
 
-// MARK: - UICollectionViewDelegate
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension FFDailyViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch indexPath.row {
+        case 0:
+            let widthPerItem = view.frame.width - 36
+            return CGSize(width: widthPerItem, height: Constants.statCellHeight)
+        case 1:
+            let widthPerItem = view.frame.width / 2 - 27
+            return CGSize(width: widthPerItem, height: Constants.waterStatCellHeight)
+        case 2:
+            let widthPerItem = view.frame.width / 2 - 27
+            return CGSize(width: widthPerItem, height: Constants.stepsStatCellHeight)
+        case 3:
+            let widthPerItem = view.frame.width - 36
+            return CGSize(width: widthPerItem, height: Constants.fastingTimerCellHeight)
+        default:
+            return CGSize()
+        }
+    }
     
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
+        Constants.sectionInsets
+    }
+
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumInteritemSpacingForSectionAt _: Int) -> CGFloat {
+        Constants.sectionInsets.left
+    }
+
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt _: Int) -> CGFloat {
+        Constants.sectionInsets.top
+    }
 }
 
 // MARK: - CalendarDelegate
@@ -138,6 +215,11 @@ extension FFDailyViewController: CalendarDelegate {
 private extension FFDailyViewController {
     enum Constants {
         static let calendarViewHeight: CGFloat = 102
+        static let sectionInsets = UIEdgeInsets(top: 24, left: 18, bottom: 24, right: 18)
+        static let statCellHeight: CGFloat = 413
+        static let waterStatCellHeight: CGFloat = 250
+        static let stepsStatCellHeight: CGFloat = 250
+        static let fastingTimerCellHeight: CGFloat = 122
     }
 }
 

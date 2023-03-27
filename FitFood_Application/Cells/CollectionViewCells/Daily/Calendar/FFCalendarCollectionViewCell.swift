@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 final class FFCalendarCollectionViewCell: UICollectionViewCell {
+    // MARK: - Identifier
+    
     static let identifier = "FFCalendarCollectionViewCell"
     
     // MARK: - Constants
