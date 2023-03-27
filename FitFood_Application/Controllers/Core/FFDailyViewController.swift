@@ -8,10 +8,7 @@
 import UIKit
 
 final class FFDailyViewController: FFBaseViewController {
-    
-    // MARK: - Constants
-    
-    private let calendarViewHeight: CGFloat = 102
+    // MARK: - Properties
     
     private let calendarModel = FFCalendarModel()
     private lazy var centerDate = Date()
@@ -20,7 +17,9 @@ final class FFDailyViewController: FFBaseViewController {
     
     private lazy var calendarView = FFCalendarCollectionView()
     private lazy var collectionBottomSeparator = UIView()
-
+    private lazy var collectionView = UICollectionView(frame: .zero,
+                                                       collectionViewLayout: UICollectionViewFlowLayout())
+    
     // MARK: - LifeCycle
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,17 +33,19 @@ final class FFDailyViewController: FFBaseViewController {
         
         configureViews()
     }
+}
+
+// MARK: - Layout
     
-    // MARK: - Layout
-    
-    private func configureViews() {
+private extension FFDailyViewController {
+    func configureViews() {
         title = Asset.Strings.daily
         
         configureCalendarView()
         configureCollectionBottomSeparator()
     }
     
-    private func configureCalendarView() {
+    func configureCalendarView() {
         updateData(day: 0)
         calendarView.calendarDelegate = self
         calendarView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,11 +55,11 @@ final class FFDailyViewController: FFBaseViewController {
         calendarView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.width.equalToSuperview()
-            $0.height.equalTo(calendarViewHeight)
+            $0.height.equalTo(Constants.calendarViewHeight)
         }
     }
     
-    private func configureCollectionBottomSeparator() {
+    func configureCollectionBottomSeparator() {
         collectionBottomSeparator.backgroundColor = Asset.Colors.separator
         collectionBottomSeparator.translatesAutoresizingMaskIntoConstraints = false
         
@@ -71,8 +72,15 @@ final class FFDailyViewController: FFBaseViewController {
         }
     }
     
-    // MARK: - Private Function
+    func configureCollectionView() {
+        
+    }
+}
     
+// MARK: - Actions
+    
+extension FFDailyViewController {
+    // Calendar view
     private func updateData(day offset: Int) {
         centerDate = centerDate.getDateWithOffset(with: offset)
         let daysArr = calendarModel.getWeeksForCalendar(date: centerDate)
@@ -81,6 +89,32 @@ final class FFDailyViewController: FFBaseViewController {
         calendarView.reloadData()
         calendarView.scrollToItem(at: [0, 10], at: .centeredHorizontally, animated: false)
     }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension FFDailyViewController: UICollectionViewDelegate {
+    
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension FFDailyViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        UICollectionViewCell()
+    }
+    
+    
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension FFDailyViewController: UICollectionViewDelegateFlowLayout {
+    
 }
 
 // MARK: - CalendarDelegate
@@ -96,6 +130,14 @@ extension FFDailyViewController: CalendarDelegate {
     
     func cellWasSelected(date: FFDateModel) {
         print("Date: \(date.dateString)")
+    }
+}
+
+// MARK: - Constants
+
+private extension FFDailyViewController {
+    enum Constants {
+        static let calendarViewHeight: CGFloat = 102
     }
 }
 
