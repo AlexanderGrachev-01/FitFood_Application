@@ -217,8 +217,8 @@ private extension FFDailyViewController {
         static let calendarViewHeight: CGFloat = 102
         static let sectionInsets = UIEdgeInsets(top: 24, left: 18, bottom: 24, right: 18)
         static let statCellHeight: CGFloat = 413
-        static let waterStatCellHeight: CGFloat = 250
-        static let stepsStatCellHeight: CGFloat = 250
+        static let waterStatCellHeight: CGFloat = 275
+        static let stepsStatCellHeight: CGFloat = 275
         static let fastingTimerCellHeight: CGFloat = 122
     }
 }

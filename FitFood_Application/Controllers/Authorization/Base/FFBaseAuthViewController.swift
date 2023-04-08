@@ -52,7 +52,7 @@ private extension FFBaseAuthViewController {
     
     func configureBackButton() {
         backButton.setImage(
-            Asset.Images.backButton?.withTintColor(Asset.Colors.white),
+            Asset.Images.backButton.withTintColor(Asset.Colors.white),
             for: .normal
         )
         backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
