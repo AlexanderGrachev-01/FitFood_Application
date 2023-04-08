@@ -9,6 +9,9 @@ import UIKit
 
 enum Asset {
     enum Colors {
+        // BTW
+        static let btw400 = UIColor(named: "btw400")
+        
         static let white: UIColor = .white
         static let label: UIColor = .label
         static let background = UIColor(named: "background") ?? UIColor()
@@ -19,21 +22,28 @@ enum Asset {
         static let primary50 = UIColor(named: "primary50") ?? UIColor()
         static let secondary500 = UIColor(named: "secondary500") ?? UIColor()
         static let orangeDark = UIColor(named: "orangeDark") ?? UIColor()
+        static let green = UIColor(named: "green") ?? UIColor()
+        static let lightGreen = UIColor(named: "lightGreen") ?? UIColor()
     }
     
     enum Strings {
-        // TabBar
         static let daily = "Daily"
         static let recipes = "Recipes"
-        static let lunch = "Lunch"
         static let fasting = "Fasting"
         static let settings = "Settings"
-        
         static let recent = "Recent"
         static let favorites = "Favorites"
         static let logOut = "Log out"
         static let water = "Water"
         static let steps = "Steps"
+        static let eaten = "Eaten"
+        static let breakfast = "Breakfast"
+        static let lunch = "Lunch"
+        static let dinner = "Dinner"
+        static let snack = "Snack"
+        
+        static let timeToStrave = "Time to strave"
+        static let timeToEat = "Time to eat"
     }
     
     enum Images {

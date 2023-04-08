@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F65727F329E1A7DB00FA7B57 /* FoodContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */; };
+		F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */; };
 		F6622A4D29D22AD80097694F /* FFDailyStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A4C29D22AD80097694F /* FFDailyStatCollectionViewCell.swift */; };
 		F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A4E29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift */; };
 		F6622A5129D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A5029D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodContentsView.swift; sourceTree = "<group>"; };
+		F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsStatView.swift; sourceTree = "<group>"; };
 		F6622A4C29D22AD80097694F /* FFDailyStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyStatCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6622A4E29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyWaterStatCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6622A5029D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyStepsStatCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 			children = (
 				F6EFDA13298185AC00FC3CCB /* Adding */,
 				F6B701282974B5D40066B975 /* Daily */,
+				F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */,
+				F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -438,12 +444,14 @@
 				F6B701072971A0E60066B975 /* FFRecipesViewController.swift in Sources */,
 				F6622A5329D22C5B0097694F /* FFDailyFastingTimerCollectionViewCell.swift in Sources */,
 				F6F647DC29A108FA0028F76D /* Asset.swift in Sources */,
+				F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */,
 				F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */,
 				F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */,
 				F6EFDA17298188D200FC3CCB /* FFBaseViewController.swift in Sources */,
 				F6FF106B2984842400BD72CF /* FFSettingsTableViewCell.swift in Sources */,
 				F6622A5129D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift in Sources */,
 				F6EFDA2C2981CE4000FC3CCB /* FFWelcomePageViewController.swift in Sources */,
+				F65727F329E1A7DB00FA7B57 /* FoodContentsView.swift in Sources */,
 				F6B701262974A4030066B975 /* FFDateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

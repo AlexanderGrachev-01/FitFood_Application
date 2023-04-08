@@ -219,7 +219,7 @@ private extension FFDailyViewController {
         static let statCellHeight: CGFloat = 413
         static let waterStatCellHeight: CGFloat = 275
         static let stepsStatCellHeight: CGFloat = 275
-        static let fastingTimerCellHeight: CGFloat = 122
+        static let fastingTimerCellHeight: CGFloat = 147
     }
 }
 
