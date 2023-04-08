@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F65727F329E1A7DB00FA7B57 /* FoodContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */; };
 		F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */; };
+		F65727F729E1B84500FA7B57 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F629E1B84500FA7B57 /* ProgressView.swift */; };
 		F6622A4D29D22AD80097694F /* FFDailyStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A4C29D22AD80097694F /* FFDailyStatCollectionViewCell.swift */; };
 		F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A4E29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift */; };
 		F6622A5129D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A5029D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodContentsView.swift; sourceTree = "<group>"; };
 		F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsStatView.swift; sourceTree = "<group>"; };
+		F65727F629E1B84500FA7B57 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		F6622A4C29D22AD80097694F /* FFDailyStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyStatCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6622A4E29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyWaterStatCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6622A5029D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyStepsStatCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				F6B701282974B5D40066B975 /* Daily */,
 				F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */,
 				F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */,
+				F65727F629E1B84500FA7B57 /* ProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				F6B701222974A2B90066B975 /* FFCalendarModel.swift in Sources */,
 				F6B7011E297475280066B975 /* FFCalendarCollectionViewCell.swift in Sources */,
 				F6B701202974A1FE0066B975 /* Date+ext.swift in Sources */,
+				F65727F729E1B84500FA7B57 /* ProgressView.swift in Sources */,
 				F6EFDA2E2981E22100FC3CCB /* FFPhoneNumberViewController.swift in Sources */,
 				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
 				F6B700EB297199390066B975 /* AppDelegate.swift in Sources */,

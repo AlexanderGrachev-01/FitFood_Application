@@ -8,6 +8,8 @@
 import UIKit
 
 enum Asset {
+    // MARK: - Colors
+    
     enum Colors {
         // BTW
         static let btw400 = UIColor(named: "btw400")
@@ -24,7 +26,15 @@ enum Asset {
         static let orangeDark = UIColor(named: "orangeDark") ?? UIColor()
         static let green = UIColor(named: "green") ?? UIColor()
         static let lightGreen = UIColor(named: "lightGreen") ?? UIColor()
+        static let lightBlue = UIColor(named: "lightBlue") ?? UIColor()
+        static let orange = UIColor(named: "orange") ?? UIColor()
+        static let lightOrange = UIColor(named: "lightOrange") ?? UIColor()
+        static let progressFat = UIColor(named: "progressFat") ?? UIColor()
+        static let progressFatLight = UIColor(named: "progressFatLight") ?? UIColor()
+        
     }
+    
+    // MARK: - Strings
     
     enum Strings {
         static let daily = "Daily"
@@ -41,10 +51,16 @@ enum Asset {
         static let lunch = "Lunch"
         static let dinner = "Dinner"
         static let snack = "Snack"
+        static let protein = "Protein"
+        static let fat = "Fat"
+        static let carbs = "Carbs"
+        
         
         static let timeToStrave = "Time to strave"
         static let timeToEat = "Time to eat"
     }
+    
+    // MARK: - Images
     
     enum Images {
         // Backgrounds
@@ -67,5 +83,10 @@ enum Asset {
         // Buttons
         static let plusButton = UIImage(named: "plusButton") ?? UIImage()
         static let minusButton = UIImage(named: "minusButton") ?? UIImage()
+        
+        // Views
+        static let protein = UIImage(named: "proteinImage") ?? UIImage()
+        static let fat = UIImage(named: "fatImage") ?? UIImage()
+        static let carbs = UIImage(named: "carbsImage") ?? UIImage()
     }
 }
