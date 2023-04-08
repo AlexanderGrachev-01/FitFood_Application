@@ -16,6 +16,9 @@ enum Asset {
         static let separator = UIColor(named: "separator") ?? UIColor()
         static let selectedDate = UIColor(named: "selectedDate") ?? UIColor()
         static let blue = UIColor(named: "blue") ?? UIColor()
+        static let primary50 = UIColor(named: "primary50") ?? UIColor()
+        static let secondary500 = UIColor(named: "secondary500") ?? UIColor()
+        static let orangeDark = UIColor(named: "orangeDark") ?? UIColor()
     }
     
     enum Strings {
@@ -30,6 +33,7 @@ enum Asset {
         static let favorites = "Favorites"
         static let logOut = "Log out"
         static let water = "Water"
+        static let steps = "Steps"
     }
     
     enum Images {
@@ -48,6 +52,7 @@ enum Asset {
         static let logo = UIImage(named: "logo") ?? UIImage()
         static let rightChevron = UIImage(named: "iconRightChevron") ?? UIImage()
         static let cup = UIImage(named: "iconCup") ?? UIImage()
+        static let steps = UIImage(named: "iconSteps") ?? UIImage()
         
         // Buttons
         static let plusButton = UIImage(named: "plusButton") ?? UIImage()

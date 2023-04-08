@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 final class FFDailyWaterStatCollectionViewCell: UICollectionViewCell {
     // MARK: - Identifier
@@ -21,6 +20,7 @@ final class FFDailyWaterStatCollectionViewCell: UICollectionViewCell {
     // MARK: - Subviews
     
     private lazy var titleLabel = UILabel()
+    private lazy var backView = UIView()
     private lazy var backgroundImageView = UIImageView()
     private lazy var moreIcon = UIImageView()
     private lazy var totalLabel = UILabel()
@@ -49,6 +49,7 @@ private extension FFDailyWaterStatCollectionViewCell {
     func configureViews() {
         contentView.backgroundColor = .clear
         configureTitleLabel()
+        configureBackView()
         configureBackgroundImageView()
         configureMoreIcon()
         configureTotalLabel()
@@ -69,11 +70,23 @@ private extension FFDailyWaterStatCollectionViewCell {
         }
     }
     
+    func configureBackView() {
+        backView.backgroundColor = Asset.Colors.secondaryBackground
+        backView.layer.cornerRadius = Constants.backViewCornerRadius
+        contentView.addSubview(backView)
+        backView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(Constants.backViewTopOffset)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
     func configureBackgroundImageView() {
         backgroundImageView.image = Asset.Images.drinkBackground
-        contentView.addSubview(backgroundImageView)
+        backView.addSubview(backgroundImageView)
         backgroundImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(Constants.backgroundImageTopOffset)
+            $0.top.equalToSuperview()
             $0.left.equalToSuperview()
             $0.right.equalToSuperview()
             $0.bottom.equalToSuperview()
@@ -82,11 +95,11 @@ private extension FFDailyWaterStatCollectionViewCell {
     
     func configureMoreIcon() {
         moreIcon.image = Asset.Images.rightChevron.withTintColor(Asset.Colors.blue)
-        contentView.addSubview(moreIcon)
+        backView.addSubview(moreIcon)
         moreIcon.snp.makeConstraints {
             $0.height.equalTo(Constants.moreIconSize)
             $0.width.equalTo(Constants.moreIconSize)
-            $0.top.equalTo(backgroundImageView.snp.top).offset(Constants.moreIconTopOffset)
+            $0.top.equalToSuperview().offset(Constants.moreIconTopOffset)
             $0.right.equalToSuperview().offset(-Constants.moreIconRightOffset)
         }
     }
@@ -96,9 +109,9 @@ private extension FFDailyWaterStatCollectionViewCell {
         totalLabel.textColor = Asset.Colors.label
         totalLabel.textAlignment = .center
         totalLabel.font = .systemFont(ofSize: 24, weight: .semibold)
-        contentView.addSubview(totalLabel)
+        backView.addSubview(totalLabel)
         totalLabel.snp.makeConstraints {
-            $0.top.equalTo(backgroundImageView.snp.top).offset(Constants.totalLabelTopOffset)
+            $0.top.equalToSuperview().offset(Constants.totalLabelTopOffset)
             $0.centerX.equalToSuperview()
         }
     }
@@ -108,7 +121,7 @@ private extension FFDailyWaterStatCollectionViewCell {
         aimLabel.textColor = Asset.Colors.label
         aimLabel.textAlignment = .center
         aimLabel.font = .systemFont(ofSize: 18, weight: .light)
-        contentView.addSubview(aimLabel)
+        backView.addSubview(aimLabel)
         aimLabel.snp.makeConstraints {
             $0.top.equalTo(totalLabel.snp.bottom)
             $0.centerX.equalToSuperview()
@@ -117,7 +130,7 @@ private extension FFDailyWaterStatCollectionViewCell {
     
     func configureCupIcon() {
         cupIcon.image = Asset.Images.cup.withTintColor(Asset.Colors.blue)
-        contentView.addSubview(cupIcon)
+        backView.addSubview(cupIcon)
         cupIcon.snp.makeConstraints {
             $0.height.equalTo(Constants.cupIconSize)
             $0.width.equalTo(Constants.cupIconSize)
@@ -130,7 +143,7 @@ private extension FFDailyWaterStatCollectionViewCell {
         minusButton.setBackgroundImage(Asset.Images.minusButton, for: .normal)
         minusButton.layer.cornerRadius = Constants.buttonsSize / 2
         minusButton.addTarget(self, action: #selector(minusButtonAction), for: .touchUpInside)
-        contentView.addSubview(minusButton)
+        backView.addSubview(minusButton)
         minusButton.snp.makeConstraints {
             $0.height.equalTo(Constants.buttonsSize)
             $0.width.equalTo(Constants.buttonsSize)
@@ -143,7 +156,7 @@ private extension FFDailyWaterStatCollectionViewCell {
         plusButton.setBackgroundImage(Asset.Images.plusButton, for: .normal)
         plusButton.layer.cornerRadius = Constants.buttonsSize / 2
         plusButton.addTarget(self, action: #selector(plusButtonAction), for: .touchUpInside)
-        contentView.addSubview(plusButton)
+        backView.addSubview(plusButton)
         plusButton.snp.makeConstraints {
             $0.height.equalTo(Constants.buttonsSize)
             $0.width.equalTo(Constants.buttonsSize)
@@ -156,7 +169,6 @@ private extension FFDailyWaterStatCollectionViewCell {
 // MARK: - Actions
 
 extension FFDailyWaterStatCollectionViewCell {
-    
     @objc
     private func minusButtonAction() {
         onMinusButton?()
@@ -174,7 +186,8 @@ private extension FFDailyWaterStatCollectionViewCell {
     enum Constants {
         static let titleLabelLeftOffset = 8
         
-        static let backgroundImageTopOffset = 25
+        static let backViewTopOffset = 25
+        static let backViewCornerRadius = 20.0
         
         static let moreIconSize = 24
         static let moreIconTopOffset = 13
