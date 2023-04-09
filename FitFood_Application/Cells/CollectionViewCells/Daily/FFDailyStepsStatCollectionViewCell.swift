@@ -18,7 +18,7 @@ final class FFDailyStepsStatCollectionViewCell: UICollectionViewCell {
     private lazy var backView = UIView()
     private lazy var stepsIcon = UIImageView()
     private lazy var moreIcon = UIImageView()
-    private lazy var progressView = UIView()
+    private lazy var progressView = RoundProgressBarView()
     private lazy var totalLabel = UILabel()
     private lazy var aimLabel = UILabel()
     
@@ -95,10 +95,7 @@ private extension FFDailyStepsStatCollectionViewCell {
     }
     
     func configureProgressView() {
-        progressView.layer.cornerRadius = Constants.progressViewSize / 2
-        progressView.layer.borderColor = Asset.Colors.orangeDark.cgColor
-        progressView.layer.borderWidth = 12
-        progressView.backgroundColor = .clear
+        progressView.resetProgressBar(ratio: 0.8)
         backView.addSubview(progressView)
         progressView.snp.makeConstraints {
             $0.height.equalTo(Constants.progressViewSize)
@@ -115,7 +112,7 @@ private extension FFDailyStepsStatCollectionViewCell {
         totalLabel.textAlignment = .center
         backView.addSubview(totalLabel)
         totalLabel.snp.makeConstraints {
-            $0.top.equalTo(progressView.snp.top).offset(Constants.totalLabelTopOffset)
+            $0.bottom.equalTo(progressView.snp.centerY).offset(4)
             $0.centerX.equalToSuperview()
         }
     }
@@ -150,10 +147,8 @@ private extension FFDailyStepsStatCollectionViewCell {
         static let moreIconTopOffset = 13
         static let moreIconRightOffset = 12
         
-        static let progressViewSize = 145.0
-        static let progressViewTopOffset = 67
+        static let progressViewSize = 124.0
+        static let progressViewTopOffset = 77
         static let progressViewBorderWidth = 12
-        
-        static let totalLabelTopOffset = 48
     }
 }

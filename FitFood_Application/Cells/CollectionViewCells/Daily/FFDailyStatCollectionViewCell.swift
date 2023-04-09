@@ -14,6 +14,10 @@ final class FFDailyStatCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Subviews
     
+    private lazy var arcProgressBarView = ArcProgressBarView()
+    private lazy var kcalImageView = UIImageView()
+    private lazy var remainedLabel = UILabel()
+    private lazy var remainedCountLabel = UILabel()
     private lazy var eatenLabel = UILabel()
     private lazy var eatenCountLabel = UILabel()
     private lazy var mealsStatView = MealsStatView()
@@ -39,10 +43,60 @@ private extension FFDailyStatCollectionViewCell {
     func configureViews() {
         contentView.backgroundColor = Asset.Colors.secondaryBackground
         contentView.layer.cornerRadius = Constants.contentViewCornerRadius
+        configureArcProgressBarView()
+        configureRemainedCountLabel()
+        configureRemainedLabel()
+        configureKcalImageView()
         configureEatenLabel()
         configureEatenCountLabel()
         configureMealsStatView()
         configureFoodContentsView()
+    }
+    
+    func configureArcProgressBarView() {
+        arcProgressBarView.resetProgressBar(ratio: 0.7)
+        contentView.addSubview(arcProgressBarView)
+        arcProgressBarView.snp.makeConstraints {
+            $0.height.equalTo(Constants.arcProgressBarViewSize)
+            $0.width.equalTo(Constants.arcProgressBarViewSize)
+            $0.top.equalToSuperview().offset(Constants.arcProgressBarViewTopOffset)
+            $0.left.equalToSuperview().offset(Constants.arcProgressBarViewLeftOffset)
+        }
+    }
+    
+    func configureRemainedCountLabel() {
+        remainedCountLabel.text = "1100 kcal"
+        remainedCountLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+        remainedCountLabel.textColor = Asset.Colors.label
+        remainedCountLabel.textAlignment = .center
+        contentView.addSubview(remainedCountLabel)
+        remainedCountLabel.snp.makeConstraints {
+            $0.bottom.equalTo(arcProgressBarView.snp.centerY)
+            $0.centerX.equalTo(arcProgressBarView.snp.centerX)
+        }
+    }
+    
+    func configureRemainedLabel() {
+        remainedLabel.text = "Remaining"
+        remainedLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        remainedLabel.textColor = Asset.Colors.label
+        remainedLabel.textAlignment = .center
+        contentView.addSubview(remainedLabel)
+        remainedLabel.snp.makeConstraints {
+            $0.top.equalTo(remainedCountLabel.snp.bottom)
+            $0.centerX.equalTo(arcProgressBarView.snp.centerX)
+        }
+    }
+    
+    func configureKcalImageView() {
+        kcalImageView.image = Asset.Images.fire
+        contentView.addSubview(kcalImageView)
+        kcalImageView.snp.makeConstraints {
+            $0.height.equalTo(Constants.kcalImageViewSize)
+            $0.width.equalTo(Constants.kcalImageViewSize)
+            $0.top.equalTo(remainedLabel.snp.bottom).offset(Constants.kcalImageViewBottomOffset)
+            $0.centerX.equalTo(arcProgressBarView.snp.centerX)
+        }
     }
     
     func configureEatenLabel() {
@@ -94,7 +148,14 @@ private extension FFDailyStatCollectionViewCell {
     enum Constants {
         static let contentViewCornerRadius = 20.0
         
-        static let eatenLabelTopOffset = 42
+        static let arcProgressBarViewTopOffset = 32
+        static let arcProgressBarViewLeftOffset = 21
+        static let arcProgressBarViewSize = 124
+        
+        static let kcalImageViewSize = 32
+        static let kcalImageViewBottomOffset = 8
+        
+        static let eatenLabelTopOffset = 32
         static let eatenLabelRightOffset = 189
         static let eatenCountLabelRightOffset = 19
         

@@ -31,7 +31,8 @@ enum Asset {
         static let lightOrange = UIColor(named: "lightOrange") ?? UIColor()
         static let progressFat = UIColor(named: "progressFat") ?? UIColor()
         static let progressFatLight = UIColor(named: "progressFatLight") ?? UIColor()
-        
+        static let arcProgressViewBackground = UIColor(named: "arcProgressViewBackground") ?? UIColor()
+        static let arcProgressView = UIColor(named: "arcProgressView") ?? UIColor()
     }
     
     // MARK: - Strings
@@ -88,5 +89,6 @@ enum Asset {
         static let protein = UIImage(named: "proteinImage") ?? UIImage()
         static let fat = UIImage(named: "fatImage") ?? UIImage()
         static let carbs = UIImage(named: "carbsImage") ?? UIImage()
+        static let fire = UIImage(named: "iconFire") ?? UIImage()
     }
 }

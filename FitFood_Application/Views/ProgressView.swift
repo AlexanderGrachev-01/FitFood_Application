@@ -8,8 +8,6 @@
 import UIKit
 
 class ProgressView: UIView {
-    // MARK: - Properties
-    
     // MARK: - Subviews
     
     private lazy var titleLabel = UILabel()
