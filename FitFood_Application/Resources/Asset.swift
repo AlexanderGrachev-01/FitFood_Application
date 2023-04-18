@@ -33,6 +33,7 @@ enum Asset {
         static let progressFatLight = UIColor(named: "progressFatLight") ?? UIColor()
         static let arcProgressViewBackground = UIColor(named: "arcProgressViewBackground") ?? UIColor()
         static let arcProgressView = UIColor(named: "arcProgressView") ?? UIColor()
+        static let darkBlue = UIColor(named: "darkBlue") ?? UIColor()
     }
     
     // MARK: - Strings
@@ -55,10 +56,10 @@ enum Asset {
         static let protein = "Protein"
         static let fat = "Fat"
         static let carbs = "Carbs"
-        
-        
         static let timeToStrave = "Time to strave"
         static let timeToEat = "Time to eat"
+        static let popularMenus = "Popular menus"
+        static let seeAll = "See all"
     }
     
     // MARK: - Images
@@ -80,6 +81,8 @@ enum Asset {
         static let rightChevron = UIImage(named: "iconRightChevron") ?? UIImage()
         static let cup = UIImage(named: "iconCup") ?? UIImage()
         static let steps = UIImage(named: "iconSteps") ?? UIImage()
+        static let blackFire = UIImage(named: "iconBlackFire") ?? UIImage()
+        static let personBlack = UIImage(named: "iconPersonBlack") ?? UIImage()
         
         // Buttons
         static let plusButton = UIImage(named: "plusButton") ?? UIImage()
@@ -90,5 +93,8 @@ enum Asset {
         static let fat = UIImage(named: "fatImage") ?? UIImage()
         static let carbs = UIImage(named: "carbsImage") ?? UIImage()
         static let fire = UIImage(named: "iconFire") ?? UIImage()
+        
+        // Cells
+        static let dishPhoto = UIImage(named: "dishPhoto") ?? UIImage()
     }
 }

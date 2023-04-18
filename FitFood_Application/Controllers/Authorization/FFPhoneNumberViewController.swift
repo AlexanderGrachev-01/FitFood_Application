@@ -36,7 +36,7 @@ final class FFPhoneNumberViewController: FFBaseAuthViewController {
         
         var number = text
         number.removeFirst()
-        AuthorizationManager.shared.verifyPhone("+78\(number)") { [weak self] success in
+        AuthorizationManager.shared.verifyPhone("+7\(number)") { [weak self] success in
             guard success else { return }
             DispatchQueue.main.async {
                 self?.textField.resignFirstResponder()

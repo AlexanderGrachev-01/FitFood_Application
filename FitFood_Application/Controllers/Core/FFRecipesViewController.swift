@@ -14,6 +14,7 @@ final class FFRecipesViewController: FFBaseViewController {
     
     // MARK: - Subviews
     
+    private lazy var separator = UIView()
     private lazy var collectionView = UICollectionView(frame: .zero,
                                                        collectionViewLayout: UICollectionViewFlowLayout())
     
@@ -31,14 +32,23 @@ final class FFRecipesViewController: FFBaseViewController {
 private extension FFRecipesViewController {
     func configureViews() {
         title = Asset.Strings.recipes
-        navigationController?.navigationBar.addBottomBorder(
-            with: Asset.Colors.separator,
-            height: 0.5
-        )
         configureCollectionView()
+        configureSeparator()
+    }
+    
+    func configureSeparator() {
+        separator.backgroundColor = Asset.Colors.separator
+        view.addSubview(separator)
+        separator.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.left.right.equalToSuperview()
+            $0.height.equalTo(Constants.separatorHeight)
+        }
     }
     
     func configureCollectionView() {
+        collectionView.register(PopularMenusHeaderCell.self, forCellWithReuseIdentifier: PopularMenusHeaderCell.identifier)
+        collectionView.register(DishInfoCollectionViewCell.self, forCellWithReuseIdentifier: DishInfoCollectionViewCell.identifier)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = Asset.Colors.background
         collectionView.delegate = self
@@ -67,16 +77,129 @@ extension FFRecipesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        0
+        switch section {
+        case 0:
+            return 5
+        case 1:
+            return 0
+        case 2:
+            return 4
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        UICollectionViewCell()
+        switch indexPath.section {
+        case 0:
+            if indexPath.row == 0 {
+                guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: PopularMenusHeaderCell.identifier,
+                    for: indexPath
+                ) as? PopularMenusHeaderCell else {
+                    return UICollectionViewCell()
+                }
+                
+                return cell
+            }
+            
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: DishInfoCollectionViewCell.identifier,
+                for: indexPath
+            ) as? DishInfoCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            return cell
+        case 1:
+            return UICollectionViewCell()
+        case 2:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: DishInfoCollectionViewCell.identifier,
+                for: indexPath
+            ) as? DishInfoCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension FFRecipesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch indexPath.section {
+        case 0:
+            if indexPath.row == 0 {
+                let widthPerItem = view.frame.width - Constants.firstSectionInset.left * 2
+                return CGSize(width: widthPerItem, height: Constants.firstSectionHeaderHeight)
+            }
+            
+            let widthPerItem = view.frame.width / 2 - Constants.firstSectionInset.left - Constants.minimumInteritemSpacingForFirstSection / 2
+            return CGSize(width: widthPerItem, height: Constants.firstSectionCellsHeight)
+        case 1:
+            return CGSize()
+        case 2:
+            let widthPerItem = view.frame.width / 2 - Constants.firstSectionInset.left - Constants.minimumInteritemSpacingForFirstSection / 2
+            return CGSize(width: widthPerItem, height: Constants.firstSectionCellsHeight)
+        default:
+            return CGSize()
+        }
+    }
     
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        switch section {
+        case 0:
+            return Constants.firstSectionInset
+        case 1:
+            return UIEdgeInsets()
+        case 2:
+            return Constants.thirdSectionInset
+        default:
+            return UIEdgeInsets()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return Constants.minimumInteritemSpacingForFirstSection
+        case 1:
+            return CGFloat()
+        case 2:
+            return  Constants.minimumInteritemSpacingForFirstSection
+        default:
+            return CGFloat()
+        }
+    }
+
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return Constants.minimumLineSpacingForFirstSection
+        case 1:
+            return CGFloat()
+        case 2:
+            return Constants.minimumLineSpacingForFirstSection
+        default:
+            return CGFloat()
+        }
+    }
+}
+
+private extension FFRecipesViewController {
+    enum Constants {
+        static let separatorHeight = 0.5
+        
+        static let firstSectionHeaderHeight = 101.0
+        static let firstSectionCellsHeight = 228.0
+        static let firstSectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 0, right: 20)
+        static let thirdSectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 24, right: 20)
+        static let minimumInteritemSpacingForFirstSection = 12.0
+        static let minimumLineSpacingForFirstSection = 12.0
+    }
 }

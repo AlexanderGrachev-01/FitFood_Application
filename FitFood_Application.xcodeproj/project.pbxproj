@@ -13,6 +13,8 @@
 		F65727F929E2DF1300FA7B57 /* ArcProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F829E2DF1300FA7B57 /* ArcProgressBarView.swift */; };
 		F65727FB29E2F20300FA7B57 /* RoundProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727FA29E2F20300FA7B57 /* RoundProgressBarView.swift */; };
 		F65727FF29E44B6E00FA7B57 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = F65727FE29E44B6E00FA7B57 /* Atlantis */; };
+		F65F9D2A29EDBED800CBF1D2 /* DishInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65F9D2929EDBED800CBF1D2 /* DishInfoCollectionViewCell.swift */; };
+		F65F9D2C29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65F9D2B29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift */; };
 		F6622A4D29D22AD80097694F /* FFDailyStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A4C29D22AD80097694F /* FFDailyStatCollectionViewCell.swift */; };
 		F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A4E29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift */; };
 		F6622A5129D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A5029D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift */; };
@@ -59,6 +61,8 @@
 		F65727F629E1B84500FA7B57 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		F65727F829E2DF1300FA7B57 /* ArcProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcProgressBarView.swift; sourceTree = "<group>"; };
 		F65727FA29E2F20300FA7B57 /* RoundProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundProgressBarView.swift; sourceTree = "<group>"; };
+		F65F9D2929EDBED800CBF1D2 /* DishInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F65F9D2B29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMenusHeaderCell.swift; sourceTree = "<group>"; };
 		F6622A4C29D22AD80097694F /* FFDailyStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyStatCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6622A4E29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyWaterStatCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6622A5029D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyStepsStatCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		F65727FC29E2FADF00FA7B57 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				F65F9D2929EDBED800CBF1D2 /* DishInfoCollectionViewCell.swift */,
+				F65F9D2B29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -464,10 +470,12 @@
 				F6B7010D2971A1C70066B975 /* FFSettingsViewController.swift in Sources */,
 				F6EFDA292981C8B500FC3CCB /* AuthorizationManager.swift in Sources */,
 				F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */,
+				F65F9D2C29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift in Sources */,
 				F6B701162971A7520066B975 /* UIView+ext.swift in Sources */,
 				F6B701072971A0E60066B975 /* FFRecipesViewController.swift in Sources */,
 				F6622A5329D22C5B0097694F /* FFDailyFastingTimerCollectionViewCell.swift in Sources */,
 				F6F647DC29A108FA0028F76D /* Asset.swift in Sources */,
+				F65F9D2A29EDBED800CBF1D2 /* DishInfoCollectionViewCell.swift in Sources */,
 				F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */,
 				F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */,
 				F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */,
