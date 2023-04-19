@@ -14,17 +14,31 @@ final class PopularMenusHeaderCell: UICollectionViewCell {
     
     // MARK: - Properties
     
+    private var selectedMeal: Meals = .breakfast {
+        didSet {
+            breakfastButton.isPicked = selectedMeal == .breakfast
+            lunchButton.isPicked = selectedMeal == .lunch
+            dinerButton.isPicked = selectedMeal == .diner
+            snacksButton.isPicked = selectedMeal == .snacks
+        }
+    }
+    
     private let buttonTitles = [Asset.Strings.breakfast, Asset.Strings.lunch, Asset.Strings.dinner, Asset.Strings.snack]
+    
+    // MARK: - Handlers
+    
+    var onSeeAll: (() -> Void)?
+    var onChangeMeal: ((_ meal: Meals) -> Void)?
 
     // MARK: - Subviews
     
     private lazy var titleLabel = UILabel()
     private lazy var seeAllButton = UIButton()
     private lazy var stackView = UIStackView()
-    private lazy var breakfastButton = UIButton()
-    private lazy var lunchButton = UIButton()
-    private lazy var dinerButton = UIButton()
-    private lazy var snacksButton = UIButton()
+    private lazy var breakfastButton = FFButton()
+    private lazy var lunchButton = FFButton()
+    private lazy var dinerButton = FFButton()
+    private lazy var snacksButton = FFButton()
     
     // MARK: - Lifecycle
     
@@ -47,6 +61,9 @@ private extension PopularMenusHeaderCell {
         configureSeeAllButton()
         configureStackView()
         configureBreakfastButton()
+        configureLunchButton()
+        configureDinerButton()
+        configureSnacksButton()
     }
     
     func configureTitleLabel() {
@@ -64,6 +81,7 @@ private extension PopularMenusHeaderCell {
         seeAllButton.setTitle(Asset.Strings.seeAll, for: .normal)
         seeAllButton.setTitleColor(Asset.Colors.green, for: .normal)
         seeAllButton.setTitleColor(Asset.Colors.lightGreen, for: .highlighted)
+        seeAllButton.addTarget(self, action: #selector(seeAllAction), for: .touchUpInside)
         contentView.addSubview(seeAllButton)
         seeAllButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel)
@@ -84,33 +102,59 @@ private extension PopularMenusHeaderCell {
         
         let buttons = [breakfastButton, lunchButton, dinerButton, snacksButton]
         for (index, button) in buttons.enumerated() {
-            button.titleLabel?.textAlignment = .center
-            button.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
             button.setTitle(buttonTitles[index], for: .normal)
-            button.setTitleColor(Asset.Colors.label, for: .normal)
-            button.setTitleColor(Asset.Colors.white, for: .highlighted)
-            button.layer.borderWidth = Constants.buttonBorderWidth
-            button.layer.cornerRadius = Constants.buttonCornerRadius
-            button.layer.borderColor = Asset.Colors.lightGreen.cgColor
             stackView.addArrangedSubview(button)
         }
     }
     
     func configureBreakfastButton() {
-        breakfastButton.backgroundColor = Asset.Colors.green
-        breakfastButton.setTitleColor(Asset.Colors.white, for: .normal)
+        breakfastButton.isPicked = true
+        breakfastButton.addTarget(self, action: #selector(breakfastAction), for: .touchDown)
     }
     
     func configureLunchButton() {
-        
+        lunchButton.addTarget(self, action: #selector(lunchAction), for: .touchDown)
     }
     
     func configureDinerButton() {
-        
+        dinerButton.addTarget(self, action: #selector(dinerAction), for: .touchDown)
     }
     
     func configureSnacksButton() {
-        
+        snacksButton.addTarget(self, action: #selector(snacksAction), for: .touchDown)
+    }
+}
+
+// MARK: - Actions
+
+extension PopularMenusHeaderCell {
+    @objc
+    private func seeAllAction() {
+        onSeeAll?()
+    }
+    
+    @objc
+    private func breakfastAction() {
+        selectedMeal = .breakfast
+        onChangeMeal?(selectedMeal)
+    }
+    
+    @objc
+    private func lunchAction() {
+        selectedMeal = .lunch
+        onChangeMeal?(selectedMeal)
+    }
+    
+    @objc
+    private func dinerAction() {
+        selectedMeal = .diner
+        onChangeMeal?(selectedMeal)
+    }
+    
+    @objc
+    private func snacksAction() {
+        selectedMeal = .snacks
+        onChangeMeal?(selectedMeal)
     }
 }
 
@@ -123,8 +167,5 @@ private extension PopularMenusHeaderCell {
         static let stackViewSpacing = 12.0
         static let stackViewHeight = 44
         static let stackViewTopOffset = 16
-        
-        static let buttonBorderWidth = 1.0
-        static let buttonCornerRadius = 16.0
     }
 }

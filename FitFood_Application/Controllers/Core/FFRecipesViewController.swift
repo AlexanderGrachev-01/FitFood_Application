@@ -48,7 +48,9 @@ private extension FFRecipesViewController {
     
     func configureCollectionView() {
         collectionView.register(PopularMenusHeaderCell.self, forCellWithReuseIdentifier: PopularMenusHeaderCell.identifier)
+        collectionView.register(HeaderCollectionViewCell.self, forCellWithReuseIdentifier: HeaderCollectionViewCell.identifier)
         collectionView.register(DishInfoCollectionViewCell.self, forCellWithReuseIdentifier: DishInfoCollectionViewCell.identifier)
+        collectionView.register(RecipesCategoriesCollectionViewCell.self, forCellWithReuseIdentifier: RecipesCategoriesCollectionViewCell.identifier)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = Asset.Colors.background
         collectionView.delegate = self
@@ -77,27 +79,41 @@ extension FFRecipesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let section = CollectionSectionType(rawValue: section) else {
+            return 0
+        }
+        
         switch section {
-        case 0:
+        case .popular:
             return 5
-        case 1:
-            return 0
-        case 2:
-            return 4
-        default:
-            return 0
+        case .categories:
+            return 5
+        case .recently:
+            return 5
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 0:
+        guard let section = CollectionSectionType(rawValue: indexPath.section) else {
+            return UICollectionViewCell()
+        }
+        
+        switch section {
+        case .popular:
             if indexPath.row == 0 {
                 guard let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: PopularMenusHeaderCell.identifier,
                     for: indexPath
                 ) as? PopularMenusHeaderCell else {
                     return UICollectionViewCell()
+                }
+                
+                cell.onSeeAll = {
+                    print("See all")
+                }
+                
+                cell.onChangeMeal = { meal in
+                    print(meal)
                 }
                 
                 return cell
@@ -111,9 +127,52 @@ extension FFRecipesViewController: UICollectionViewDataSource {
             }
             
             return cell
-        case 1:
-            return UICollectionViewCell()
-        case 2:
+        case .categories:
+            if indexPath.row == 0 {
+                guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: HeaderCollectionViewCell.identifier,
+                    for: indexPath
+                ) as? HeaderCollectionViewCell else {
+                    return UICollectionViewCell()
+                }
+                
+                cell.configure(title: sections[indexPath.section])
+                
+                cell.onSeeAll = {
+                    print("See all")
+                }
+                
+                return cell
+            }
+            
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: RecipesCategoriesCollectionViewCell.identifier,
+                for: indexPath
+            ) as? RecipesCategoriesCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            cell.configure(image: Asset.Images.banana, title: "Fruits")
+            
+            return cell
+        case  .recently:
+            if indexPath.row == 0 {
+                guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: HeaderCollectionViewCell.identifier,
+                    for: indexPath
+                ) as? HeaderCollectionViewCell else {
+                    return UICollectionViewCell()
+                }
+                
+                cell.configure(title: sections[indexPath.section])
+                
+                cell.onSeeAll = {
+                    print("See all")
+                }
+                
+                return cell
+            }
+            
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: DishInfoCollectionViewCell.identifier,
                 for: indexPath
@@ -122,8 +181,6 @@ extension FFRecipesViewController: UICollectionViewDataSource {
             }
             
             return cell
-        default:
-            return UICollectionViewCell()
         }
     }
 }
@@ -132,74 +189,103 @@ extension FFRecipesViewController: UICollectionViewDataSource {
 
 extension FFRecipesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.section {
-        case 0:
+        guard let section = CollectionSectionType(rawValue: indexPath.section) else {
+            return CGSize()
+        }
+        
+        switch section {
+        case .popular:
             if indexPath.row == 0 {
                 let widthPerItem = view.frame.width - Constants.firstSectionInset.left * 2
                 return CGSize(width: widthPerItem, height: Constants.firstSectionHeaderHeight)
             }
             
-            let widthPerItem = view.frame.width / 2 - Constants.firstSectionInset.left - Constants.minimumInteritemSpacingForFirstSection / 2
+            let widthPerItem = view.frame.width / 2 - Constants.firstSectionInset.left - Constants.minimumInteritemSpacingForSection / 2
             return CGSize(width: widthPerItem, height: Constants.firstSectionCellsHeight)
-        case 1:
-            return CGSize()
-        case 2:
-            let widthPerItem = view.frame.width / 2 - Constants.firstSectionInset.left - Constants.minimumInteritemSpacingForFirstSection / 2
+        case .categories:
+            if indexPath.row == 0 {
+                let widthPerItem = view.frame.width - Constants.firstSectionInset.left * 2
+                return CGSize(width: widthPerItem, height: Constants.sectionHeaderHeight)
+            }
+            
+            let  widthPerItem = (view.frame.width - Constants.firstSectionInset.left * 2 - Constants.minimumInteritemSpacingForSection * 3) / 4
+            return CGSize(width: widthPerItem, height: widthPerItem + 29)
+        case .recently:
+            if indexPath.row == 0 {
+                let widthPerItem = view.frame.width - Constants.firstSectionInset.left * 2
+                return CGSize(width: widthPerItem, height: Constants.sectionHeaderHeight)
+            }
+            
+            let widthPerItem = view.frame.width / 2 - Constants.firstSectionInset.left - Constants.minimumInteritemSpacingForSection / 2
             return CGSize(width: widthPerItem, height: Constants.firstSectionCellsHeight)
-        default:
-            return CGSize()
         }
     }
     
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        guard let section = CollectionSectionType(rawValue: section) else {
+            return UIEdgeInsets()
+        }
+        
         switch section {
-        case 0:
+        case .popular:
             return Constants.firstSectionInset
-        case 1:
-            return UIEdgeInsets()
-        case 2:
+        case .categories:
+            return Constants.secondSectionInset
+        case .recently:
             return Constants.thirdSectionInset
-        default:
-            return UIEdgeInsets()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        guard let section = CollectionSectionType(rawValue: section) else {
+            return CGFloat()
+        }
+        
         switch section {
-        case 0:
-            return Constants.minimumInteritemSpacingForFirstSection
-        case 1:
-            return CGFloat()
-        case 2:
-            return  Constants.minimumInteritemSpacingForFirstSection
-        default:
-            return CGFloat()
+        case .popular:
+            return Constants.minimumInteritemSpacingForSection
+        case .categories:
+            return Constants.minimumInteritemSpacingForSection
+        case .recently:
+            return  Constants.minimumInteritemSpacingForSection
         }
     }
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        guard let section = CollectionSectionType(rawValue: section) else {
+            return CGFloat()
+        }
+        
         switch section {
-        case 0:
-            return Constants.minimumLineSpacingForFirstSection
-        case 1:
-            return CGFloat()
-        case 2:
-            return Constants.minimumLineSpacingForFirstSection
-        default:
-            return CGFloat()
+        case .popular:
+            return Constants.minimumLineSpacingForSection
+        case .categories:
+            return Constants.minimumLineSpacingForSection
+        case .recently:
+            return Constants.minimumLineSpacingForSection
         }
     }
 }
 
+// MARK: - Constants
+
 private extension FFRecipesViewController {
     enum Constants {
         static let separatorHeight = 0.5
+        static let sectionHeaderHeight = 36.0
         
-        static let firstSectionHeaderHeight = 101.0
+        static let firstSectionHeaderHeight = 96.0
         static let firstSectionCellsHeight = 228.0
         static let firstSectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 0, right: 20)
-        static let thirdSectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 24, right: 20)
-        static let minimumInteritemSpacingForFirstSection = 12.0
-        static let minimumLineSpacingForFirstSection = 12.0
+        static let secondSectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 0, right: 20)
+        static let thirdSectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 24, right: 20)
+        static let minimumInteritemSpacingForSection = 12.0
+        static let minimumLineSpacingForSection = 12.0
+    }
+    
+    enum CollectionSectionType: Int, CaseIterable {
+        case popular = 0
+        case categories = 1
+        case recently = 2
     }
 }

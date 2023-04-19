@@ -34,6 +34,7 @@ enum Asset {
         static let arcProgressViewBackground = UIColor(named: "arcProgressViewBackground") ?? UIColor()
         static let arcProgressView = UIColor(named: "arcProgressView") ?? UIColor()
         static let darkBlue = UIColor(named: "darkBlue") ?? UIColor()
+        static let categoryCellBackground = UIColor(named: "categoryCellBackground") ?? UIColor()
     }
     
     // MARK: - Strings
@@ -96,5 +97,6 @@ enum Asset {
         
         // Cells
         static let dishPhoto = UIImage(named: "dishPhoto") ?? UIImage()
+        static let banana = UIImage(named: "banana") ?? UIImage()
     }
 }
