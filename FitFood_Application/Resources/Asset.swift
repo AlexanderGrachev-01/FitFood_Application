@@ -35,6 +35,7 @@ enum Asset {
         static let arcProgressView = UIColor(named: "arcProgressView") ?? UIColor()
         static let darkBlue = UIColor(named: "darkBlue") ?? UIColor()
         static let categoryCellBackground = UIColor(named: "categoryCellBackground") ?? UIColor()
+        static let lightGray = UIColor(named: "lightGray") ?? UIColor()
     }
     
     // MARK: - Strings
@@ -84,6 +85,9 @@ enum Asset {
         static let steps = UIImage(named: "iconSteps") ?? UIImage()
         static let blackFire = UIImage(named: "iconBlackFire") ?? UIImage()
         static let personBlack = UIImage(named: "iconPersonBlack") ?? UIImage()
+        static let star = UIImage(named: "iconStar") ?? UIImage()
+        static let starFill = UIImage(named: "iconStarFill") ?? UIImage()
+        static let plus = UIImage(named: "iconPlus") ?? UIImage()
         
         // Buttons
         static let plusButton = UIImage(named: "plusButton") ?? UIImage()

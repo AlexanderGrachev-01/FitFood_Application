@@ -23,6 +23,7 @@
 		F69E69A929F04CCB0032068E /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69A829F04CCB0032068E /* Meals.swift */; };
 		F69E69AB29F0599E0032068E /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */; };
 		F69E69AD29F061080032068E /* RecipesCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69AC29F061080032068E /* RecipesCategoriesCollectionViewCell.swift */; };
+		F69E69B029F06B770032068E /* ProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69AF29F06B770032068E /* ProductInfoTableViewCell.swift */; };
 		F6B700EB297199390066B975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EA297199390066B975 /* AppDelegate.swift */; };
 		F6B700ED297199390066B975 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EC297199390066B975 /* SceneDelegate.swift */; };
 		F6B700EF297199390066B975 /* FFDailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EE297199390066B975 /* FFDailyViewController.swift */; };
@@ -75,6 +76,7 @@
 		F69E69A829F04CCB0032068E /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		F69E69AC29F061080032068E /* RecipesCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		F69E69AF29F06B770032068E /* ProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F6B700E7297199390066B975 /* FitFood_Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFood_Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B700EA297199390066B975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6B700EC297199390066B975 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				F6622A4B29D22A810097694F /* Daily */,
 				F65727FC29E2FADF00FA7B57 /* Recipes */,
+				F69E69AE29F06B2A0032068E /* Adding */,
 				F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
@@ -205,6 +208,14 @@
 				F69E69A829F04CCB0032068E /* Meals.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		F69E69AE29F06B2A0032068E /* Adding */ = {
+			isa = PBXGroup;
+			children = (
+				F69E69AF29F06B770032068E /* ProductInfoTableViewCell.swift */,
+			);
+			path = Adding;
 			sourceTree = "<group>";
 		};
 		F6B700DE297199390066B975 = {
@@ -479,6 +490,7 @@
 				F6B7011E297475280066B975 /* FFCalendarCollectionViewCell.swift in Sources */,
 				F6B701202974A1FE0066B975 /* Date+ext.swift in Sources */,
 				F65727F729E1B84500FA7B57 /* ProgressView.swift in Sources */,
+				F69E69B029F06B770032068E /* ProductInfoTableViewCell.swift in Sources */,
 				F6EFDA2E2981E22100FC3CCB /* FFPhoneNumberViewController.swift in Sources */,
 				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
 				F69E69A929F04CCB0032068E /* Meals.swift in Sources */,
