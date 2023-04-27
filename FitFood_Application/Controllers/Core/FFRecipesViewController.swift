@@ -49,7 +49,7 @@ private extension FFRecipesViewController {
     func configureCollectionView() {
         collectionView.register(PopularMenusHeaderCell.self, forCellWithReuseIdentifier: PopularMenusHeaderCell.identifier)
         collectionView.register(HeaderCollectionViewCell.self, forCellWithReuseIdentifier: HeaderCollectionViewCell.identifier)
-        collectionView.register(DishInfoCollectionViewCell.self, forCellWithReuseIdentifier: DishInfoCollectionViewCell.identifier)
+        collectionView.register(RecipeInfoCollectionViewCell.self, forCellWithReuseIdentifier: RecipeInfoCollectionViewCell.identifier)
         collectionView.register(RecipesCategoriesCollectionViewCell.self, forCellWithReuseIdentifier: RecipesCategoriesCollectionViewCell.identifier)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = Asset.Colors.background
@@ -68,7 +68,12 @@ private extension FFRecipesViewController {
 // MARK: - UICollectionViewDelegate
 
 extension FFRecipesViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(
+            RecepiesDetailViewController(),
+            animated: true
+        )
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -120,9 +125,9 @@ extension FFRecipesViewController: UICollectionViewDataSource {
             }
             
             guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: DishInfoCollectionViewCell.identifier,
+                withReuseIdentifier: RecipeInfoCollectionViewCell.identifier,
                 for: indexPath
-            ) as? DishInfoCollectionViewCell else {
+            ) as? RecipeInfoCollectionViewCell else {
                 return UICollectionViewCell()
             }
             
@@ -174,9 +179,9 @@ extension FFRecipesViewController: UICollectionViewDataSource {
             }
             
             guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: DishInfoCollectionViewCell.identifier,
+                withReuseIdentifier: RecipeInfoCollectionViewCell.identifier,
                 for: indexPath
-            ) as? DishInfoCollectionViewCell else {
+            ) as? RecipeInfoCollectionViewCell else {
                 return UICollectionViewCell()
             }
             

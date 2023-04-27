@@ -1,5 +1,5 @@
 //
-//  DishInfoCollectionViewCell.swift
+//  RecipeInfoCollectionViewCell.swift
 //  FitFood_Application
 //
 //  Created by Aleksandr.Grachev on 17.04.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DishInfoCollectionViewCell: UICollectionViewCell {
+final class RecipeInfoCollectionViewCell: UICollectionViewCell {
     // MARK: - Identifier
     
     static let identifier = "DishInfoCollectionViewCell"
@@ -36,7 +36,7 @@ final class DishInfoCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Layout
 
-private extension DishInfoCollectionViewCell {
+private extension RecipeInfoCollectionViewCell {
     func configureViews() {
         configurePhotoImageView()
         configureNameLabel()
@@ -115,7 +115,7 @@ private extension DishInfoCollectionViewCell {
 
 // MARK: - Constants
 
-private extension DishInfoCollectionViewCell {
+private extension RecipeInfoCollectionViewCell {
     enum Constants {
         static let photoImageViewRadius = 16.0
         static let photoImageViewHeight = 134

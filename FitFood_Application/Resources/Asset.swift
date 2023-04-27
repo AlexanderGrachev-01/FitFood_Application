@@ -92,6 +92,8 @@ enum Asset {
         // Buttons
         static let plusButton = UIImage(named: "plusButton") ?? UIImage()
         static let minusButton = UIImage(named: "minusButton") ?? UIImage()
+        static let checkRadio = UIImage(named: "checkRadio") ?? UIImage()
+        static let checkRadioSelected = UIImage(named: "checkRadioSelected") ?? UIImage()
         
         // Views
         static let protein = UIImage(named: "proteinImage") ?? UIImage()
