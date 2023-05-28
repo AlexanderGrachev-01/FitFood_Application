@@ -10,10 +10,10 @@ import UIKit
 class ProgressView: UIView {
     // MARK: - Subviews
     
-    private lazy var titleLabel = UILabel()
-    private lazy var scoreLabel = UILabel()
-    private lazy var backView = UIView()
-    private lazy var scoreView = UIView()
+    private var titleLabel = UILabel()
+    private var scoreLabel = UILabel()
+    private var backView = UIView()
+    private var scoreView = UIView()
     
     // MARK: - Lifecycle
     

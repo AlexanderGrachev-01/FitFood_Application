@@ -32,13 +32,13 @@ final class PopularMenusHeaderCell: UICollectionViewCell {
 
     // MARK: - Subviews
     
-    private lazy var titleLabel = UILabel()
-    private lazy var seeAllButton = UIButton()
-    private lazy var stackView = UIStackView()
-    private lazy var breakfastButton = FFButton()
-    private lazy var lunchButton = FFButton()
-    private lazy var dinerButton = FFButton()
-    private lazy var snacksButton = FFButton()
+    private var titleLabel = UILabel()
+    private var seeAllButton = UIButton()
+    private var stackView = UIStackView()
+    private var breakfastButton = FFButton()
+    private var lunchButton = FFButton()
+    private var dinerButton = FFButton()
+    private var snacksButton = FFButton()
     
     // MARK: - Lifecycle
     

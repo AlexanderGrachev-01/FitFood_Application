@@ -35,7 +35,7 @@ final class СookingStepCollectionViewCell: UICollectionViewCell {
 
 private extension СookingStepCollectionViewCell {
     func configureViews() {
-        contentView.backgroundColor = Asset.Colors.white
+        contentView.backgroundColor = Asset.Colors.secondaryBackground
         contentView.layer.cornerRadius = Constants.radius
         configureStepLabel()
         configureTimeLabel()
@@ -69,6 +69,7 @@ private extension СookingStepCollectionViewCell {
         textView.text = "NNCecoinwondoindwoinedoinddew NNCecoinwondoindwoinedoinddew NNCecoinwondoindwoinedoinddew NNCecoinwondoindwoinedoinddew enfienfwoifnof"
         textView.font = .systemFont(ofSize: 20, weight: .regular)
         textView.textColor = Asset.Colors.label
+        textView.backgroundColor = .clear
         contentView.addSubview(textView)
         textView.snp.makeConstraints {
             $0.top.equalTo(stepLabel.snp.bottom).offset(Constants.TextView.top)

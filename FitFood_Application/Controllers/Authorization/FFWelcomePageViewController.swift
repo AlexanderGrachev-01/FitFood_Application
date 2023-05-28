@@ -10,7 +10,7 @@ import UIKit
 final class FFWelcomePageViewController: FFBaseAuthViewController {
     // MARK: - Subviews
     
-    private lazy var warningLabel = UILabel()
+    private var warningLabel = UILabel()
     
     // MARK: - Lifecycle
     
@@ -23,7 +23,10 @@ final class FFWelcomePageViewController: FFBaseAuthViewController {
     // MARK: - Action
     
     override func buttonWasTapped(_ sender: Any) {
-        navigationController?.pushViewController(FFPhoneNumberViewController(), animated: true)
+        navigationController?.pushViewController(
+            FFPhoneNumberViewController(),
+            animated: true
+        )
     }
 }
     

@@ -10,12 +10,12 @@ import UIKit
 class FoodContentsView: UIView {
     // MARK: - Subviews
     
-    private lazy var proteinImageView = UIImageView()
-    private lazy var fatImageView = UIImageView()
-    private lazy var carbsImageView = UIImageView()
-    private lazy var proteinProgressView = ProgressView()
-    private lazy var fatProgressView = ProgressView()
-    private lazy var carbsProgressView = ProgressView()
+    private var proteinImageView = UIImageView()
+    private var fatImageView = UIImageView()
+    private var carbsImageView = UIImageView()
+    private var proteinProgressView = ProgressView()
+    private var fatProgressView = ProgressView()
+    private var carbsProgressView = ProgressView()
     
     
     // MARK: - Lifecycle

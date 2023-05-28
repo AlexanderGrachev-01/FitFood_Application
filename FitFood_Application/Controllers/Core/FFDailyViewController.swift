@@ -11,14 +11,16 @@ final class FFDailyViewController: FFBaseViewController {
     // MARK: - Properties
     
     private let calendarModel = FFCalendarModel()
-    private lazy var centerDate = Date()
+    private var centerDate = Date()
     
     // MARK: - Subviews
     
-    private lazy var calendarView = FFCalendarCollectionView()
-    private lazy var collectionBottomSeparator = UIView()
-    private lazy var collectionView = UICollectionView(frame: .zero,
-                                                       collectionViewLayout: UICollectionViewFlowLayout())
+    private var calendarView = FFCalendarCollectionView()
+    private var collectionBottomSeparator = UIView()
+    private var collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
     
     // MARK: - LifeCycle
     
@@ -70,14 +72,22 @@ private extension FFDailyViewController {
     }
     
     func configureCollectionView() {
-        collectionView.register(FFDailyStatCollectionViewCell.self,
-                                forCellWithReuseIdentifier: FFDailyStatCollectionViewCell.identifier)
-        collectionView.register(FFDailyWaterStatCollectionViewCell.self,
-                                forCellWithReuseIdentifier: FFDailyWaterStatCollectionViewCell.identifier)
-        collectionView.register(FFDailyStepsStatCollectionViewCell.self,
-                                forCellWithReuseIdentifier: FFDailyStepsStatCollectionViewCell.identifier)
-        collectionView.register(FFDailyFastingTimerCollectionViewCell.self,
-                                forCellWithReuseIdentifier: FFDailyFastingTimerCollectionViewCell.identifier)
+        collectionView.register(
+            FFDailyStatCollectionViewCell.self,
+            forCellWithReuseIdentifier: FFDailyStatCollectionViewCell.identifier
+        )
+        collectionView.register(
+            FFDailyWaterStatCollectionViewCell.self,
+            forCellWithReuseIdentifier: FFDailyWaterStatCollectionViewCell.identifier
+        )
+        collectionView.register(
+            FFDailyStepsStatCollectionViewCell.self,
+            forCellWithReuseIdentifier: FFDailyStepsStatCollectionViewCell.identifier
+        )
+        collectionView.register(
+            FFDailyFastingTimerCollectionViewCell.self,
+            forCellWithReuseIdentifier: FFDailyFastingTimerCollectionViewCell.identifier
+        )
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = Asset.Colors.background
         collectionView.delegate = self

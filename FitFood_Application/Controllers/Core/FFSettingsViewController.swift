@@ -19,8 +19,8 @@ final class FFSettingsViewController: FFBaseViewController {
     
     // MARK: - Subviews
     
-    private lazy var tableView = UITableView(frame: .zero)
-    private lazy var logoutButton = UIButton()
+    private var tableView = UITableView(frame: .zero)
+    private var logoutButton = UIButton()
     
     // MARK: - LifeCycle
     
@@ -42,18 +42,22 @@ final class FFSettingsViewController: FFBaseViewController {
     private func configureTableView() {
         tableView.backgroundColor = Asset.Colors.secondaryBackground
         tableView.separatorStyle = .none
+        tableView.register(
+            FFUserInfoTableViewCell.self,
+            forCellReuseIdentifier: FFUserInfoTableViewCell.identifier
+        )
+        tableView.register(
+            FFSettingsTableViewCell.self,
+            forCellReuseIdentifier: FFSettingsTableViewCell.identifier
+        )
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(FFUserInfoTableViewCell.self, forCellReuseIdentifier: FFUserInfoTableViewCell.identifier)
-        tableView.register(FFSettingsTableViewCell.self, forCellReuseIdentifier: FFSettingsTableViewCell.identifier)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
-        
         tableView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            $0.left.equalTo(view.safeAreaLayoutGuide.snp.left)
-            $0.right.equalTo(view.safeAreaLayoutGuide.snp.right)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.left.equalTo(view.safeAreaLayoutGuide)
+            $0.right.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -81,12 +85,29 @@ extension FFSettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: FFUserInfoTableViewCell.identifier, for: indexPath) as! FFUserInfoTableViewCell
-            cell.configure(fullName: "Grachev Aleksander", gender: FFGender(rawValue: "Male")!)
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: FFUserInfoTableViewCell.identifier,
+                for: indexPath
+            ) as? FFUserInfoTableViewCell else {
+                return UITableViewCell()
+            }
+
+            cell.configure(
+                fullName: "Grachev Aleksander",
+                gender: FFGender(rawValue: "Male")!
+            )
+
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: FFSettingsTableViewCell.identifier, for: indexPath) as! FFSettingsTableViewCell
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: FFSettingsTableViewCell.identifier,
+                for: indexPath
+            ) as? FFSettingsTableViewCell else {
+                return UITableViewCell()
+            }
+
             cell.configure(text: modules[indexPath.row], imageName: images[indexPath.row])
+
             return cell
         }
     }
@@ -114,15 +135,19 @@ extension FFSettingsViewController: UITableViewDelegate {
 extension FFSettingsViewController {
     @objc
     private func signOutAction() {
-        let alert = UIAlertController(title: "Attention",
-                                      message: "Do you really want to log out?",
-                                      preferredStyle: .actionSheet)
+        let alert = UIAlertController(
+            title: "Attention",
+            message: "Do you really want to log out?",
+            preferredStyle: .actionSheet
+        )
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(cancel)
         let logout = UIAlertAction(title: "Log out", style: .default) {_ in
             try? Auth.auth().signOut()
-            let vc = FFWelcomePageViewController()
-            UIApplication.shared.windows.first?.rootViewController = UINavigationController(rootViewController: vc)
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let sceneDelegate = windowScene.delegate as? SceneDelegate {
+                sceneDelegate.window?.rootViewController = FFWelcomePageViewController()
+            }
         }
         alert.addAction(logout)
         

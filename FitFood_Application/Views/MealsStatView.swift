@@ -10,16 +10,16 @@ import UIKit
 class MealsStatView: UIView {
     // MARK: - Subviews
     
-    private lazy var leftStackView = UIStackView()
-    private lazy var breakfastLabel = UILabel()
-    private lazy var lunchLabel = UILabel()
-    private lazy var dinnerLabel = UILabel()
-    private lazy var snackLabel = UILabel()
-    private lazy var rightStackView = UIStackView()
-    private lazy var breakfastCountLabel = UILabel()
-    private lazy var lunchCountLabel = UILabel()
-    private lazy var dinnerCountLabel = UILabel()
-    private lazy var snackCountLabel = UILabel()
+    private var leftStackView = UIStackView()
+    private var breakfastLabel = UILabel()
+    private var lunchLabel = UILabel()
+    private var dinnerLabel = UILabel()
+    private var snackLabel = UILabel()
+    private var rightStackView = UIStackView()
+    private var breakfastCountLabel = UILabel()
+    private var lunchCountLabel = UILabel()
+    private var dinnerCountLabel = UILabel()
+    private var snackCountLabel = UILabel()
     
     // MARK: - Lifecycle
     

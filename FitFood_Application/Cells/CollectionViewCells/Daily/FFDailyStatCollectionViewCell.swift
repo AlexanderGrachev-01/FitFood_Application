@@ -14,14 +14,14 @@ final class FFDailyStatCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Subviews
     
-    private lazy var arcProgressBarView = ArcProgressBarView()
-    private lazy var kcalImageView = UIImageView()
-    private lazy var remainedLabel = UILabel()
-    private lazy var remainedCountLabel = UILabel()
-    private lazy var eatenLabel = UILabel()
-    private lazy var eatenCountLabel = UILabel()
-    private lazy var mealsStatView = MealsStatView()
-    private lazy var foodContentsView = FoodContentsView()
+    private var arcProgressBarView = ArcProgressBarView()
+    private var kcalImageView = UIImageView()
+    private var remainedLabel = UILabel()
+    private var remainedCountLabel = UILabel()
+    private var eatenLabel = UILabel()
+    private var eatenCountLabel = UILabel()
+    private var mealsStatView = MealsStatView()
+    private var foodContentsView = FoodContentsView()
     
     
     // MARK: - Init

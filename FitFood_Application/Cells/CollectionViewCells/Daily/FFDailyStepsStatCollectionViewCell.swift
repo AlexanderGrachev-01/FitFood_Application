@@ -14,13 +14,13 @@ final class FFDailyStepsStatCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Subviews
     
-    private lazy var titleLabel = UILabel()
-    private lazy var backView = UIView()
-    private lazy var stepsIcon = UIImageView()
-    private lazy var moreIcon = UIImageView()
-    private lazy var progressView = RoundProgressBarView()
-    private lazy var totalLabel = UILabel()
-    private lazy var aimLabel = UILabel()
+    private var titleLabel = UILabel()
+    private var backView = UIView()
+    private var stepsIcon = UIImageView()
+    private var moreIcon = UIImageView()
+    private var progressView = RoundProgressBarView()
+    private var totalLabel = UILabel()
+    private var aimLabel = UILabel()
     
     // MARK: - Init
     

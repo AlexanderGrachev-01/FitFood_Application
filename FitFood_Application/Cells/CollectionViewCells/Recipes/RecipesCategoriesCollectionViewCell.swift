@@ -14,9 +14,9 @@ final class RecipesCategoriesCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Subviews
     
-    private lazy var backView = UIView()
-    private lazy var imageView = UIImageView()
-    private lazy var titleLabel = UILabel()
+    private var backView = UIView()
+    private var imageView = UIImageView()
+    private var titleLabel = UILabel()
     
     // MARK: - Lifecycle
     

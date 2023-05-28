@@ -44,24 +44,36 @@ final class FFTabBarController: UITabBarController {
         fastingNav.navigationBar.prefersLargeTitles = true
         settingsNav.navigationBar.prefersLargeTitles = true
         
-        dailyNav.tabBarItem = UITabBarItem(title: Asset.Strings.daily,
-                                           image: UIImage(systemName: "text.book.closed"),
-                                           tag: 0)
-        recipesNav.tabBarItem = UITabBarItem(title: Asset.Strings.recipes,
-                                             image: UIImage(systemName: "fork.knife.circle"),
-                                             tag: 0)
-        addingNav.tabBarItem = UITabBarItem(title: Asset.Strings.lunch,
-                                            image: UIImage(systemName: "plus.circle.fill"),
-                                            tag: 0)
-        fastingNav.tabBarItem = UITabBarItem(title: Asset.Strings.fasting,
-                                             image: UIImage(systemName: "bell.badge"),
-                                             tag: 0)
-        settingsNav.tabBarItem = UITabBarItem(title: Asset.Strings.settings,
-                                              image: UIImage(systemName: "gearshape"),
-                                              tag: 0)
+        dailyNav.tabBarItem = UITabBarItem(
+            title: Asset.Strings.daily,
+            image: UIImage(systemName: "text.book.closed"),
+            tag: 0
+        )
+        recipesNav.tabBarItem = UITabBarItem(
+            title: Asset.Strings.recipes,
+            image: UIImage(systemName: "fork.knife.circle"),
+            tag: 0
+        )
+        addingNav.tabBarItem = UITabBarItem(
+            title: Asset.Strings.lunch,
+            image: UIImage(systemName: "plus.circle.fill"),
+            tag: 0
+        )
+        fastingNav.tabBarItem = UITabBarItem(
+            title: Asset.Strings.fasting,
+            image: UIImage(systemName: "bell.badge"),
+            tag: 0
+        )
+        settingsNav.tabBarItem = UITabBarItem(
+            title: Asset.Strings.settings,
+            image: UIImage(systemName: "gearshape"),
+            tag: 0
+        )
         
-        setViewControllers([dailyNav,recipesNav, addingNav, fastingNav, settingsNav],
-                           animated: true)
+        setViewControllers(
+            [dailyNav,recipesNav, addingNav, fastingNav, settingsNav],
+            animated: true
+        )
         
         tabBar.addTopBorder(with: Asset.Colors.separator, height: 0.5)
         tabBar.backgroundColor = Asset.Colors.secondaryBackground

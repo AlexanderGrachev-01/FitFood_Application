@@ -18,7 +18,7 @@ final class FFCalendarCollectionViewCell: UICollectionViewCell {
     private let dayOfWeekLabelTopOffset: CGFloat = 7
     private let dateNumberLabelBottomOffset: CGFloat = 7
     
-    private lazy var isToday = false
+    private var isToday = false
     
     // MARK: - Subviews
     

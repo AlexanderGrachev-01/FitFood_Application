@@ -14,9 +14,11 @@ final class FFRecipesViewController: FFBaseViewController {
     
     // MARK: - Subviews
     
-    private lazy var separator = UIView()
-    private lazy var collectionView = UICollectionView(frame: .zero,
-                                                       collectionViewLayout: UICollectionViewFlowLayout())
+    private var separator = UIView()
+    private var collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
     
     // MARK: - LifeCycle
     
@@ -47,10 +49,22 @@ private extension FFRecipesViewController {
     }
     
     func configureCollectionView() {
-        collectionView.register(PopularMenusHeaderCell.self, forCellWithReuseIdentifier: PopularMenusHeaderCell.identifier)
-        collectionView.register(HeaderCollectionViewCell.self, forCellWithReuseIdentifier: HeaderCollectionViewCell.identifier)
-        collectionView.register(RecipeInfoCollectionViewCell.self, forCellWithReuseIdentifier: RecipeInfoCollectionViewCell.identifier)
-        collectionView.register(RecipesCategoriesCollectionViewCell.self, forCellWithReuseIdentifier: RecipesCategoriesCollectionViewCell.identifier)
+        collectionView.register(
+            PopularMenusHeaderCell.self,
+            forCellWithReuseIdentifier: PopularMenusHeaderCell.identifier
+        )
+        collectionView.register(
+            HeaderCollectionViewCell.self,
+            forCellWithReuseIdentifier: HeaderCollectionViewCell.identifier
+        )
+        collectionView.register(
+            RecipeInfoCollectionViewCell.self,
+            forCellWithReuseIdentifier: RecipeInfoCollectionViewCell.identifier
+        )
+        collectionView.register(
+            RecipesCategoriesCollectionViewCell.self,
+            forCellWithReuseIdentifier: RecipesCategoriesCollectionViewCell.identifier
+        )
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = Asset.Colors.background
         collectionView.delegate = self

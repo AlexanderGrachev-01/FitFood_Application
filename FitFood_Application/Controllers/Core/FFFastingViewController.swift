@@ -21,7 +21,9 @@ final class FFFastingViewController: FFBaseViewController {
     
     private func configureViews() {
         title = Asset.Strings.fasting
-        navigationController?.navigationBar.addBottomBorder(with: Asset.Colors.separator,
-                                                            height: 0.5)
+        navigationController?.navigationBar.addBottomBorder(
+            with: Asset.Colors.separator,
+            height: 0.5
+        )
     }
 }

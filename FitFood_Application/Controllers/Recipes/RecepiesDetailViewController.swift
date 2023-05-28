@@ -12,8 +12,10 @@ final class RecepiesDetailViewController: FFBaseViewController {
     
     // MARK: - Subviews
     
-    private lazy var collectionView = UICollectionView(frame: .zero,
-                                                       collectionViewLayout: UICollectionViewFlowLayout())
+    private var collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
     
     // MARK: - LifeCycle
     
@@ -35,9 +37,18 @@ private extension RecepiesDetailViewController {
     
     func configureCollectionView() {
         collectionView.backgroundColor = Asset.Colors.background
-        collectionView.register(RecipeDetilsCollectionViewCell.self, forCellWithReuseIdentifier: RecipeDetilsCollectionViewCell.identifier)
-        collectionView.register(CheckBoxCollectionViewCell.self, forCellWithReuseIdentifier: CheckBoxCollectionViewCell.identifier)
-        collectionView.register(СookingStepCollectionViewCell.self, forCellWithReuseIdentifier: СookingStepCollectionViewCell.identifier)
+        collectionView.register(
+            RecipeDetilsCollectionViewCell.self,
+            forCellWithReuseIdentifier: RecipeDetilsCollectionViewCell.identifier
+        )
+        collectionView.register(
+            CheckBoxCollectionViewCell.self,
+            forCellWithReuseIdentifier: CheckBoxCollectionViewCell.identifier
+        )
+        collectionView.register(
+            СookingStepCollectionViewCell.self,
+            forCellWithReuseIdentifier: СookingStepCollectionViewCell.identifier
+        )
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)

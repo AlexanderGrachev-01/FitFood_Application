@@ -36,8 +36,8 @@ final class CheckBoxCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Subviews
     
-    private lazy var checkButton = UIButton()
-    private lazy var nameLabel = UILabel()
+    private var checkButton = UIButton()
+    private var nameLabel = UILabel()
     
     // MARK: - Lifecycle
     

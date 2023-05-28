@@ -38,7 +38,10 @@ final class FFSmsCodeViewController: FFBaseAuthViewController {
             guard success else { return }
             DispatchQueue.main.async {
                 self?.textField.resignFirstResponder()
-                UIApplication.shared.windows.first?.rootViewController = FFTabBarController()
+                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                   let sceneDelegate = windowScene.delegate as? SceneDelegate {
+                    sceneDelegate.window?.rootViewController = FFTabBarController()
+                }
             }
         }
     }

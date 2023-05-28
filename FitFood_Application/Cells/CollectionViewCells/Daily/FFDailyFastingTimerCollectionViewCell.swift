@@ -14,12 +14,12 @@ final class FFDailyFastingTimerCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Subviews
     
-    private lazy var titleLabel = UILabel()
-    private lazy var backView = UIView()
-    private lazy var moreIcon = UIImageView()
-    private lazy var fastingIcon = UIImageView()
-    private lazy var infoLabel = UILabel()
-    private lazy var timerLabel = UILabel()
+    private var titleLabel = UILabel()
+    private var backView = UIView()
+    private var moreIcon = UIImageView()
+    private var fastingIcon = UIImageView()
+    private var infoLabel = UILabel()
+    private var timerLabel = UILabel()
     
     // MARK: - Init
     

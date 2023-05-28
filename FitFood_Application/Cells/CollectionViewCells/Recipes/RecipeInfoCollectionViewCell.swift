@@ -14,12 +14,12 @@ final class RecipeInfoCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Subviews
     
-    private lazy var photoImageView = UIImageView()
-    private lazy var nameLabel = UILabel()
-    private lazy var kcalImageView = UIImageView()
-    private lazy var kcalLabel = UILabel()
-    private lazy var personsImageView = UIImageView()
-    private lazy var personsLabel = UILabel()
+    private var photoImageView = UIImageView()
+    private var nameLabel = UILabel()
+    private var kcalImageView = UIImageView()
+    private var kcalLabel = UILabel()
+    private var personsImageView = UIImageView()
+    private var personsLabel = UILabel()
     
     // MARK: - Lifecycle
     

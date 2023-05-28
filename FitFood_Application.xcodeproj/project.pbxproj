@@ -48,6 +48,9 @@
 		F6BB3FF42A23C671002883D1 /* FFActivityFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF32A23C671002883D1 /* FFActivityFactor.swift */; };
 		F6BB3FF62A23C791002883D1 /* СookingStepCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF52A23C791002883D1 /* СookingStepCollectionViewCell.swift */; };
 		F6BB3FF82A23CD43002883D1 /* FFCookingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF72A23CD43002883D1 /* FFCookingStep.swift */; };
+		F6BB3FFB2A23D10D002883D1 /* ProductAddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FFA2A23D10D002883D1 /* ProductAddingViewController.swift */; };
+		F6BB3FFD2A23D1C1002883D1 /* ProductCreatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FFC2A23D1C1002883D1 /* ProductCreatingViewController.swift */; };
+		F6BB3FFF2A23D574002883D1 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FFE2A23D574002883D1 /* TextFieldTableViewCell.swift */; };
 		F6D08D8F29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */; };
 		F6EFDA17298188D200FC3CCB /* FFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDA16298188D200FC3CCB /* FFBaseViewController.swift */; };
 		F6EFDA1B2981C11C00FC3CCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6EFDA1A2981C11C00FC3CCB /* GoogleService-Info.plist */; };
@@ -110,6 +113,9 @@
 		F6BB3FF32A23C671002883D1 /* FFActivityFactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFActivityFactor.swift; sourceTree = "<group>"; };
 		F6BB3FF52A23C791002883D1 /* СookingStepCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СookingStepCollectionViewCell.swift"; sourceTree = "<group>"; };
 		F6BB3FF72A23CD43002883D1 /* FFCookingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFCookingStep.swift; sourceTree = "<group>"; };
+		F6BB3FFA2A23D10D002883D1 /* ProductAddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddingViewController.swift; sourceTree = "<group>"; };
+		F6BB3FFC2A23D1C1002883D1 /* ProductCreatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCreatingViewController.swift; sourceTree = "<group>"; };
+		F6BB3FFE2A23D574002883D1 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6EFDA16298188D200FC3CCB /* FFBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFBaseViewController.swift; sourceTree = "<group>"; };
 		F6EFDA1A2981C11C00FC3CCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 		F6622A4629D229E30097694F /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				F69E69AE29F06B2A0032068E /* Adding */,
 				F6622A4829D22A030097694F /* Settings */,
 			);
 			path = TableViewCells;
@@ -193,7 +200,6 @@
 			children = (
 				F6622A4B29D22A810097694F /* Daily */,
 				F65727FC29E2FADF00FA7B57 /* Recipes */,
-				F69E69AE29F06B2A0032068E /* Adding */,
 				F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */,
 				F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */,
 			);
@@ -241,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				F69E69AF29F06B770032068E /* ProductInfoTableViewCell.swift */,
+				F6BB3FFE2A23D574002883D1 /* TextFieldTableViewCell.swift */,
 			);
 			path = Adding;
 			sourceTree = "<group>";
@@ -287,6 +294,7 @@
 		F6B700FF297199F30066B975 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F6BB3FF92A23D0ED002883D1 /* Adding */,
 				F601331729FADD9600AE5C2A /* Recipes */,
 				F6EFDA2A2981CDEE00FC3CCB /* Authorization */,
 				F6EFDA15298188A300FC3CCB /* Core */,
@@ -370,6 +378,15 @@
 				F6B701272974B5C30066B975 /* Calendar */,
 			);
 			path = Daily;
+			sourceTree = "<group>";
+		};
+		F6BB3FF92A23D0ED002883D1 /* Adding */ = {
+			isa = PBXGroup;
+			children = (
+				F6BB3FFA2A23D10D002883D1 /* ProductAddingViewController.swift */,
+				F6BB3FFC2A23D1C1002883D1 /* ProductCreatingViewController.swift */,
+			);
+			path = Adding;
 			sourceTree = "<group>";
 		};
 		F6EFDA13298185AC00FC3CCB /* Adding */ = {
@@ -513,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6BB3FFF2A23D574002883D1 /* TextFieldTableViewCell.swift in Sources */,
 				F6FF106629843B9700BD72CF /* FFUser.swift in Sources */,
 				F6BB3FF42A23C671002883D1 /* FFActivityFactor.swift in Sources */,
 				F6B7011B2974727B0066B975 /* FFCalendarCollectionView.swift in Sources */,
@@ -531,10 +549,12 @@
 				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
 				F6BB3FF82A23CD43002883D1 /* FFCookingStep.swift in Sources */,
 				F69E69A929F04CCB0032068E /* Meals.swift in Sources */,
+				F6BB3FFD2A23D1C1002883D1 /* ProductCreatingViewController.swift in Sources */,
 				F6B700EB297199390066B975 /* AppDelegate.swift in Sources */,
 				F6FF10692984738100BD72CF /* FFUserInfoTableViewCell.swift in Sources */,
 				F69E69AD29F061080032068E /* RecipesCategoriesCollectionViewCell.swift in Sources */,
 				F6B7010B2971A18B0066B975 /* FFFastingViewController.swift in Sources */,
+				F6BB3FFB2A23D10D002883D1 /* ProductAddingViewController.swift in Sources */,
 				F69E69AB29F0599E0032068E /* HeaderCollectionViewCell.swift in Sources */,
 				F6B700ED297199390066B975 /* SceneDelegate.swift in Sources */,
 				F65727F929E2DF1300FA7B57 /* ArcProgressBarView.swift in Sources */,

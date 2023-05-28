@@ -16,10 +16,10 @@ final class FFAddingViewController: FFBaseViewController {
     
     // MARK: - Subviews
     
-    private lazy var searchController = UISearchController()
+    private var searchController = UISearchController()
     private lazy var segmentedControl = UISegmentedControl(items: segmentsArray)
-    private lazy var addDishButton = UIButton()
-    private lazy var tableView = UITableView(frame: .zero)
+    private var addDishButton = UIButton()
+    private var tableView = UITableView(frame: .zero)
     
     // MARK: - LifeCycle
     
@@ -64,10 +64,12 @@ private extension FFAddingViewController {
             Asset.Images.plus.withTintColor(Asset.Colors.lightGreen),
             for: .highlighted
         )
-        addDishButton.setTitle("Add your own dish", for: .normal)
+        addDishButton.setTitle(Asset.Strings.addYourDish, for: .normal)
         addDishButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .regular)
+        addDishButton.titleLabel?.textAlignment = .left
         addDishButton.setTitleColor(Asset.Colors.green, for: .normal)
         addDishButton.setTitleColor(Asset.Colors.lightGreen, for: .highlighted)
+        addDishButton.addTarget(self, action: #selector(addDishAction), for: .touchUpInside)
         view.addSubview(addDishButton)
         addDishButton.snp.makeConstraints {
             $0.height.equalTo(Constants.addDishButtonHeight)
@@ -79,7 +81,10 @@ private extension FFAddingViewController {
     
     func configureTableView() {
         tableView.backgroundColor = Asset.Colors.secondaryBackground
-        tableView.register(ProductInfoTableViewCell.self, forCellReuseIdentifier: ProductInfoTableViewCell.identifier)
+        tableView.register(
+            ProductInfoTableViewCell.self,
+            forCellReuseIdentifier: ProductInfoTableViewCell.identifier
+        )
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -91,8 +96,16 @@ private extension FFAddingViewController {
     }
 }
 
+// MARK: - Actions
+
 extension FFAddingViewController {
-    
+    @objc
+    private func addDishAction() {
+        navigationController?.pushViewController(
+            ProductCreatingViewController(),
+            animated: true
+        )
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -104,6 +117,10 @@ extension FFAddingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.pushViewController(
+            ProductAddingViewController(),
+            animated: true
+        )
     }
 }
 
@@ -125,8 +142,6 @@ extension FFAddingViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 
@@ -152,7 +167,7 @@ private extension FFAddingViewController {
         static let segmentedControlOffset = 16
         static let segmentedControlHeight = 32
         
-        static let addDishButtonWidth = 207
+        static let addDishButtonWidth = 166
         static let addDishButtonSideOffset = 20
         static let addDishButtonTopOffset = 24
         static let addDishButtonHeight = 24

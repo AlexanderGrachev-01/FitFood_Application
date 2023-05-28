@@ -36,6 +36,7 @@ enum Asset {
         static let darkBlue = UIColor(named: "darkBlue") ?? UIColor()
         static let categoryCellBackground = UIColor(named: "categoryCellBackground") ?? UIColor()
         static let lightGray = UIColor(named: "lightGray") ?? UIColor()
+        static let errorRed = UIColor(named: "errorRed") ?? UIColor()
     }
     
     // MARK: - Strings
@@ -62,6 +63,9 @@ enum Asset {
         static let timeToEat = "Time to eat"
         static let popularMenus = "Popular menus"
         static let seeAll = "See all"
+        static let done = "Done"
+        static let addYourDish = "Add your own dish"
+        static let fillTheField = "Fill in the field"
     }
     
     // MARK: - Images

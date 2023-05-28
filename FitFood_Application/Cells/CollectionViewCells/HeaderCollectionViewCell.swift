@@ -26,8 +26,8 @@ final class HeaderCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Subviews
     
-    private lazy var titleLabel = UILabel()
-    private lazy var seeAllButton = UIButton()
+    private var titleLabel = UILabel()
+    private var seeAllButton = UIButton()
     
     // MARK: - Lifecycle
     

@@ -10,13 +10,13 @@ import UIKit
 class FFBaseAuthViewController: UIViewController {
     // MARK: - Subviews
     
-    lazy var button = UIButton()
-    lazy var textField = UITextField()
+    var button = UIButton()
+    var textField = UITextField()
     
-    private lazy var backButton = UIButton()
-    private lazy var backgroundImageView = UIImageView()
-    private lazy var logoImageView = UIImageView()
-    private lazy var textFieldUnderline = UIView()
+    private var backButton = UIButton()
+    private var backgroundImageView = UIImageView()
+    private var logoImageView = UIImageView()
+    private var textFieldUnderline = UIView()
     
     // MARK: - LifeCycle
     
@@ -143,8 +143,15 @@ private extension FFBaseAuthViewController {
 extension FFBaseAuthViewController {
     func subviewsSettings(buttonTitle: String, isFirst: Bool, textFieldPlaceholder: String?) {
         button.setTitle(buttonTitle, for: .normal)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: Asset.Colors.white,
+            .font: UIFont.systemFont(ofSize: 17)
+        ]
         guard isFirst else {
-            textField.placeholder = textFieldPlaceholder ?? ""
+            textField.attributedPlaceholder = NSAttributedString(
+                string: textFieldPlaceholder ?? "",
+                attributes: attributes
+            )
             return
         }
         

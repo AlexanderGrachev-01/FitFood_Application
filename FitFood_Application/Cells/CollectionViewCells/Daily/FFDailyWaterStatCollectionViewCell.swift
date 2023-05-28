@@ -19,15 +19,15 @@ final class FFDailyWaterStatCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Subviews
     
-    private lazy var titleLabel = UILabel()
-    private lazy var backView = UIView()
-    private lazy var backgroundImageView = UIImageView()
-    private lazy var moreIcon = UIImageView()
-    private lazy var totalLabel = UILabel()
-    private lazy var aimLabel = UILabel()
-    private lazy var plusButton = UIButton()
-    private lazy var minusButton = UIButton()
-    private lazy var cupIcon = UIImageView()
+    private var titleLabel = UILabel()
+    private var backView = UIView()
+    private var backgroundImageView = UIImageView()
+    private var moreIcon = UIImageView()
+    private var totalLabel = UILabel()
+    private var aimLabel = UILabel()
+    private var plusButton = UIButton()
+    private var minusButton = UIButton()
+    private var cupIcon = UIImageView()
     
     
     // MARK: - Init

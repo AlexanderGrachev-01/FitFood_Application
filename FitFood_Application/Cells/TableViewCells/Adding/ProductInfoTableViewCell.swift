@@ -36,15 +36,15 @@ final class ProductInfoTableViewCell: UITableViewCell {
     
     // MARK: - Subviews
     
-    private lazy var favouritesButton = UIButton()
-    private lazy var kcalLabel = UILabel()
-    private lazy var nameLabel = UILabel()
-    private lazy var proteinImageView = UIImageView()
-    private lazy var proteinLabel = UILabel()
-    private lazy var fatImageView = UIImageView()
-    private lazy var fatLabel = UILabel()
-    private lazy var carbsImageView = UIImageView()
-    private lazy var carbsLabel = UILabel()
+    private var favouritesButton = UIButton()
+    private var kcalLabel = UILabel()
+    private var nameLabel = UILabel()
+    private var proteinImageView = UIImageView()
+    private var proteinLabel = UILabel()
+    private var fatImageView = UIImageView()
+    private var fatLabel = UILabel()
+    private var carbsImageView = UIImageView()
+    private var carbsLabel = UILabel()
     
     // MARK: - Lifecycle
     
@@ -107,7 +107,7 @@ private extension ProductInfoTableViewCell {
     }
     
     func configureNameLabel() {
-        nameLabel.text = "Салат “Оливье“"
+        nameLabel.text = "Fruit Salad"
         nameLabel.textColor = Asset.Colors.label
         nameLabel.font = .systemFont(ofSize: 17, weight: .medium)
         contentView.addSubview(nameLabel)

@@ -19,7 +19,10 @@ final class AuthorizationManager: AuthorizationProtocol {
     
     var verificationID: String?
     
-    func verifyPhone(_ phoneNumber: String, completion: @escaping (Bool) -> Void) {
+    func verifyPhone(
+        _ phoneNumber: String,
+        completion: @escaping (Bool) -> Void
+    ) {
         PhoneAuthProvider.provider().verifyPhoneNumber(
             phoneNumber,
             uiDelegate: nil

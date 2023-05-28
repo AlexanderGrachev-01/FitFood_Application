@@ -19,7 +19,7 @@ final class FFCalendarCollectionView: UICollectionView {
     
     private let calendarCellHeight: CGFloat = 70
     
-    private lazy var daysArr = [FFDateModel]()
+    private var daysArr = [FFDateModel]()
     weak var calendarDelegate: CalendarDelegate?
     private let collectionLayout = UICollectionViewFlowLayout()
     
