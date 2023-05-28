@@ -187,8 +187,12 @@ private extension ProductInfoTableViewCell {
 // MARK: - Public
 
 extension ProductInfoTableViewCell {
-    func configure() {
-        
+    func configure(product: FFProduct) {
+        nameLabel.text = product.name
+        kcalLabel.text = "\(product.calories)"
+        carbsLabel.text = "\(product.carbs)"
+        fatLabel.text = "\(product.fat)"
+        proteinLabel.text = "\(product.protein)"
     }
 }
 

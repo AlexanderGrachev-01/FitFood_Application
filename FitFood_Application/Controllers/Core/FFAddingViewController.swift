@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 final class FFAddingViewController: FFBaseViewController {
     
     // MARK: - Properties
-    
+
     private let segmentsArray = [Asset.Strings.recent, Asset.Strings.favorites]
     
     // MARK: - Subviews
@@ -63,7 +64,7 @@ private extension FFAddingViewController {
             Asset.Images.plus.withTintColor(Asset.Colors.lightGreen),
             for: .highlighted
         )
-        addDishButton.setTitle("Добавить свое блюдо", for: .normal)
+        addDishButton.setTitle("Add your own dish", for: .normal)
         addDishButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .regular)
         addDishButton.setTitleColor(Asset.Colors.green, for: .normal)
         addDishButton.setTitleColor(Asset.Colors.lightGreen, for: .highlighted)

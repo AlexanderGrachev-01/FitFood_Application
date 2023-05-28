@@ -20,6 +20,7 @@
 		F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A4E29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift */; };
 		F6622A5129D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A5029D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift */; };
 		F6622A5329D22C5B0097694F /* FFDailyFastingTimerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6622A5229D22C5B0097694F /* FFDailyFastingTimerCollectionViewCell.swift */; };
+		F66DBA482A1BCC1B002C57DD /* FFProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66DBA472A1BCC1B002C57DD /* FFProduct.swift */; };
 		F69E69A629F046F10032068E /* FFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69A529F046F10032068E /* FFButton.swift */; };
 		F69E69A929F04CCB0032068E /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69A829F04CCB0032068E /* Meals.swift */; };
 		F69E69AB29F0599E0032068E /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */; };
@@ -43,6 +44,10 @@
 		F6B701202974A1FE0066B975 /* Date+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7011F2974A1FE0066B975 /* Date+ext.swift */; };
 		F6B701222974A2B90066B975 /* FFCalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701212974A2B90066B975 /* FFCalendarModel.swift */; };
 		F6B701262974A4030066B975 /* FFDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701252974A4030066B975 /* FFDateModel.swift */; };
+		F6BB3FF22A23C646002883D1 /* FFGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF12A23C646002883D1 /* FFGender.swift */; };
+		F6BB3FF42A23C671002883D1 /* FFActivityFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF32A23C671002883D1 /* FFActivityFactor.swift */; };
+		F6BB3FF62A23C791002883D1 /* СookingStepCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF52A23C791002883D1 /* СookingStepCollectionViewCell.swift */; };
+		F6BB3FF82A23CD43002883D1 /* FFCookingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF72A23CD43002883D1 /* FFCookingStep.swift */; };
 		F6D08D8F29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */; };
 		F6EFDA17298188D200FC3CCB /* FFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDA16298188D200FC3CCB /* FFBaseViewController.swift */; };
 		F6EFDA1B2981C11C00FC3CCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6EFDA1A2981C11C00FC3CCB /* GoogleService-Info.plist */; };
@@ -58,7 +63,7 @@
 		F6F1425D29FB178E004960EB /* RecipeDetilsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1425C29FB178E004960EB /* RecipeDetilsCollectionViewCell.swift */; };
 		F6F647DC29A108FA0028F76D /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F647DB29A108FA0028F76D /* Asset.swift */; };
 		F6FF105C2982C68900BD72CF /* FFBaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF105B2982C68900BD72CF /* FFBaseAuthViewController.swift */; };
-		F6FF106629843B9700BD72CF /* FFUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF106529843B9700BD72CF /* FFUserModel.swift */; };
+		F6FF106629843B9700BD72CF /* FFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF106529843B9700BD72CF /* FFUser.swift */; };
 		F6FF10692984738100BD72CF /* FFUserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF10682984738100BD72CF /* FFUserInfoTableViewCell.swift */; };
 		F6FF106B2984842400BD72CF /* FFSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF106A2984842400BD72CF /* FFSettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +81,7 @@
 		F6622A4E29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyWaterStatCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6622A5029D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyStepsStatCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6622A5229D22C5B0097694F /* FFDailyFastingTimerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDailyFastingTimerCollectionViewCell.swift; sourceTree = "<group>"; };
+		F66DBA472A1BCC1B002C57DD /* FFProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFProduct.swift; sourceTree = "<group>"; };
 		F69E69A529F046F10032068E /* FFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFButton.swift; sourceTree = "<group>"; };
 		F69E69A829F04CCB0032068E /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -100,6 +106,10 @@
 		F6B7011F2974A1FE0066B975 /* Date+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ext.swift"; sourceTree = "<group>"; };
 		F6B701212974A2B90066B975 /* FFCalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFCalendarModel.swift; sourceTree = "<group>"; };
 		F6B701252974A4030066B975 /* FFDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDateModel.swift; sourceTree = "<group>"; };
+		F6BB3FF12A23C646002883D1 /* FFGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFGender.swift; sourceTree = "<group>"; };
+		F6BB3FF32A23C671002883D1 /* FFActivityFactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFActivityFactor.swift; sourceTree = "<group>"; };
+		F6BB3FF52A23C791002883D1 /* СookingStepCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СookingStepCollectionViewCell.swift"; sourceTree = "<group>"; };
+		F6BB3FF72A23CD43002883D1 /* FFCookingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFCookingStep.swift; sourceTree = "<group>"; };
 		F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6EFDA16298188D200FC3CCB /* FFBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFBaseViewController.swift; sourceTree = "<group>"; };
 		F6EFDA1A2981C11C00FC3CCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -110,7 +120,7 @@
 		F6F1425C29FB178E004960EB /* RecipeDetilsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetilsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6F647DB29A108FA0028F76D /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		F6FF105B2982C68900BD72CF /* FFBaseAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFBaseAuthViewController.swift; sourceTree = "<group>"; };
-		F6FF106529843B9700BD72CF /* FFUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFUserModel.swift; sourceTree = "<group>"; };
+		F6FF106529843B9700BD72CF /* FFUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFUser.swift; sourceTree = "<group>"; };
 		F6FF10682984738100BD72CF /* FFUserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFUserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F6FF106A2984842400BD72CF /* FFSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +158,7 @@
 				F65F9D2B29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift */,
 				F69E69AC29F061080032068E /* RecipesCategoriesCollectionViewCell.swift */,
 				F6F1425C29FB178E004960EB /* RecipeDetilsCollectionViewCell.swift */,
+				F6BB3FF52A23C791002883D1 /* СookingStepCollectionViewCell.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -287,7 +298,11 @@
 		F6B7010029719A0E0066B975 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F6FF106429843B7900BD72CF /* DataTypes */,
+				F66DBA472A1BCC1B002C57DD /* FFProduct.swift */,
+				F6BB3FF32A23C671002883D1 /* FFActivityFactor.swift */,
+				F6BB3FF72A23CD43002883D1 /* FFCookingStep.swift */,
+				F6BB3FF12A23C646002883D1 /* FFGender.swift */,
+				F6FF106529843B9700BD72CF /* FFUser.swift */,
 				F6FF10602984345E00BD72CF /* Calendar */,
 			);
 			path = Models;
@@ -412,14 +427,6 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		F6FF106429843B7900BD72CF /* DataTypes */ = {
-			isa = PBXGroup;
-			children = (
-				F6FF106529843B9700BD72CF /* FFUserModel.swift */,
-			);
-			path = DataTypes;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,11 +513,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6FF106629843B9700BD72CF /* FFUserModel.swift in Sources */,
+				F6FF106629843B9700BD72CF /* FFUser.swift in Sources */,
+				F6BB3FF42A23C671002883D1 /* FFActivityFactor.swift in Sources */,
 				F6B7011B2974727B0066B975 /* FFCalendarCollectionView.swift in Sources */,
 				F6F1425D29FB178E004960EB /* RecipeDetilsCollectionViewCell.swift in Sources */,
 				F6622A4D29D22AD80097694F /* FFDailyStatCollectionViewCell.swift in Sources */,
 				F6B700EF297199390066B975 /* FFDailyViewController.swift in Sources */,
+				F66DBA482A1BCC1B002C57DD /* FFProduct.swift in Sources */,
 				F65727FB29E2F20300FA7B57 /* RoundProgressBarView.swift in Sources */,
 				F6B701222974A2B90066B975 /* FFCalendarModel.swift in Sources */,
 				F6B7011E297475280066B975 /* FFCalendarCollectionViewCell.swift in Sources */,
@@ -520,6 +529,7 @@
 				F69E69B029F06B770032068E /* ProductInfoTableViewCell.swift in Sources */,
 				F6EFDA2E2981E22100FC3CCB /* FFPhoneNumberViewController.swift in Sources */,
 				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
+				F6BB3FF82A23CD43002883D1 /* FFCookingStep.swift in Sources */,
 				F69E69A929F04CCB0032068E /* Meals.swift in Sources */,
 				F6B700EB297199390066B975 /* AppDelegate.swift in Sources */,
 				F6FF10692984738100BD72CF /* FFUserInfoTableViewCell.swift in Sources */,
@@ -542,6 +552,7 @@
 				F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */,
 				F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */,
 				F69E69A629F046F10032068E /* FFButton.swift in Sources */,
+				F6BB3FF62A23C791002883D1 /* СookingStepCollectionViewCell.swift in Sources */,
 				F6EFDA17298188D200FC3CCB /* FFBaseViewController.swift in Sources */,
 				F6FF106B2984842400BD72CF /* FFSettingsTableViewCell.swift in Sources */,
 				F6622A5129D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift in Sources */,
@@ -549,6 +560,7 @@
 				F65727F329E1A7DB00FA7B57 /* FoodContentsView.swift in Sources */,
 				F6B701262974A4030066B975 /* FFDateModel.swift in Sources */,
 				F601331929FADF2500AE5C2A /* RecepiesDetailViewController.swift in Sources */,
+				F6BB3FF22A23C646002883D1 /* FFGender.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

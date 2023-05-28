@@ -37,6 +37,7 @@ private extension RecepiesDetailViewController {
         collectionView.backgroundColor = Asset.Colors.background
         collectionView.register(RecipeDetilsCollectionViewCell.self, forCellWithReuseIdentifier: RecipeDetilsCollectionViewCell.identifier)
         collectionView.register(CheckBoxCollectionViewCell.self, forCellWithReuseIdentifier: CheckBoxCollectionViewCell.identifier)
+        collectionView.register(СookingStepCollectionViewCell.self, forCellWithReuseIdentifier: СookingStepCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
@@ -70,7 +71,7 @@ extension RecepiesDetailViewController: UICollectionViewDataSource {
         case .ingredients:
             return 6
         case .cookingSteps:
-            return 0
+            return 4
         }
     }
     
@@ -101,7 +102,14 @@ extension RecepiesDetailViewController: UICollectionViewDataSource {
             return cell
             
         case .cookingSteps:
-            return UICollectionViewCell()
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: СookingStepCollectionViewCell.identifier,
+                for: indexPath
+            ) as? СookingStepCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+
+            return cell
         }
     }
     
@@ -124,7 +132,8 @@ extension RecepiesDetailViewController: UICollectionViewDelegateFlowLayout {
             let widthPerItem = view.frame.width - Constants.secondSectionInset.left * 2
             return CGSize(width: widthPerItem, height: Constants.secondSectionCellsHeight)
         case .cookingSteps:
-            return CGSize()
+            let widthPerItem = view.frame.width - Constants.thirdSectionInset.left * 2
+            return CGSize(width: widthPerItem, height: Constants.thirdSectionCellsHeight)
         }
     }
     
@@ -180,6 +189,7 @@ private extension RecepiesDetailViewController {
     enum Constants {
         static let firstSectionCellsHeight = 483.0
         static let secondSectionCellsHeight = 38.0
+        static let thirdSectionCellsHeight = 162.0
         static let firstSectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 0, right: 20)
         static let secondSectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 0, right: 20)
         static let thirdSectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 24, right: 20)
