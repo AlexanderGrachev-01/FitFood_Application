@@ -108,5 +108,16 @@ enum Asset {
         // Cells
         static let dishPhoto = UIImage(named: "dishPhoto") ?? UIImage()
         static let banana = UIImage(named: "banana") ?? UIImage()
+        static let bread = UIImage(named: "bread") ?? UIImage()
+        static let broccoli = UIImage(named: "broccoli") ?? UIImage()
+        static let cookie = UIImage(named: "cookie") ?? UIImage()
+        static let eggs = UIImage(named: "eggs") ?? UIImage()
+        static let fish = UIImage(named: "fish") ?? UIImage()
+        static let meatOnBone = UIImage(named: "meatOnBone") ?? UIImage()
+        static let milkCarton = UIImage(named: "milkCarton") ?? UIImage()
+        static let mushrooms = UIImage(named: "mushrooms") ?? UIImage()
+        static let peanuts = UIImage(named: "peanuts") ?? UIImage()
+        static let soy = UIImage(named: "soy") ?? UIImage()
+        static let spaghetti = UIImage(named: "spaghetti") ?? UIImage()
     }
 }

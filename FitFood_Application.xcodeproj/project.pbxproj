@@ -116,6 +116,7 @@
 		F6BB3FFA2A23D10D002883D1 /* ProductAddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddingViewController.swift; sourceTree = "<group>"; };
 		F6BB3FFC2A23D1C1002883D1 /* ProductCreatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCreatingViewController.swift; sourceTree = "<group>"; };
 		F6BB3FFE2A23D574002883D1 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		F6BB40052A24F66C002883D1 /* FitFood_Application.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitFood_Application.entitlements; sourceTree = "<group>"; };
 		F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6EFDA16298188D200FC3CCB /* FFBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFBaseViewController.swift; sourceTree = "<group>"; };
 		F6EFDA1A2981C11C00FC3CCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -271,6 +272,7 @@
 		F6B700E9297199390066B975 /* FitFood_Application */ = {
 			isa = PBXGroup;
 			children = (
+				F6BB40052A24F66C002883D1 /* FitFood_Application.entitlements */,
 				F6B700FE297199DB0066B975 /* APIClient */,
 				F6B7010129719A1A0066B975 /* Managers */,
 				F6B7010029719A0E0066B975 /* Models */,
@@ -717,6 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitFood_Application/FitFood_Application.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJAQY24NC2;
@@ -749,6 +752,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitFood_Application/FitFood_Application.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJAQY24NC2;

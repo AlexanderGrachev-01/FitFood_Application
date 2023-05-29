@@ -77,8 +77,9 @@ private extension HeaderCollectionViewCell {
 // MARK: - Public
 
 extension HeaderCollectionViewCell {
-    func configure(title: String) {
+    func configure(title: String, isButtonHiden: Bool = true) {
         titleLabel.text = title
+        seeAllButton.isHidden = isButtonHiden
     }
 }
 

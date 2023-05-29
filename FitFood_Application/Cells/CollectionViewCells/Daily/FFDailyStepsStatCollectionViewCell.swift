@@ -95,7 +95,7 @@ private extension FFDailyStepsStatCollectionViewCell {
     }
     
     func configureProgressView() {
-        progressView.resetProgressBar(ratio: 0.8)
+        progressView.resetProgressBar(ratio: 0.0)
         backView.addSubview(progressView)
         progressView.snp.makeConstraints {
             $0.height.equalTo(Constants.progressViewSize)
@@ -106,7 +106,6 @@ private extension FFDailyStepsStatCollectionViewCell {
     }
     
     func configureTotalLabel() {
-        totalLabel.text = "8,000"
         totalLabel.font = .systemFont(ofSize: 24, weight: .semibold)
         totalLabel.textColor = Asset.Colors.label
         totalLabel.textAlignment = .center
@@ -118,7 +117,6 @@ private extension FFDailyStepsStatCollectionViewCell {
     }
     
     func configureAimLabel() {
-        aimLabel.text = "/ 10,000"
         aimLabel.font = .systemFont(ofSize: 18, weight: .light)
         aimLabel.textColor = Asset.Colors.label
         aimLabel.textAlignment = .center
@@ -127,6 +125,17 @@ private extension FFDailyStepsStatCollectionViewCell {
             $0.top.equalTo(totalLabel.snp.bottom)
             $0.centerX.equalToSuperview()
         }
+    }
+}
+
+// MARK: - Public configure
+
+extension FFDailyStepsStatCollectionViewCell {
+    func configure(goal: Double, count: Double) {
+        totalLabel.text = "\(Int(count))"
+        aimLabel.text = "\(Int(goal))"
+
+        progressView.resetProgressBar(ratio: count / goal)
     }
 }
 

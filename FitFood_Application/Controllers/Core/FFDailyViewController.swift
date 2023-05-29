@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import HealthKit
 
 final class FFDailyViewController: FFBaseViewController {
     // MARK: - Properties
     
     private let calendarModel = FFCalendarModel()
     private var centerDate = Date()
+    private let healthStore = HKHealthStore()
+    private var stepGoal = 0.0
+    private var stepCount = 0.0
     
     // MARK: - Subviews
     
@@ -34,6 +38,24 @@ final class FFDailyViewController: FFBaseViewController {
         super.viewDidLoad()
         
         configureViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        guard HKHealthStore.isHealthDataAvailable(),
+              let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
+            return
+        }
+
+        healthStore.requestAuthorization(toShare: nil, read: [stepCountType]) { [weak self] success, error in
+            guard let self = self,
+                  success else {
+                return
+            }
+
+            self.retrieveStepCount()
+        }
     }
 }
 
@@ -114,6 +136,41 @@ extension FFDailyViewController {
         calendarView.reloadData()
         calendarView.scrollToItem(at: [0, 10], at: .centeredHorizontally, animated: false)
     }
+
+    private func retrieveStepCount() {
+        let calendar = Calendar.current
+        let startDate = calendar.startOfDay(for: Date())
+
+        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount),
+              let endDate = calendar.date(byAdding: .day, value: 1, to: startDate) else {
+            return
+        }
+
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+
+        let query = HKStatisticsCollectionQuery(quantityType: stepCountType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: startDate, intervalComponents: DateComponents(day: 1))
+
+        query.initialResultsHandler = { _, result, error in
+            guard let result = result else {
+                return
+            }
+
+            result.enumerateStatistics(from: startDate, to: endDate) { [weak self] statistics, _ in
+                guard let sum = statistics.sumQuantity(),
+                      let self = self else {
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    let stepCount = sum.doubleValue(for: HKUnit.count())
+                    self.stepCount = stepCount
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+
+        healthStore.execute(query)
+    }
 }
 
 // MARK: - UICollectionViewDelegate
@@ -154,6 +211,9 @@ extension FFDailyViewController: UICollectionViewDataSource {
             ) as? FFDailyStepsStatCollectionViewCell else {
                 return UICollectionViewCell()
             }
+
+            cell.configure(goal: 10000.0, count: stepCount)
+
             return cell
         case 3:
             guard let cell = collectionView.dequeueReusableCell(

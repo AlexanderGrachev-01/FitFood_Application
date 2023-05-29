@@ -11,6 +11,8 @@ final class FFRecipesViewController: FFBaseViewController {
     // MARK: - Properties
     
     private var sections = ["Popular menus", "Сategories", "Recently"]
+    private var isPopularCovered = true
+    private var isСategoriesCovered = true
     
     // MARK: - Subviews
     
@@ -104,9 +106,9 @@ extension FFRecipesViewController: UICollectionViewDataSource {
         
         switch section {
         case .popular:
-            return 5
+            return isPopularCovered ? 5 : 10
         case .categories:
-            return 5
+            return isСategoriesCovered ? 5 : Categories.allCases.count
         case .recently:
             return 5
         }
@@ -127,8 +129,11 @@ extension FFRecipesViewController: UICollectionViewDataSource {
                     return UICollectionViewCell()
                 }
                 
-                cell.onSeeAll = {
-                    print("See all")
+                cell.onSeeAll = { [weak self] in
+                    guard let self = self else { return }
+
+                    self.isPopularCovered = !(self.isPopularCovered)
+                    self.collectionView.reloadSections(IndexSet(integer: 0))
                 }
                 
                 cell.onChangeMeal = { meal in
@@ -147,31 +152,55 @@ extension FFRecipesViewController: UICollectionViewDataSource {
             
             return cell
         case .categories:
-            if indexPath.row == 0 {
-                guard let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: HeaderCollectionViewCell.identifier,
-                    for: indexPath
-                ) as? HeaderCollectionViewCell else {
-                    return UICollectionViewCell()
-                }
-                
-                cell.configure(title: sections[indexPath.section])
-                
-                cell.onSeeAll = {
-                    print("See all")
-                }
-                
-                return cell
-            }
-            
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: RecipesCategoriesCollectionViewCell.identifier,
+            let categories = Categories.allCases[indexPath.item]
+
+            guard let titleCell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: HeaderCollectionViewCell.identifier,
                 for: indexPath
-            ) as? RecipesCategoriesCollectionViewCell else {
+            ) as? HeaderCollectionViewCell,
+                  let cell = collectionView.dequeueReusableCell(
+                      withReuseIdentifier: RecipesCategoriesCollectionViewCell.identifier,
+                      for: indexPath
+                  ) as? RecipesCategoriesCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            
-            cell.configure(image: Asset.Images.banana, title: "Fruits")
+
+            switch categories {
+            case .title:
+                titleCell.configure(title: sections[indexPath.section], isButtonHiden: false)
+                titleCell.onSeeAll = { [weak self] in
+                    guard let self = self else { return }
+
+                    self.isСategoriesCovered = !(self.isСategoriesCovered)
+                    self.collectionView.reloadSections(IndexSet(integer: 1))
+                }
+
+                return titleCell
+            case .fruits:
+                cell.configure(image: Asset.Images.banana, title: categories.rawValue)
+            case .meat:
+                cell.configure(image: Asset.Images.meatOnBone, title: categories.rawValue)
+            case .vegetables:
+                cell.configure(image: Asset.Images.broccoli, title: categories.rawValue)
+            case .bread:
+                cell.configure(image: Asset.Images.bread, title: categories.rawValue)
+            case .nuts:
+                cell.configure(image: Asset.Images.peanuts, title: categories.rawValue)
+            case .fish:
+                cell.configure(image: Asset.Images.fish, title: categories.rawValue)
+            case .mushrooms:
+                cell.configure(image: Asset.Images.mushrooms, title: categories.rawValue)
+            case .eggs:
+                cell.configure(image: Asset.Images.eggs, title: categories.rawValue)
+            case .milk:
+                cell.configure(image: Asset.Images.milkCarton, title: categories.rawValue)
+            case .dessert:
+                cell.configure(image: Asset.Images.cookie, title: categories.rawValue)
+            case .pasta:
+                cell.configure(image: Asset.Images.spaghetti, title: categories.rawValue)
+            case .legumes:
+                cell.configure(image: Asset.Images.soy, title: categories.rawValue)
+            }
             
             return cell
         case  .recently:
@@ -184,10 +213,6 @@ extension FFRecipesViewController: UICollectionViewDataSource {
                 }
                 
                 cell.configure(title: sections[indexPath.section])
-                
-                cell.onSeeAll = {
-                    print("See all")
-                }
                 
                 return cell
             }
@@ -306,5 +331,21 @@ private extension FFRecipesViewController {
         case popular = 0
         case categories = 1
         case recently = 2
+    }
+
+    enum Categories: String, CaseIterable {
+        case title
+        case fruits
+        case meat
+        case vegetables
+        case bread
+        case nuts
+        case fish
+        case mushrooms
+        case eggs
+        case milk
+        case dessert
+        case pasta
+        case legumes
     }
 }
