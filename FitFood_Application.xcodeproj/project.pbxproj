@@ -26,6 +26,7 @@
 		F69E69AB29F0599E0032068E /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */; };
 		F69E69AD29F061080032068E /* RecipesCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69AC29F061080032068E /* RecipesCategoriesCollectionViewCell.swift */; };
 		F69E69B029F06B770032068E /* ProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E69AF29F06B770032068E /* ProductInfoTableViewCell.swift */; };
+		F6B062BB2A252DA3004DB198 /* FFRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B062BA2A252DA3004DB198 /* FFRecipe.swift */; };
 		F6B700EB297199390066B975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EA297199390066B975 /* AppDelegate.swift */; };
 		F6B700ED297199390066B975 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EC297199390066B975 /* SceneDelegate.swift */; };
 		F6B700EF297199390066B975 /* FFDailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EE297199390066B975 /* FFDailyViewController.swift */; };
@@ -44,6 +45,10 @@
 		F6B701202974A1FE0066B975 /* Date+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7011F2974A1FE0066B975 /* Date+ext.swift */; };
 		F6B701222974A2B90066B975 /* FFCalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701212974A2B90066B975 /* FFCalendarModel.swift */; };
 		F6B701262974A4030066B975 /* FFDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701252974A4030066B975 /* FFDateModel.swift */; };
+		F6B7A58E2A27E74500A8ADCB /* FastingConfigCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7A58D2A27E74400A8ADCB /* FastingConfigCollectionViewCell.swift */; };
+		F6B7A5902A27EFC800A8ADCB /* FastingInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7A58F2A27EFC800A8ADCB /* FastingInfoCollectionViewCell.swift */; };
+		F6B7A5922A27F69800A8ADCB /* FastingInfoCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7A5912A27F69800A8ADCB /* FastingInfoCardCollectionViewCell.swift */; };
+		F6B7A5942A28023C00A8ADCB /* FastingStatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7A5932A28023C00A8ADCB /* FastingStatCollectionViewCell.swift */; };
 		F6BB3FF22A23C646002883D1 /* FFGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF12A23C646002883D1 /* FFGender.swift */; };
 		F6BB3FF42A23C671002883D1 /* FFActivityFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF32A23C671002883D1 /* FFActivityFactor.swift */; };
 		F6BB3FF62A23C791002883D1 /* СookingStepCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB3FF52A23C791002883D1 /* СookingStepCollectionViewCell.swift */; };
@@ -90,6 +95,7 @@
 		F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		F69E69AC29F061080032068E /* RecipesCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		F69E69AF29F06B770032068E /* ProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoTableViewCell.swift; sourceTree = "<group>"; };
+		F6B062BA2A252DA3004DB198 /* FFRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFRecipe.swift; sourceTree = "<group>"; };
 		F6B700E7297199390066B975 /* FitFood_Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFood_Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B700EA297199390066B975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6B700EC297199390066B975 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +115,10 @@
 		F6B7011F2974A1FE0066B975 /* Date+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ext.swift"; sourceTree = "<group>"; };
 		F6B701212974A2B90066B975 /* FFCalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFCalendarModel.swift; sourceTree = "<group>"; };
 		F6B701252974A4030066B975 /* FFDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDateModel.swift; sourceTree = "<group>"; };
+		F6B7A58D2A27E74400A8ADCB /* FastingConfigCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingConfigCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6B7A58F2A27EFC800A8ADCB /* FastingInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6B7A5912A27F69800A8ADCB /* FastingInfoCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingInfoCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6B7A5932A28023C00A8ADCB /* FastingStatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingStatCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6BB3FF12A23C646002883D1 /* FFGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFGender.swift; sourceTree = "<group>"; };
 		F6BB3FF32A23C671002883D1 /* FFActivityFactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFActivityFactor.swift; sourceTree = "<group>"; };
 		F6BB3FF52A23C791002883D1 /* СookingStepCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СookingStepCollectionViewCell.swift"; sourceTree = "<group>"; };
@@ -201,6 +211,7 @@
 			children = (
 				F6622A4B29D22A810097694F /* Daily */,
 				F65727FC29E2FADF00FA7B57 /* Recipes */,
+				F6B7A58C2A27E71D00A8ADCB /* Fasting */,
 				F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */,
 				F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */,
 			);
@@ -310,6 +321,7 @@
 			children = (
 				F66DBA472A1BCC1B002C57DD /* FFProduct.swift */,
 				F6BB3FF32A23C671002883D1 /* FFActivityFactor.swift */,
+				F6B062BA2A252DA3004DB198 /* FFRecipe.swift */,
 				F6BB3FF72A23CD43002883D1 /* FFCookingStep.swift */,
 				F6BB3FF12A23C646002883D1 /* FFGender.swift */,
 				F6FF106529843B9700BD72CF /* FFUser.swift */,
@@ -380,6 +392,17 @@
 				F6B701272974B5C30066B975 /* Calendar */,
 			);
 			path = Daily;
+			sourceTree = "<group>";
+		};
+		F6B7A58C2A27E71D00A8ADCB /* Fasting */ = {
+			isa = PBXGroup;
+			children = (
+				F6B7A58D2A27E74400A8ADCB /* FastingConfigCollectionViewCell.swift */,
+				F6B7A58F2A27EFC800A8ADCB /* FastingInfoCollectionViewCell.swift */,
+				F6B7A5912A27F69800A8ADCB /* FastingInfoCardCollectionViewCell.swift */,
+				F6B7A5932A28023C00A8ADCB /* FastingStatCollectionViewCell.swift */,
+			);
+			path = Fasting;
 			sourceTree = "<group>";
 		};
 		F6BB3FF92A23D0ED002883D1 /* Adding */ = {
@@ -537,6 +560,7 @@
 				F6BB3FF42A23C671002883D1 /* FFActivityFactor.swift in Sources */,
 				F6B7011B2974727B0066B975 /* FFCalendarCollectionView.swift in Sources */,
 				F6F1425D29FB178E004960EB /* RecipeDetilsCollectionViewCell.swift in Sources */,
+				F6B7A5902A27EFC800A8ADCB /* FastingInfoCollectionViewCell.swift in Sources */,
 				F6622A4D29D22AD80097694F /* FFDailyStatCollectionViewCell.swift in Sources */,
 				F6B700EF297199390066B975 /* FFDailyViewController.swift in Sources */,
 				F66DBA482A1BCC1B002C57DD /* FFProduct.swift in Sources */,
@@ -565,6 +589,7 @@
 				F6EFDA292981C8B500FC3CCB /* AuthorizationManager.swift in Sources */,
 				F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */,
 				F65F9D2C29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift in Sources */,
+				F6B062BB2A252DA3004DB198 /* FFRecipe.swift in Sources */,
 				F6B701162971A7520066B975 /* UIView+ext.swift in Sources */,
 				F6B701072971A0E60066B975 /* FFRecipesViewController.swift in Sources */,
 				F6622A5329D22C5B0097694F /* FFDailyFastingTimerCollectionViewCell.swift in Sources */,
@@ -576,13 +601,16 @@
 				F69E69A629F046F10032068E /* FFButton.swift in Sources */,
 				F6BB3FF62A23C791002883D1 /* СookingStepCollectionViewCell.swift in Sources */,
 				F6EFDA17298188D200FC3CCB /* FFBaseViewController.swift in Sources */,
+				F6B7A58E2A27E74500A8ADCB /* FastingConfigCollectionViewCell.swift in Sources */,
 				F6FF106B2984842400BD72CF /* FFSettingsTableViewCell.swift in Sources */,
 				F6622A5129D22C240097694F /* FFDailyStepsStatCollectionViewCell.swift in Sources */,
 				F6EFDA2C2981CE4000FC3CCB /* FFWelcomePageViewController.swift in Sources */,
 				F65727F329E1A7DB00FA7B57 /* FoodContentsView.swift in Sources */,
 				F6B701262974A4030066B975 /* FFDateModel.swift in Sources */,
 				F601331929FADF2500AE5C2A /* RecepiesDetailViewController.swift in Sources */,
+				F6B7A5942A28023C00A8ADCB /* FastingStatCollectionViewCell.swift in Sources */,
 				F6BB3FF22A23C646002883D1 /* FFGender.swift in Sources */,
+				F6B7A5922A27F69800A8ADCB /* FastingInfoCardCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,4 +16,9 @@ struct FFUser: Codable {
     let weight: Int
     let age: Int
     let activityFactor: FFActivityFactor
+    let breakfast: [FFProduct]
+    let lunch: [FFProduct]
+    let diner: [FFProduct]
+    let snaks: [FFProduct]
+    let favoritesProducts: [FFProduct]
 }

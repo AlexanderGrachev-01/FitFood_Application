@@ -63,9 +63,18 @@ enum Asset {
         static let timeToEat = "Time to eat"
         static let popularMenus = "Popular menus"
         static let seeAll = "See all"
+        static let hide = "Hide"
         static let done = "Done"
         static let addYourDish = "Add your own dish"
         static let fillTheField = "Fill in the field"
+        static let chooseIntervalPlan = "Choose an interval fasting plan"
+        static let aboutIntermittentFasting = "About Intermittent Fasting"
+        static let loseWeight = "Lose weight"
+        static let intervals = "Intervals"
+        static let health = "Health"
+        static let drinks = "Drinks"
+        static let activity = "Activity"
+        static let yourFasting = "Your Fasting"
     }
     
     // MARK: - Images
@@ -119,5 +128,16 @@ enum Asset {
         static let peanuts = UIImage(named: "peanuts") ?? UIImage()
         static let soy = UIImage(named: "soy") ?? UIImage()
         static let spaghetti = UIImage(named: "spaghetti") ?? UIImage()
+        static let rightGreenChevron = UIImage(named: "rightGreenChevron") ?? UIImage()
+        static let fastingConfig = UIImage(named: "fastingConfig") ?? UIImage()
+        static let drinks = UIImage(named: "drinks") ?? UIImage()
+        static let health = UIImage(named: "health") ?? UIImage()
+        static let intervals = UIImage(named: "intervals") ?? UIImage()
+        static let weight = UIImage(named: "weight") ?? UIImage()
+
+        static let biceps = UIImage(named: "biceps") ?? UIImage()
+        static let checkMark = UIImage(named: "checkMark") ?? UIImage()
+        static let clock = UIImage(named: "clock") ?? UIImage()
+        static let fireCur = UIImage(named: "fireCur") ?? UIImage()
     }
 }
