@@ -48,7 +48,9 @@ private extension TextFieldTableViewCell {
         contentView.addSubview(textField)
         textField.snp.makeConstraints {
             $0.height.equalTo(Constants.TextField.height)
-            $0.top.left.right.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
         }
     }
 

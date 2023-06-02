@@ -37,6 +37,7 @@ enum Asset {
         static let categoryCellBackground = UIColor(named: "categoryCellBackground") ?? UIColor()
         static let lightGray = UIColor(named: "lightGray") ?? UIColor()
         static let errorRed = UIColor(named: "errorRed") ?? UIColor()
+        static let fatingTypeViewBackground = UIColor(named: "fatingTypeViewBackground") ?? UIColor()
     }
     
     // MARK: - Strings
@@ -75,6 +76,9 @@ enum Asset {
         static let drinks = "Drinks"
         static let activity = "Activity"
         static let yourFasting = "Your Fasting"
+        static let eating = "Eating"
+        static let start = "Start"
+        static let finishPlan = "Finish (according to plan):"
     }
     
     // MARK: - Images

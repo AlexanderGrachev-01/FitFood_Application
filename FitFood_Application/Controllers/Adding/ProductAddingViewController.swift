@@ -82,6 +82,7 @@ private extension ProductAddingViewController {
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
         tableView.contentInset = Constants.TableView.contentInset
+        tableView.backgroundColor = .black
         tableView.register(
             TextFieldTableViewCell.self,
             forCellReuseIdentifier: TextFieldTableViewCell.identifier

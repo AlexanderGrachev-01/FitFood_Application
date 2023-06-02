@@ -74,6 +74,9 @@
 		F6FF106629843B9700BD72CF /* FFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF106529843B9700BD72CF /* FFUser.swift */; };
 		F6FF10692984738100BD72CF /* FFUserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF10682984738100BD72CF /* FFUserInfoTableViewCell.swift */; };
 		F6FF106B2984842400BD72CF /* FFSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF106A2984842400BD72CF /* FFSettingsTableViewCell.swift */; };
+		F6FFD25D2A2A4872001615D5 /* FastingMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD25C2A2A4872001615D5 /* FastingMainCollectionViewCell.swift */; };
+		F6FFD2602A2A77AA001615D5 /* FastingArcProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD25F2A2A77AA001615D5 /* FastingArcProgressBarView.swift */; };
+		F6FFD2622A2A7A3A001615D5 /* FastingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2612A2A7A3A001615D5 /* FastingType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +143,9 @@
 		F6FF106529843B9700BD72CF /* FFUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFUser.swift; sourceTree = "<group>"; };
 		F6FF10682984738100BD72CF /* FFUserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFUserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F6FF106A2984842400BD72CF /* FFSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		F6FFD25C2A2A4872001615D5 /* FastingMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingMainCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6FFD25F2A2A77AA001615D5 /* FastingArcProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingArcProgressBarView.swift; sourceTree = "<group>"; };
+		F6FFD2612A2A7A3A001615D5 /* FastingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				F69E69A829F04CCB0032068E /* Meals.swift */,
+				F6FFD2612A2A7A3A001615D5 /* FastingType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -341,6 +348,7 @@
 		F6B7010229719A480066B975 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6FFD25E2A2A773E001615D5 /* Fasting */,
 				F6F1425E29FB18A5004960EB /* Recipes */,
 				F6EFDA13298185AC00FC3CCB /* Adding */,
 				F6B701282974B5D40066B975 /* Daily */,
@@ -401,6 +409,7 @@
 				F6B7A58F2A27EFC800A8ADCB /* FastingInfoCollectionViewCell.swift */,
 				F6B7A5912A27F69800A8ADCB /* FastingInfoCardCollectionViewCell.swift */,
 				F6B7A5932A28023C00A8ADCB /* FastingStatCollectionViewCell.swift */,
+				F6FFD25C2A2A4872001615D5 /* FastingMainCollectionViewCell.swift */,
 			);
 			path = Fasting;
 			sourceTree = "<group>";
@@ -467,6 +476,14 @@
 				F6B701252974A4030066B975 /* FFDateModel.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		F6FFD25E2A2A773E001615D5 /* Fasting */ = {
+			isa = PBXGroup;
+			children = (
+				F6FFD25F2A2A77AA001615D5 /* FastingArcProgressBarView.swift */,
+			);
+			path = Fasting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,6 +587,7 @@
 				F6B701202974A1FE0066B975 /* Date+ext.swift in Sources */,
 				F65727F729E1B84500FA7B57 /* ProgressView.swift in Sources */,
 				F6D08D8F29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift in Sources */,
+				F6FFD2602A2A77AA001615D5 /* FastingArcProgressBarView.swift in Sources */,
 				F69E69B029F06B770032068E /* ProductInfoTableViewCell.swift in Sources */,
 				F6EFDA2E2981E22100FC3CCB /* FFPhoneNumberViewController.swift in Sources */,
 				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
@@ -588,6 +606,7 @@
 				F6B7010D2971A1C70066B975 /* FFSettingsViewController.swift in Sources */,
 				F6EFDA292981C8B500FC3CCB /* AuthorizationManager.swift in Sources */,
 				F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */,
+				F6FFD2622A2A7A3A001615D5 /* FastingType.swift in Sources */,
 				F65F9D2C29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift in Sources */,
 				F6B062BB2A252DA3004DB198 /* FFRecipe.swift in Sources */,
 				F6B701162971A7520066B975 /* UIView+ext.swift in Sources */,
@@ -599,6 +618,7 @@
 				F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */,
 				F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */,
 				F69E69A629F046F10032068E /* FFButton.swift in Sources */,
+				F6FFD25D2A2A4872001615D5 /* FastingMainCollectionViewCell.swift in Sources */,
 				F6BB3FF62A23C791002883D1 /* СookingStepCollectionViewCell.swift in Sources */,
 				F6EFDA17298188D200FC3CCB /* FFBaseViewController.swift in Sources */,
 				F6B7A58E2A27E74500A8ADCB /* FastingConfigCollectionViewCell.swift in Sources */,

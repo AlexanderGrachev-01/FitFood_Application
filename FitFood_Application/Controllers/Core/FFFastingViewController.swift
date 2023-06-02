@@ -14,6 +14,7 @@ final class FFFastingViewController: FFBaseViewController {
 
     // MARK: - Subviews
 
+    private var separator = UIView()
     private var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     // MARK: - LifeCycle
@@ -30,11 +31,18 @@ final class FFFastingViewController: FFBaseViewController {
 private extension FFFastingViewController {
     private func configureViews() {
         title = Asset.Strings.fasting
-        navigationController?.navigationBar.addBottomBorder(
-            with: Asset.Colors.separator,
-            height: 0.5
-        )
         configureCollectionView()
+        configureSeparator()
+    }
+
+    func configureSeparator() {
+        separator.backgroundColor = Asset.Colors.separator
+        view.addSubview(separator)
+        separator.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.left.right.equalToSuperview()
+            $0.height.equalTo(Constants.separatorHeight)
+        }
     }
 
     private func configureCollectionView() {
@@ -43,6 +51,10 @@ private extension FFFastingViewController {
         collectionView.register(
             FastingConfigCollectionViewCell.self,
             forCellWithReuseIdentifier: FastingConfigCollectionViewCell.identifier
+        )
+        collectionView.register(
+            FastingMainCollectionViewCell.self,
+            forCellWithReuseIdentifier: FastingMainCollectionViewCell.identifier
         )
         collectionView.register(
             FastingStatCollectionViewCell.self,
@@ -81,7 +93,7 @@ extension FFFastingViewController: UICollectionViewDataSource {
         case .configure:
             return isActive ? 0 : 1
         case .main:
-            return 0 // isActive ? 1 : 0
+            return isActive ? 1 : 0
         case .statistic:
             return isActive ? 1 : 0
         case .info:
@@ -105,7 +117,14 @@ extension FFFastingViewController: UICollectionViewDataSource {
 
             return cell
         case .main:
-            return UICollectionViewCell()
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: FastingMainCollectionViewCell.identifier,
+                for: indexPath
+            ) as? FastingMainCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+
+            return cell
         case .statistic:
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: FastingStatCollectionViewCell.identifier,
@@ -150,7 +169,11 @@ extension FFFastingViewController: UICollectionViewDelegateFlowLayout {
                 height: Constants.CollectionView.configureCellHeight
             )
         case .main:
-            return CGSize()
+            let widthPerItem = view.frame.width - Constants.CollectionView.sectionInset.left - Constants.CollectionView.sectionInset.right
+            return CGSize(
+                width: widthPerItem,
+                height: Constants.CollectionView.mainCellHeight
+            )
         case .statistic:
             let widthPerItem = view.frame.width - Constants.CollectionView.sectionInset.left - Constants.CollectionView.sectionInset.right
             return CGSize(
@@ -231,6 +254,7 @@ private extension FFFastingViewController {
             static let minimumLineSpacingForSection = 24.0
             static let sectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 0, right: 20)
         }
+        static let separatorHeight = 0.5
     }
 
     enum CollectionSectionType: Int, CaseIterable {
