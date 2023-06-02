@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FastingArcProgressBarView: UIView {
+final class FastingArcProgressBarView: UIView {
     // MARK: - Properties
 
     private var fastingType: FastingType = .third {

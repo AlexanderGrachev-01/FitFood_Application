@@ -124,6 +124,8 @@ extension FFFastingViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
 
+            cell.configure(fastingType: .fourth)
+
             return cell
         case .statistic:
             guard let cell = collectionView.dequeueReusableCell(
@@ -202,7 +204,7 @@ extension FFFastingViewController: UICollectionViewDelegateFlowLayout {
         case .statistic:
             return isActive ? Constants.CollectionView.sectionInset : UIEdgeInsets()
         case .info:
-            return Constants.CollectionView.sectionInset
+            return Constants.CollectionView.lastSectionInset
         }
     }
 
@@ -253,6 +255,7 @@ private extension FFFastingViewController {
             static let minimumInteritemSpacing = 0.0
             static let minimumLineSpacingForSection = 24.0
             static let sectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 0, right: 20)
+            static let lastSectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 24, right: 20)
         }
         static let separatorHeight = 0.5
     }

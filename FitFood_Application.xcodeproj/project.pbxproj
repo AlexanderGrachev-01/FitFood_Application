@@ -77,6 +77,7 @@
 		F6FFD25D2A2A4872001615D5 /* FastingMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD25C2A2A4872001615D5 /* FastingMainCollectionViewCell.swift */; };
 		F6FFD2602A2A77AA001615D5 /* FastingArcProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD25F2A2A77AA001615D5 /* FastingArcProgressBarView.swift */; };
 		F6FFD2622A2A7A3A001615D5 /* FastingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2612A2A7A3A001615D5 /* FastingType.swift */; };
+		F6FFD2642A2AA943001615D5 /* ImageTwoLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2632A2AA943001615D5 /* ImageTwoLabelsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		F6FFD25C2A2A4872001615D5 /* FastingMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingMainCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6FFD25F2A2A77AA001615D5 /* FastingArcProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingArcProgressBarView.swift; sourceTree = "<group>"; };
 		F6FFD2612A2A7A3A001615D5 /* FastingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingType.swift; sourceTree = "<group>"; };
+		F6FFD2632A2AA943001615D5 /* ImageTwoLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTwoLabelsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				F6FFD25F2A2A77AA001615D5 /* FastingArcProgressBarView.swift */,
+				F6FFD2632A2AA943001615D5 /* ImageTwoLabelsView.swift */,
 			);
 			path = Fasting;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				F6F647DC29A108FA0028F76D /* Asset.swift in Sources */,
 				F65F9D2A29EDBED800CBF1D2 /* RecipeInfoCollectionViewCell.swift in Sources */,
 				F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */,
+				F6FFD2642A2AA943001615D5 /* ImageTwoLabelsView.swift in Sources */,
 				F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */,
 				F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */,
 				F69E69A629F046F10032068E /* FFButton.swift in Sources */,

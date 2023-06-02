@@ -16,6 +16,7 @@ final class FastingStatCollectionViewCell: UICollectionViewCell {
 
     private var title = UILabel()
     private var backView = UIView()
+    private var stackView = UIStackView()
 
     // MARK: - Lifecycle
 
@@ -37,6 +38,7 @@ private extension FastingStatCollectionViewCell {
         contentView.backgroundColor = .clear
         configureTitle()
         configureBackView()
+        configureStackView()
     }
 
     func configureTitle() {
@@ -58,7 +60,34 @@ private extension FastingStatCollectionViewCell {
             $0.top.equalTo(title.snp.bottom).offset(Constants.BackView.top)
             $0.left.right.bottom.equalToSuperview()
         }
+    }
 
+    func configureStackView() {
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        backView.addSubview(stackView)
+        stackView.snp.makeConstraints {
+            $0.top.left.right.bottom.equalToSuperview()
+        }
+        configureStatViews()
+    }
+
+    func configureStatViews() {
+        let curStatView = ImageTwoLabelsView()
+        curStatView.configure(image: Asset.Images.fireCur, info: "2 Days", name: Asset.Strings.curent)
+        stackView.addArrangedSubview(curStatView)
+
+        let longStatView = ImageTwoLabelsView()
+        longStatView.configure(image: Asset.Images.biceps, info: "31 Days", name: Asset.Strings.longest)
+        stackView.addArrangedSubview(longStatView)
+
+        let allStatView = ImageTwoLabelsView()
+        allStatView.configure(image: Asset.Images.checkMark, info: "44 Days", name: Asset.Strings.all)
+        stackView.addArrangedSubview(allStatView)
+
+        let totalStatView = ImageTwoLabelsView()
+        totalStatView.configure(image: Asset.Images.clock, info: "704 hr", name: Asset.Strings.total)
+        stackView.addArrangedSubview(totalStatView)
     }
 }
 

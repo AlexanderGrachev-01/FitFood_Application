@@ -12,6 +12,10 @@ final class FastingMainCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "FastingMainCollectionViewCell"
 
+    // MARK: - Properties
+
+    private var fastingType: FastingType = .first
+
     // MARK: - Subviews
 
     private var fastingInfoView = FastingArcProgressBarView()
@@ -65,7 +69,7 @@ private extension FastingMainCollectionViewCell {
     }
 
     func configureFastingInfoView() {
-        fastingInfoView.resetFastingType(fastingType: .first)
+        fastingInfoView.resetFastingType(fastingType: fastingType)
         fastingInfoView.resetProgressBar(fastingRation: 1.0, eatingRetio: 0.4)
         contentView.addSubview(fastingInfoView)
         fastingInfoView.snp.makeConstraints {
@@ -124,7 +128,7 @@ private extension FastingMainCollectionViewCell {
     }
 
     func configureFastingTypeLabel() {
-        fastingTypeLabel.text = "16-8"
+        fastingTypeLabel.text = fastingType.rawValue
         fastingTypeLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         fastingTypeLabel.textColor = Asset.Colors.green
         fastingTypeLabel.textAlignment = .center
@@ -223,6 +227,31 @@ private extension FastingMainCollectionViewCell {
         startTimeLabel.snp.makeConstraints {
             $0.centerY.equalTo(startLabel)
             $0.right.equalToSuperview().offset(-Constants.FinishTimeLabel.right)
+        }
+    }
+}
+
+// MARK: - Public configure
+
+extension FastingMainCollectionViewCell {
+    func configure(fastingType: FastingType) {
+        fastingTypeLabel.text = fastingType.rawValue
+        fastingInfoView.resetFastingType(fastingType: fastingType)
+        fastingInfoView.resetProgressBar(fastingRation: 1.0, eatingRetio: 0.4)
+
+        switch fastingType {
+        case .first:
+            startTimeLabel.text = "19:00"
+            finishTimeLabel.text = "09:00"
+        case .second:
+            startTimeLabel.text = "17:00"
+            finishTimeLabel.text = "09:00"
+        case .third:
+            startTimeLabel.text = "15:00"
+            finishTimeLabel.text = "09:00"
+        case .fourth:
+            startTimeLabel.text = "13:00"
+            finishTimeLabel.text = "09:00"
         }
     }
 }

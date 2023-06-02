@@ -79,6 +79,10 @@ enum Asset {
         static let eating = "Eating"
         static let start = "Start"
         static let finishPlan = "Finish (according to plan):"
+        static let curent = "Curent"
+        static let longest = "Longest"
+        static let all = "All"
+        static let total = "Total"
     }
     
     // MARK: - Images
@@ -143,5 +147,15 @@ enum Asset {
         static let checkMark = UIImage(named: "checkMark") ?? UIImage()
         static let clock = UIImage(named: "clock") ?? UIImage()
         static let fireCur = UIImage(named: "fireCur") ?? UIImage()
+
+        // Onboarding
+        static let onboarding1 = UIImage(named: "onboarding1") ?? UIImage()
+        static let onboarding2 = UIImage(named: "onboarding2") ?? UIImage()
+        static let onboarding3 = UIImage(named: "onboarding3") ?? UIImage()
+        static let onboarding4 = UIImage(named: "onboarding4") ?? UIImage()
+        static let onboarding5 = UIImage(named: "onboarding5") ?? UIImage()
+        static let onboarding6 = UIImage(named: "onboarding6") ?? UIImage()
+        static let onboarding7 = UIImage(named: "onboarding7") ?? UIImage()
+        static let onboarding8 = UIImage(named: "onboarding8") ?? UIImage()
     }
 }
