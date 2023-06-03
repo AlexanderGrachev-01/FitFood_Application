@@ -83,6 +83,11 @@ enum Asset {
         static let longest = "Longest"
         static let all = "All"
         static let total = "Total"
+        static let choosePlanToStartFasting = "Choose a plan to start fasting"
+        static let hOfFasting = "h. fasting"
+        static let hOfMeal = "h. meal period"
+        static let startFasting = "Start fasting"
+        static let difficultyLevel = "Difficulty level"
     }
     
     // MARK: - Images

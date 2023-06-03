@@ -10,7 +10,7 @@ import UIKit
 final class FFFastingViewController: FFBaseViewController {
     // MARK: - Properties
 
-    var isActive = true
+    var isActive = false
 
     // MARK: - Subviews
 
@@ -75,6 +75,25 @@ private extension FFFastingViewController {
 // MARK: - UICollectionViewDelegate
 
 extension FFFastingViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let section = CollectionSectionType(rawValue: indexPath.section) else {
+            return
+        }
+
+        switch section {
+        case .configure:
+            navigationController?.pushViewController(
+                SetupFastingViewController(),
+                animated: true
+            )
+        case .main:
+            return
+        case .statistic:
+            return
+        case .info:
+            return
+        }
+    }
 }
 
 // MARK: - UICollectionViewDataSource

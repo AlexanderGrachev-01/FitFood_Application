@@ -78,6 +78,14 @@
 		F6FFD2602A2A77AA001615D5 /* FastingArcProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD25F2A2A77AA001615D5 /* FastingArcProgressBarView.swift */; };
 		F6FFD2622A2A7A3A001615D5 /* FastingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2612A2A7A3A001615D5 /* FastingType.swift */; };
 		F6FFD2642A2AA943001615D5 /* ImageTwoLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2632A2AA943001615D5 /* ImageTwoLabelsView.swift */; };
+		F6FFD2672A2B8FAC001615D5 /* SetupFastingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2662A2B8FAC001615D5 /* SetupFastingViewController.swift */; };
+		F6FFD2692A2B92C3001615D5 /* FastingVariantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2682A2B92C2001615D5 /* FastingVariantCollectionViewCell.swift */; };
+		F6FFD26B2A2B94D7001615D5 /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD26A2A2B94D7001615D5 /* LabelCollectionViewCell.swift */; };
+		F6FFD26D2A2B975B001615D5 /* StarsRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD26C2A2B975B001615D5 /* StarsRatingView.swift */; };
+		F6FFD26F2A2B9FE3001615D5 /* SetupFastingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD26E2A2B9FE3001615D5 /* SetupFastingInfoViewController.swift */; };
+		F6FFD2712A2BA5A5001615D5 /* FastingSetupInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2702A2BA5A5001615D5 /* FastingSetupInfoCollectionViewCell.swift */; };
+		F6FFD2732A2BA61D001615D5 /* WarningCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2722A2BA61D001615D5 /* WarningCollectionViewCell.swift */; };
+		F6FFD2752A2BA699001615D5 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2742A2BA699001615D5 /* ButtonCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +156,14 @@
 		F6FFD25F2A2A77AA001615D5 /* FastingArcProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingArcProgressBarView.swift; sourceTree = "<group>"; };
 		F6FFD2612A2A7A3A001615D5 /* FastingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingType.swift; sourceTree = "<group>"; };
 		F6FFD2632A2AA943001615D5 /* ImageTwoLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTwoLabelsView.swift; sourceTree = "<group>"; };
+		F6FFD2662A2B8FAC001615D5 /* SetupFastingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupFastingViewController.swift; sourceTree = "<group>"; };
+		F6FFD2682A2B92C2001615D5 /* FastingVariantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingVariantCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6FFD26A2A2B94D7001615D5 /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6FFD26C2A2B975B001615D5 /* StarsRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsRatingView.swift; sourceTree = "<group>"; };
+		F6FFD26E2A2B9FE3001615D5 /* SetupFastingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupFastingInfoViewController.swift; sourceTree = "<group>"; };
+		F6FFD2702A2BA5A5001615D5 /* FastingSetupInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingSetupInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6FFD2722A2BA61D001615D5 /* WarningCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6FFD2742A2BA699001615D5 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +238,9 @@
 				F6B7A58C2A27E71D00A8ADCB /* Fasting */,
 				F69E69AA29F0599E0032068E /* HeaderCollectionViewCell.swift */,
 				F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */,
+				F6FFD26A2A2B94D7001615D5 /* LabelCollectionViewCell.swift */,
+				F6FFD2722A2BA61D001615D5 /* WarningCollectionViewCell.swift */,
+				F6FFD2742A2BA699001615D5 /* ButtonCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -318,6 +337,7 @@
 			children = (
 				F6BB3FF92A23D0ED002883D1 /* Adding */,
 				F601331729FADD9600AE5C2A /* Recipes */,
+				F6FFD2652A2B8F86001615D5 /* Fasting */,
 				F6EFDA2A2981CDEE00FC3CCB /* Authorization */,
 				F6EFDA15298188A300FC3CCB /* Core */,
 				F6EFDA142981887D00FC3CCB /* Base */,
@@ -412,6 +432,8 @@
 				F6B7A5912A27F69800A8ADCB /* FastingInfoCardCollectionViewCell.swift */,
 				F6B7A5932A28023C00A8ADCB /* FastingStatCollectionViewCell.swift */,
 				F6FFD25C2A2A4872001615D5 /* FastingMainCollectionViewCell.swift */,
+				F6FFD2682A2B92C2001615D5 /* FastingVariantCollectionViewCell.swift */,
+				F6FFD2702A2BA5A5001615D5 /* FastingSetupInfoCollectionViewCell.swift */,
 			);
 			path = Fasting;
 			sourceTree = "<group>";
@@ -485,6 +507,16 @@
 			children = (
 				F6FFD25F2A2A77AA001615D5 /* FastingArcProgressBarView.swift */,
 				F6FFD2632A2AA943001615D5 /* ImageTwoLabelsView.swift */,
+				F6FFD26C2A2B975B001615D5 /* StarsRatingView.swift */,
+			);
+			path = Fasting;
+			sourceTree = "<group>";
+		};
+		F6FFD2652A2B8F86001615D5 /* Fasting */ = {
+			isa = PBXGroup;
+			children = (
+				F6FFD2662A2B8FAC001615D5 /* SetupFastingViewController.swift */,
+				F6FFD26E2A2B9FE3001615D5 /* SetupFastingInfoViewController.swift */,
 			);
 			path = Fasting;
 			sourceTree = "<group>";
@@ -593,23 +625,29 @@
 				F6FFD2602A2A77AA001615D5 /* FastingArcProgressBarView.swift in Sources */,
 				F69E69B029F06B770032068E /* ProductInfoTableViewCell.swift in Sources */,
 				F6EFDA2E2981E22100FC3CCB /* FFPhoneNumberViewController.swift in Sources */,
+				F6FFD2732A2BA61D001615D5 /* WarningCollectionViewCell.swift in Sources */,
+				F6FFD2712A2BA5A5001615D5 /* FastingSetupInfoCollectionViewCell.swift in Sources */,
 				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
 				F6BB3FF82A23CD43002883D1 /* FFCookingStep.swift in Sources */,
 				F69E69A929F04CCB0032068E /* Meals.swift in Sources */,
+				F6FFD2692A2B92C3001615D5 /* FastingVariantCollectionViewCell.swift in Sources */,
 				F6BB3FFD2A23D1C1002883D1 /* ProductCreatingViewController.swift in Sources */,
 				F6B700EB297199390066B975 /* AppDelegate.swift in Sources */,
 				F6FF10692984738100BD72CF /* FFUserInfoTableViewCell.swift in Sources */,
 				F69E69AD29F061080032068E /* RecipesCategoriesCollectionViewCell.swift in Sources */,
 				F6B7010B2971A18B0066B975 /* FFFastingViewController.swift in Sources */,
 				F6BB3FFB2A23D10D002883D1 /* ProductAddingViewController.swift in Sources */,
+				F6FFD26F2A2B9FE3001615D5 /* SetupFastingInfoViewController.swift in Sources */,
 				F69E69AB29F0599E0032068E /* HeaderCollectionViewCell.swift in Sources */,
 				F6B700ED297199390066B975 /* SceneDelegate.swift in Sources */,
+				F6FFD26B2A2B94D7001615D5 /* LabelCollectionViewCell.swift in Sources */,
 				F65727F929E2DF1300FA7B57 /* ArcProgressBarView.swift in Sources */,
 				F6FF105C2982C68900BD72CF /* FFBaseAuthViewController.swift in Sources */,
 				F6B7010D2971A1C70066B975 /* FFSettingsViewController.swift in Sources */,
 				F6EFDA292981C8B500FC3CCB /* AuthorizationManager.swift in Sources */,
 				F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */,
 				F6FFD2622A2A7A3A001615D5 /* FastingType.swift in Sources */,
+				F6FFD2672A2B8FAC001615D5 /* SetupFastingViewController.swift in Sources */,
 				F65F9D2C29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift in Sources */,
 				F6B062BB2A252DA3004DB198 /* FFRecipe.swift in Sources */,
 				F6B701162971A7520066B975 /* UIView+ext.swift in Sources */,
@@ -617,6 +655,7 @@
 				F6622A5329D22C5B0097694F /* FFDailyFastingTimerCollectionViewCell.swift in Sources */,
 				F6F647DC29A108FA0028F76D /* Asset.swift in Sources */,
 				F65F9D2A29EDBED800CBF1D2 /* RecipeInfoCollectionViewCell.swift in Sources */,
+				F6FFD2752A2BA699001615D5 /* ButtonCollectionViewCell.swift in Sources */,
 				F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */,
 				F6FFD2642A2AA943001615D5 /* ImageTwoLabelsView.swift in Sources */,
 				F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */,
@@ -633,6 +672,7 @@
 				F6B701262974A4030066B975 /* FFDateModel.swift in Sources */,
 				F601331929FADF2500AE5C2A /* RecepiesDetailViewController.swift in Sources */,
 				F6B7A5942A28023C00A8ADCB /* FastingStatCollectionViewCell.swift in Sources */,
+				F6FFD26D2A2B975B001615D5 /* StarsRatingView.swift in Sources */,
 				F6BB3FF22A23C646002883D1 /* FFGender.swift in Sources */,
 				F6B7A5922A27F69800A8ADCB /* FastingInfoCardCollectionViewCell.swift in Sources */,
 			);
