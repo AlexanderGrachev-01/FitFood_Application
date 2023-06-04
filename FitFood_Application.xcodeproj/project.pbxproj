@@ -95,6 +95,11 @@
 		F6FFD29E2A2CA6B4001615D5 /* HelpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD29C2A2CA6B4001615D5 /* HelpType.swift */; };
 		F6FFD29F2A2CA6B4001615D5 /* OnboardingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD29D2A2CA6B4001615D5 /* OnboardingType.swift */; };
 		F6FFD2A22A2CA74A001615D5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2A12A2CA74A001615D5 /* OnboardingViewController.swift */; };
+		F6FFD2A52A2CBA5E001615D5 /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2A42A2CBA5E001615D5 /* NetworkingClient.swift */; };
+		F6FFD2A82A2CBAFE001615D5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F6FFD2A72A2CBAFE001615D5 /* Alamofire */; };
+		F6FFD2AA2A2CBBD3001615D5 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2A92A2CBBD3001615D5 /* NetworkingError.swift */; };
+		F6FFD2AC2A2CBCD7001615D5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2AB2A2CBCD7001615D5 /* Endpoint.swift */; };
+		F6FFD2AE2A2CC12A001615D5 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFD2AD2A2CC12A001615D5 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +187,10 @@
 		F6FFD29C2A2CA6B4001615D5 /* HelpType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpType.swift; sourceTree = "<group>"; };
 		F6FFD29D2A2CA6B4001615D5 /* OnboardingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingType.swift; sourceTree = "<group>"; };
 		F6FFD2A12A2CA74A001615D5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		F6FFD2A42A2CBA5E001615D5 /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
+		F6FFD2A92A2CBBD3001615D5 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		F6FFD2AB2A2CBCD7001615D5 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		F6FFD2AD2A2CC12A001615D5 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6EFDA1E2981C2F300FC3CCB /* FirebaseAnalytics in Frameworks */,
+				F6FFD2A82A2CBAFE001615D5 /* Alamofire in Frameworks */,
 				F6EFDA202981C2F300FC3CCB /* FirebaseAuth in Frameworks */,
 				F6EFDA222981C2F300FC3CCB /* FirebaseDatabase in Frameworks */,
 				F6EFDA242981C2F300FC3CCB /* FirebaseFirestore in Frameworks */,
@@ -300,6 +310,7 @@
 				F6FFD29D2A2CA6B4001615D5 /* OnboardingType.swift */,
 				F69E69A829F04CCB0032068E /* Meals.swift */,
 				F6FFD2612A2A7A3A001615D5 /* FastingType.swift */,
+				F6FFD2A92A2CBBD3001615D5 /* NetworkingError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -333,7 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				F6BB40052A24F66C002883D1 /* FitFood_Application.entitlements */,
-				F6B700FE297199DB0066B975 /* APIClient */,
+				F6FFD2A32A2CBA40001615D5 /* Networking */,
 				F6B7010129719A1A0066B975 /* Managers */,
 				F6B7010029719A0E0066B975 /* Models */,
 				F69E69A729F04CAE0032068E /* Enums */,
@@ -344,13 +355,6 @@
 				F6B701142971A6FC0066B975 /* Extensions */,
 			);
 			path = FitFood_Application;
-			sourceTree = "<group>";
-		};
-		F6B700FE297199DB0066B975 /* APIClient */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIClient;
 			sourceTree = "<group>";
 		};
 		F6B700FF297199F30066B975 /* Controllers */ = {
@@ -564,6 +568,16 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		F6FFD2A32A2CBA40001615D5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F6FFD2A42A2CBA5E001615D5 /* NetworkingClient.swift */,
+				F6FFD2AB2A2CBCD7001615D5 /* Endpoint.swift */,
+				F6FFD2AD2A2CC12A001615D5 /* Endpoints.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -588,6 +602,7 @@
 				F6EFDA232981C2F300FC3CCB /* FirebaseFirestore */,
 				F6EFDA252981C2F300FC3CCB /* FirebaseStorage */,
 				F65727FE29E44B6E00FA7B57 /* Atlantis */,
+				F6FFD2A72A2CBAFE001615D5 /* Alamofire */,
 			);
 			productName = FitFood_Application;
 			productReference = F6B700E7297199390066B975 /* FitFood_Application.app */;
@@ -621,6 +636,7 @@
 				F6B701172971A82F0066B975 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F6EFDA1C2981C2F300FC3CCB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F65727FD29E44B6D00FA7B57 /* XCRemoteSwiftPackageReference "atlantis" */,
+				F6FFD2A62A2CBAFE001615D5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = F6B700E8297199390066B975 /* Products */;
 			projectDirPath = "";
@@ -652,6 +668,7 @@
 			files = (
 				F6BB3FFF2A23D574002883D1 /* TextFieldTableViewCell.swift in Sources */,
 				F6FFD2962A2CA636001615D5 /* GenderTableViewCell.swift in Sources */,
+				F6FFD2A52A2CBA5E001615D5 /* NetworkingClient.swift in Sources */,
 				F6FFD29E2A2CA6B4001615D5 /* HelpType.swift in Sources */,
 				F6FF106629843B9700BD72CF /* FFUser.swift in Sources */,
 				F6BB3FF42A23C671002883D1 /* FFActivityFactor.swift in Sources */,
@@ -692,7 +709,9 @@
 				F6FFD26B2A2B94D7001615D5 /* LabelCollectionViewCell.swift in Sources */,
 				F65727F929E2DF1300FA7B57 /* ArcProgressBarView.swift in Sources */,
 				F6FF105C2982C68900BD72CF /* FFBaseAuthViewController.swift in Sources */,
+				F6FFD2AE2A2CC12A001615D5 /* Endpoints.swift in Sources */,
 				F6B7010D2971A1C70066B975 /* FFSettingsViewController.swift in Sources */,
+				F6FFD2AA2A2CBBD3001615D5 /* NetworkingError.swift in Sources */,
 				F6EFDA292981C8B500FC3CCB /* AuthorizationManager.swift in Sources */,
 				F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */,
 				F6FFD2622A2A7A3A001615D5 /* FastingType.swift in Sources */,
@@ -722,6 +741,7 @@
 				F65727F329E1A7DB00FA7B57 /* FoodContentsView.swift in Sources */,
 				F6B701262974A4030066B975 /* FFDateModel.swift in Sources */,
 				F601331929FADF2500AE5C2A /* RecepiesDetailViewController.swift in Sources */,
+				F6FFD2AC2A2CBCD7001615D5 /* Endpoint.swift in Sources */,
 				F6B7A5942A28023C00A8ADCB /* FastingStatCollectionViewCell.swift in Sources */,
 				F6FFD26D2A2B975B001615D5 /* StarsRatingView.swift in Sources */,
 				F6BB3FF22A23C646002883D1 /* FFGender.swift in Sources */,
@@ -972,6 +992,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		F6FFD2A62A2CBAFE001615D5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1009,6 +1037,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F6EFDA1C2981C2F300FC3CCB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		F6FFD2A72A2CBAFE001615D5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6FFD2A62A2CBAFE001615D5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

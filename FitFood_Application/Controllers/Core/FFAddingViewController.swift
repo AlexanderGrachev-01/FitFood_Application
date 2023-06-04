@@ -12,6 +12,7 @@ final class FFAddingViewController: FFBaseViewController {
     // MARK: - Properties
 
     private let segmentsArray = [Asset.Strings.recent, Asset.Strings.favorites]
+    private var products: [FFProduct] = []
     
     // MARK: - Subviews
     
@@ -26,6 +27,22 @@ final class FFAddingViewController: FFBaseViewController {
         super.viewDidLoad()
         
         configureViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        NetworkingClient.request(endpoint: Endpoints.getProducts) { [weak self] res, error in
+            guard let self, let res else {
+                print("error")
+                return
+            }
+
+            self.products = res
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -125,7 +142,7 @@ extension FFAddingViewController: UITableViewDelegate {
 
 extension FFAddingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -138,6 +155,8 @@ extension FFAddingViewController: UITableViewDataSource {
         cell.onChangeFavourite = { isFavourite in
             print(isFavourite)
         }
+
+        cell.configure(product: products[indexPath.item])
         
         return cell
     }

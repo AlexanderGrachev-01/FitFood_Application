@@ -95,7 +95,6 @@ private extension ProductInfoTableViewCell {
     }
     
     func configureKcalLabel() {
-        kcalLabel.text = "47 kcal"
         kcalLabel.textColor = Asset.Colors.lightGray
         kcalLabel.font = .systemFont(ofSize: 17, weight: .regular)
         kcalLabel.textAlignment = .right
@@ -107,7 +106,6 @@ private extension ProductInfoTableViewCell {
     }
     
     func configureNameLabel() {
-        nameLabel.text = "Fruit Salad"
         nameLabel.textColor = Asset.Colors.label
         nameLabel.font = .systemFont(ofSize: 17, weight: .medium)
         contentView.addSubview(nameLabel)
@@ -129,7 +127,6 @@ private extension ProductInfoTableViewCell {
     }
     
     func configureProteinLabel() {
-        proteinLabel.text = "30"
         proteinLabel.font = .systemFont(ofSize: 14, weight: .regular)
         proteinLabel.textColor = Asset.Colors.lightGray
         contentView.addSubview(proteinLabel)
@@ -151,7 +148,6 @@ private extension ProductInfoTableViewCell {
     }
     
     func configureFatLabel() {
-        fatLabel.text = "30"
         fatLabel.font = .systemFont(ofSize: 14, weight: .regular)
         fatLabel.textColor = Asset.Colors.lightGray
         contentView.addSubview(fatLabel)
@@ -173,7 +169,6 @@ private extension ProductInfoTableViewCell {
     }
     
     func configureCarbsLabel() {
-        carbsLabel.text = "30"
         carbsLabel.font = .systemFont(ofSize: 14, weight: .regular)
         carbsLabel.textColor = Asset.Colors.lightGray
         contentView.addSubview(carbsLabel)
@@ -189,7 +184,7 @@ private extension ProductInfoTableViewCell {
 extension ProductInfoTableViewCell {
     func configure(product: FFProduct) {
         nameLabel.text = product.name
-        kcalLabel.text = "\(product.calories)"
+        kcalLabel.text = "\(Int(product.calories)) kcal"
         carbsLabel.text = "\(product.carbs)"
         fatLabel.text = "\(product.fat)"
         proteinLabel.text = "\(product.protein)"
