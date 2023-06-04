@@ -32,6 +32,13 @@ final class RecipeInfoCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        nameLabel.text = ""
+        kcalLabel.text = ""
+    }
 }
 
 // MARK: - Layout
@@ -58,13 +65,12 @@ private extension RecipeInfoCollectionViewCell {
     }
     
     func configureNameLabel() {
-        nameLabel.text = "Fruit salad"
         nameLabel.font = .systemFont(ofSize: 16, weight: .medium)
         nameLabel.textColor = Asset.Colors.label
         contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints {
             $0.top.equalTo(photoImageView.snp.bottom).offset(Constants.nameLabelTopOffset)
-            $0.left.equalToSuperview()
+            $0.left.right.equalToSuperview()
         }
     }
     
@@ -80,7 +86,6 @@ private extension RecipeInfoCollectionViewCell {
     }
     
     func configureKcalLabel() {
-        kcalLabel.text = "240 kcal"
         kcalLabel.font = .systemFont(ofSize: 14, weight: .regular)
         kcalLabel.textColor = Asset.Colors.label
         contentView.addSubview(kcalLabel)
@@ -110,6 +115,17 @@ private extension RecipeInfoCollectionViewCell {
             $0.centerY.equalTo(personsImageView)
             $0.left.equalTo(personsImageView.snp.right).offset(Constants.labelLeftOffset)
         }
+    }
+}
+
+// MARK: - Public configure
+
+extension RecipeInfoCollectionViewCell {
+    func configure(recipe: FFRecipe?) {
+        guard let recipe else { return }
+
+        nameLabel.text = recipe.name
+        kcalLabel.text = "\(recipe.kcal) kcal"
     }
 }
 

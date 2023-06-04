@@ -73,7 +73,6 @@ private extension CheckBoxCollectionViewCell {
     }
     
     func configureNameLabel() {
-        nameLabel.text = "Vegetables"
         nameLabel.font = .systemFont(ofSize: 20, weight: .regular)
         nameLabel.textColor = Asset.Colors.label
         contentView.addSubview(nameLabel)
@@ -81,6 +80,16 @@ private extension CheckBoxCollectionViewCell {
             $0.centerY.equalToSuperview()
             $0.left.equalTo(checkButton.snp.right).offset(Constants.nameLabelOffset)
         }
+    }
+}
+
+// MARK: - Public configure
+
+extension CheckBoxCollectionViewCell {
+    func configure(text: String?) {
+        guard let text else { return }
+        
+        nameLabel.text = text
     }
 }
 

@@ -16,7 +16,7 @@ final class СookingStepCollectionViewCell: UICollectionViewCell {
 
     private var stepLabel = UILabel()
     private var timeLabel = UILabel()
-    private var textView = UITextView()
+    private var textLabel = UILabel()
 
     // MARK: - Lifecycle
 
@@ -39,11 +39,10 @@ private extension СookingStepCollectionViewCell {
         contentView.layer.cornerRadius = Constants.radius
         configureStepLabel()
         configureTimeLabel()
-        configureTextView()
+        configureTextLabel()
     }
 
     func configureStepLabel() {
-        stepLabel.text = "Step 1"
         stepLabel.font = .systemFont(ofSize: 20, weight: .medium)
         stepLabel.textColor = Asset.Colors.green
         contentView.addSubview(stepLabel)
@@ -54,7 +53,6 @@ private extension СookingStepCollectionViewCell {
     }
 
     func configureTimeLabel() {
-        timeLabel.text = "10 min"
         timeLabel.font = .systemFont(ofSize: 16, weight: .regular)
         timeLabel.textColor = Asset.Colors.lightGray
         timeLabel.textAlignment = .right
@@ -65,30 +63,30 @@ private extension СookingStepCollectionViewCell {
         }
     }
 
-    func configureTextView() {
-        textView.text = "NNCecoinwondoindwoinedoinddew NNCecoinwondoindwoinedoinddew NNCecoinwondoindwoinedoinddew NNCecoinwondoindwoinedoinddew enfienfwoifnof"
-        textView.font = .systemFont(ofSize: 20, weight: .regular)
-        textView.textColor = Asset.Colors.label
-        textView.backgroundColor = .clear
-        contentView.addSubview(textView)
-        textView.snp.makeConstraints {
+    func configureTextLabel() {
+        textLabel.font = .systemFont(ofSize: 18, weight: .regular)
+        textLabel.textColor = Asset.Colors.label
+        textLabel.numberOfLines = 4
+        textLabel.adjustsFontSizeToFitWidth = true
+        textLabel.minimumScaleFactor = 0.6
+        contentView.addSubview(textLabel)
+        textLabel.snp.makeConstraints {
             $0.top.equalTo(stepLabel.snp.bottom).offset(Constants.TextView.top)
             $0.left.equalToSuperview().offset(Constants.TextView.left)
             $0.right.equalToSuperview().offset(-Constants.TextView.right)
-            $0.bottom.equalToSuperview().offset(-Constants.TextView.bottom)
         }
     }
 }
 
 // MARK: - Public configure
 
-private extension СookingStepCollectionViewCell {
+extension СookingStepCollectionViewCell {
     func configure(step: FFCookingStep?) {
         guard let step = step else { return }
 
         stepLabel.text = "Step \(step.number)"
         timeLabel.text = "\(step.time) min"
-        textView.text = step.text
+        textLabel.text = step.text
     }
 }
 

@@ -8,6 +8,16 @@
 import UIKit
 
 class FoodContentsView: UIView {
+    // MARK: - Properties
+
+    private var aimProtein = 102.0
+    private var aimFat = 60.0
+    private var aimCarbs = 180.0
+
+    private var curProtein = 0.0
+    private var curFat = 0.0
+    private var curCarbs = 0.0
+
     // MARK: - Subviews
     
     private var proteinImageView = UIImageView()
@@ -42,6 +52,7 @@ private extension FoodContentsView {
         configureFatProgressView()
         configureCarbsImageView()
         configureCarbsProgressView()
+        resetProgress()
     }
     
     func configureProteinImageView() {
@@ -57,7 +68,6 @@ private extension FoodContentsView {
     
     func congigureProteinProgressView() {
         proteinProgressView.configure(Asset.Strings.protein, Asset.Colors.lightBlue, Asset.Colors.blue)
-        proteinProgressView.calculateScore(50.0, 102.0, "g")
         addSubview(proteinProgressView)
         proteinProgressView.snp.makeConstraints {
             $0.height.equalTo(Constants.progressViewsHeight)
@@ -80,7 +90,6 @@ private extension FoodContentsView {
     
     func configureFatProgressView() {
         fatProgressView.configure(Asset.Strings.fat, Asset.Colors.progressFatLight, Asset.Colors.progressFat)
-        fatProgressView.calculateScore(32.0, 60.0, "g")
         addSubview(fatProgressView)
         fatProgressView.snp.makeConstraints {
             $0.height.equalTo(Constants.progressViewsHeight)
@@ -103,7 +112,6 @@ private extension FoodContentsView {
     
     func configureCarbsProgressView() {
         carbsProgressView.configure(Asset.Strings.carbs, Asset.Colors.lightOrange, Asset.Colors.orange)
-        carbsProgressView.calculateScore(120.0, 180.0, "g")
         addSubview(carbsProgressView)
         carbsProgressView.snp.makeConstraints {
             $0.height.equalTo(Constants.progressViewsHeight)
@@ -111,6 +119,34 @@ private extension FoodContentsView {
             $0.left.equalTo(carbsImageView.snp.right).offset(Constants.progressViewsLeftOffset)
             $0.right.equalToSuperview()
         }
+    }
+}
+
+// MARK: - Action
+
+private extension FoodContentsView {
+    func resetProgress() {
+        proteinProgressView.calculateScore(curProtein, aimProtein, "g")
+        fatProgressView.calculateScore(curFat, aimFat, "g")
+        carbsProgressView.calculateScore(curCarbs, aimCarbs, "g")
+    }
+}
+
+// MARK: - Public configure
+
+extension FoodContentsView {
+    func setAim(protein: Double, fat: Double, carbs: Double) {
+        aimProtein = protein
+        aimFat = fat
+        aimCarbs = carbs
+        resetProgress()
+    }
+
+    func setCurrent(protein: Double, fat: Double, carbs: Double) {
+        curProtein = protein
+        curFat = fat
+        curCarbs = carbs
+        resetProgress()
     }
 }
 

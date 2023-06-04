@@ -9,6 +9,12 @@ import UIKit
 
 final class RecepiesDetailViewController: FFBaseViewController {
     // MARK: - Properties
+
+    var recipe: FFRecipe? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     // MARK: - Subviews
     
@@ -18,7 +24,7 @@ final class RecepiesDetailViewController: FFBaseViewController {
     )
     
     // MARK: - LifeCycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,9 +86,9 @@ extension RecepiesDetailViewController: UICollectionViewDataSource {
         case .info:
             return 1
         case .ingredients:
-            return 6
+            return recipe?.ingredients.count ?? 0
         case .cookingSteps:
-            return 4
+            return recipe?.cookingSteps.count ?? 0
         }
     }
     
@@ -99,6 +105,8 @@ extension RecepiesDetailViewController: UICollectionViewDataSource {
             ) as? RecipeDetilsCollectionViewCell else {
                 return UICollectionViewCell()
             }
+
+            cell.configure(recipe: recipe)
             
             return cell
             
@@ -109,7 +117,9 @@ extension RecepiesDetailViewController: UICollectionViewDataSource {
             ) as? CheckBoxCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            
+
+            cell.configure(text: recipe?.ingredients[indexPath.item])
+
             return cell
             
         case .cookingSteps:
@@ -119,6 +129,8 @@ extension RecepiesDetailViewController: UICollectionViewDataSource {
             ) as? СookingStepCollectionViewCell else {
                 return UICollectionViewCell()
             }
+
+            cell.configure(step: recipe?.cookingSteps[indexPath.item])
 
             return cell
         }

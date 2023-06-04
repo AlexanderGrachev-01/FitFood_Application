@@ -13,6 +13,9 @@ final class FFRecipesViewController: FFBaseViewController {
     private var sections = ["Popular menus", "Сategories", "Recently"]
     private var isPopularCovered = true
     private var isСategoriesCovered = true
+
+    private var recipe: [FFRecipe] = []
+    private var popularRecipe: [FFRecipe] = []
     
     // MARK: - Subviews
     
@@ -28,6 +31,22 @@ final class FFRecipesViewController: FFBaseViewController {
         super.viewDidLoad()
         
         configureViews()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        NetworkingClient.request(endpoint: Endpoints.getRecipes) { [weak self] res, error in
+            guard let self, let res else {
+                print("error")
+                return
+            }
+
+            self.recipe = res
+            self.popularRecipe = res.filter { $0.category == "Popular"}
+            collectionView.reloadData()
+            collectionView.isHidden = false
+        }
     }
 }
 
@@ -69,6 +88,7 @@ private extension FFRecipesViewController {
         )
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = Asset.Colors.background
+        collectionView.isHidden = true
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
@@ -85,10 +105,30 @@ private extension FFRecipesViewController {
 
 extension FFRecipesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(
-            RecepiesDetailViewController(),
-            animated: true
-        )
+        guard let section = CollectionSectionType(rawValue: indexPath.section) else {
+            return
+        }
+
+        switch section {
+        case .popular:
+            guard indexPath.item != 0 else { return }
+
+            let vc = RecepiesDetailViewController()
+
+            vc.recipe = popularRecipe[indexPath.item - 1]
+
+            navigationController?.pushViewController(vc, animated: true)
+            return
+        case .categories:
+            return
+        case .recently:
+            guard indexPath.item != 0 else { return }
+
+            let vc = RecepiesDetailViewController()
+
+            navigationController?.pushViewController(vc, animated: true)
+            return
+        }
     }
 }
 
@@ -106,7 +146,11 @@ extension FFRecipesViewController: UICollectionViewDataSource {
         
         switch section {
         case .popular:
-            return isPopularCovered ? 5 : 10
+            guard !(popularRecipe.isEmpty) else {
+                return 0
+            }
+
+            return isPopularCovered ? 5 : popularRecipe.count + 1
         case .categories:
             return isСategoriesCovered ? 5 : Categories.allCases.count
         case .recently:
@@ -149,6 +193,8 @@ extension FFRecipesViewController: UICollectionViewDataSource {
             ) as? RecipeInfoCollectionViewCell else {
                 return UICollectionViewCell()
             }
+
+            cell.configure(recipe: popularRecipe[indexPath.item - 1])
             
             return cell
         case .categories:

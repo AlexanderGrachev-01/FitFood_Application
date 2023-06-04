@@ -8,10 +8,11 @@
 import Foundation
 
 struct FFProduct: Codable {
+    var id: String
     var name: String
     var calories: Double
     var carbs: Double
     var fat: Double
     var protein: Double
-    var AverageWeight: Int?
+    var averageWeight: Int?
 }

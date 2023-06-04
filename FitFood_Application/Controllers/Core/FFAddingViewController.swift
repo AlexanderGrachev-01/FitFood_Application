@@ -29,8 +29,8 @@ final class FFAddingViewController: FFBaseViewController {
         configureViews()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
         NetworkingClient.request(endpoint: Endpoints.getProducts) { [weak self] res, error in
             guard let self, let res else {

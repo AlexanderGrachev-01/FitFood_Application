@@ -60,7 +60,6 @@ private extension RecipeDetilsCollectionViewCell {
     }
     
     func configureNameLabel() {
-        nameLabel.text = "Fruit salad"
         nameLabel.font = .systemFont(ofSize: 24, weight: .medium)
         nameLabel.textColor = Asset.Colors.white
         nameLabel.backgroundColor = .black.withAlphaComponent(Constants.backgroundAlpha)
@@ -109,7 +108,6 @@ private extension RecipeDetilsCollectionViewCell {
     }
     
     func configureKcalLabel() {
-        kcalLabel.text = "240 kcal"
         kcalLabel.font = .systemFont(ofSize: 14, weight: .regular)
         kcalLabel.textColor = Asset.Colors.white
         kcalLabel.backgroundColor = .black.withAlphaComponent(Constants.backgroundAlpha)
@@ -127,6 +125,22 @@ private extension RecipeDetilsCollectionViewCell {
             $0.top.equalTo(imageView.snp.bottom).offset(Constants.foodContentsViewTopOffset)
             $0.left.right.equalToSuperview()
         }
+    }
+}
+
+// MARK: - Public configure
+
+extension RecipeDetilsCollectionViewCell {
+    func configure(recipe: FFRecipe?) {
+        guard let recipe else { return }
+
+        nameLabel.text = recipe.name
+        kcalLabel.text = "\(recipe.kcal) kcal"
+        foodContentsView.setCurrent(
+            protein: recipe.protein,
+            fat: recipe.fat,
+            carbs:  recipe.carbs
+        )
     }
 }
 

@@ -8,6 +8,7 @@
 import Foundation
 
 struct FFRecipe: Codable {
+    var id: String
     var name: String
     var kcal: Int
     var protein: Double
@@ -15,4 +16,5 @@ struct FFRecipe: Codable {
     var carbs: Double
     var ingredients: [String]
     var cookingSteps: [FFCookingStep]
+    var category: String
 }
