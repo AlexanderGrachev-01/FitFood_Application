@@ -20,10 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         
-//        guard Auth.auth().currentUser != nil else {
-//            window?.rootViewController = UINavigationController(rootViewController: FFWelcomePageViewController())
-//            return
-//        }
+        guard Auth.auth().currentUser != nil else {
+            window?.rootViewController = UINavigationController(rootViewController: FFWelcomePageViewController())
+            return
+        }
         
         window?.rootViewController = FFTabBarController()
     }

@@ -16,28 +16,29 @@ enum Asset {
         
         static let white: UIColor = .white
         static let label: UIColor = .label
-        static let background = UIColor(named: "background") ?? UIColor()
-        static let secondaryBackground = UIColor(named: "secondaryBackground") ?? UIColor()
-        static let separator = UIColor(named: "separator") ?? UIColor()
-        static let selectedDate = UIColor(named: "selectedDate") ?? UIColor()
-        static let blue = UIColor(named: "blue") ?? UIColor()
-        static let primary50 = UIColor(named: "primary50") ?? UIColor()
-        static let secondary500 = UIColor(named: "secondary500") ?? UIColor()
-        static let orangeDark = UIColor(named: "orangeDark") ?? UIColor()
-        static let green = UIColor(named: "green") ?? UIColor()
-        static let lightGreen = UIColor(named: "lightGreen") ?? UIColor()
-        static let lightBlue = UIColor(named: "lightBlue") ?? UIColor()
-        static let orange = UIColor(named: "orange") ?? UIColor()
-        static let lightOrange = UIColor(named: "lightOrange") ?? UIColor()
-        static let progressFat = UIColor(named: "progressFat") ?? UIColor()
-        static let progressFatLight = UIColor(named: "progressFatLight") ?? UIColor()
-        static let arcProgressViewBackground = UIColor(named: "arcProgressViewBackground") ?? UIColor()
-        static let arcProgressView = UIColor(named: "arcProgressView") ?? UIColor()
-        static let darkBlue = UIColor(named: "darkBlue") ?? UIColor()
-        static let categoryCellBackground = UIColor(named: "categoryCellBackground") ?? UIColor()
-        static let lightGray = UIColor(named: "lightGray") ?? UIColor()
-        static let errorRed = UIColor(named: "errorRed") ?? UIColor()
-        static let fatingTypeViewBackground = UIColor(named: "fatingTypeViewBackground") ?? UIColor()
+        static let background = UIColor(named: "background") ?? .white
+        static let secondaryBackground = UIColor(named: "secondaryBackground") ?? .white
+        static let separator = UIColor(named: "separator") ?? .white
+        static let selectedDate = UIColor(named: "selectedDate") ?? .white
+        static let blue = UIColor(named: "blue") ?? .white
+        static let primary50 = UIColor(named: "primary50") ?? .white
+        static let secondary500 = UIColor(named: "secondary500") ?? .white
+        static let orangeDark = UIColor(named: "orangeDark") ?? .white
+        static let green = UIColor(named: "green") ?? .white
+        static let lightGreen = UIColor(named: "lightGreen") ?? .white
+        static let lightBlue = UIColor(named: "lightBlue") ?? .white
+        static let orange = UIColor(named: "orange") ?? .white
+        static let lightOrange = UIColor(named: "lightOrange") ?? .white
+        static let progressFat = UIColor(named: "progressFat") ?? .white
+        static let progressFatLight = UIColor(named: "progressFatLight") ?? .white
+        static let arcProgressViewBackground = UIColor(named: "arcProgressViewBackground") ?? .white
+        static let arcProgressView = UIColor(named: "arcProgressView") ?? .white
+        static let darkBlue = UIColor(named: "darkBlue") ?? .white
+        static let categoryCellBackground = UIColor(named: "categoryCellBackground") ?? .white
+        static let lightGray = UIColor(named: "lightGray") ?? .white
+        static let errorRed = UIColor(named: "errorRed") ?? .white
+        static let fatingTypeViewBackground = UIColor(named: "fatingTypeViewBackground") ?? .white
+        static let paleGreen = UIColor(named: "paleGreen") ?? .white
     }
     
     // MARK: - Strings
@@ -88,6 +89,40 @@ enum Asset {
         static let hOfMeal = "h. meal period"
         static let startFasting = "Start fasting"
         static let difficultyLevel = "Difficulty level"
+        static let countingCalories = "Counting calories"
+        static let activityTracker = "Activity tracker"
+        static let healthyEating = "Healthy eating"
+        static let analyticsAndStatistics = "Analytics and statistics"
+        static let maintainingWaterBalance = "Maintaining water balance"
+        static let next = "Next"
+        static let specifyYourGender = "Specify your gender"
+        static let weNeedGenderToCalculateCalorie = "We need to know your gender in order to correctly calculate your daily calorie requirement"
+        static let specifyYourAge = "Specify your age"
+        static let years = "years"
+        static let specifyYourHeight = "Specify your height"
+        static let cm = "cm"
+        static let yourMainGoal = "Your main goal"
+        static let maintainWeight = "Maintain current weight"
+        static let gainWeight = "Gain weight"
+        static let buildMuscle = "Build muscle"
+        static let specifyCurrentWeight = "Specify your current weight"
+        static let kg = "kg"
+        static let specifyDesiredWeight = "Specify your desired weight"
+        static let indicateYourActivity = "Indicate your activity"
+        static let levelOfActivityHelpCalculateCalorie = "The level of your daily activity will help you calculate your calorie requirement more accurately"
+        static let slightlyActive = "Slightly active"
+        static let moderatelyActive = "Moderately active"
+        static let active = "Active"
+        static let veryActive = "Very active"
+        static let howCanAppHelp = "How can our app help you?"
+        static let specifyTypeOfFood = "Specify the type of food you want to stick to"
+        static let recommendationsOfRecipesYourPreferences = "Recommendations of recipes of dishes will be selected according to your preferences"
+        static let classic = "Classic"
+        static let pescetarianism = "Pescetarianism"
+        static let vegetarianism = "Vegetarianism"
+        static let veganism = "Veganism"
+        static let female = "Female"
+        static let male = "Male"
     }
     
     // MARK: - Images
@@ -120,6 +155,8 @@ enum Asset {
         static let minusButton = UIImage(named: "minusButton") ?? UIImage()
         static let checkRadio = UIImage(named: "checkRadio") ?? UIImage()
         static let checkRadioSelected = UIImage(named: "checkRadioSelected") ?? UIImage()
+        static let checkboxEmpty = UIImage(named: "checkboxEmpty") ?? UIImage()
+        static let checkboxFilled = UIImage(named: "checkboxFilled") ?? UIImage()
         
         // Views
         static let protein = UIImage(named: "proteinImage") ?? UIImage()

@@ -146,7 +146,7 @@ extension FFSettingsViewController {
             try? Auth.auth().signOut()
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let sceneDelegate = windowScene.delegate as? SceneDelegate {
-                sceneDelegate.window?.rootViewController = FFWelcomePageViewController()
+                sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: FFWelcomePageViewController())
             }
         }
         alert.addAction(logout)

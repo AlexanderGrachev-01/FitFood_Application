@@ -8,17 +8,18 @@
 import Foundation
 
 struct FFUser: Codable {
-    let id: String
-    let firstName: String
-    let lastName: String
-    let gender: FFGender
-    let height: Int
-    let weight: Int
-    let age: Int
-    let activityFactor: FFActivityFactor
-    let breakfast: [FFProduct]
-    let lunch: [FFProduct]
-    let diner: [FFProduct]
-    let snaks: [FFProduct]
-    let favoritesProducts: [FFProduct]
+    var id: String
+    var firstName: String
+    var lastName: String
+    var gender: FFGender
+    var height: Int
+    var weight: Double
+    var desiredWeight: Double
+    var age: Int
+    var activityFactor: FFActivityFactor
+    var breakfast: [FFProduct]
+    var lunch: [FFProduct]
+    var diner: [FFProduct]
+    var snaks: [FFProduct]
+    var favoritesProducts: [FFProduct]
 }
