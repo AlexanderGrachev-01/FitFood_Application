@@ -16,6 +16,7 @@ final class FFDailyViewController: FFBaseViewController {
     private let healthStore = HKHealthStore()
     private var stepGoal = 0.0
     private var stepCount = 0.0
+    private var userData: FFUser?
     
     // MARK: - Subviews
     
@@ -43,6 +44,7 @@ final class FFDailyViewController: FFBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        getUserData()
         guard HKHealthStore.isHealthDataAvailable(),
               let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
             return
@@ -136,7 +138,11 @@ extension FFDailyViewController {
         calendarView.reloadData()
         calendarView.scrollToItem(at: [0, 10], at: .centeredHorizontally, animated: false)
     }
+}
 
+// MARK: - Utils
+
+extension FFDailyViewController {
     private func retrieveStepCount() {
         let calendar = Calendar.current
         let startDate = calendar.startOfDay(for: Date())
@@ -171,6 +177,15 @@ extension FFDailyViewController {
 
         healthStore.execute(query)
     }
+
+    private func getUserData() {
+        guard let data = UserDefaults.standard.value(forKey: "UserData") as? Data else {
+            return
+        }
+
+        userData = try? PropertyListDecoder().decode(FFUser.self, from: data)
+        collectionView.reloadData()
+    }
 }
 
 // MARK: - UICollectionViewDelegate
@@ -195,6 +210,9 @@ extension FFDailyViewController: UICollectionViewDataSource {
             ) as? FFDailyStatCollectionViewCell else {
                 return UICollectionViewCell()
             }
+
+            cell.configure(data: userData)
+
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(

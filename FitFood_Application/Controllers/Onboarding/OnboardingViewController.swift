@@ -145,6 +145,7 @@ extension OnboardingViewController {
     
     private func pushNextVC() {
         if onboardingType == .nutrition {
+            safeUserData()
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let sceneDelegate = windowScene.delegate as? SceneDelegate {
                 sceneDelegate.window?.rootViewController = FFTabBarController()
@@ -153,6 +154,18 @@ extension OnboardingViewController {
             let controller = OnboardingViewController()
             controller.onboardingType = onboardingType.nextType
             navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+
+    private func safeUserData() {
+        getUserData()
+        guard var userData, let id = AuthorizationManager.shared.verificationID else {
+            return
+        }
+
+        userData.id = id
+        AuthorizationManager.shared.saveUser(userData) { success in
+            success ? print("Data seved") : print("Saving error")
         }
     }
 }

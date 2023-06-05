@@ -133,10 +133,11 @@ extension FFAddingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.pushViewController(
-            ProductAddingViewController(),
-            animated: true
-        )
+        let vc =  ProductAddingViewController()
+
+        vc.product = products[indexPath.item]
+
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

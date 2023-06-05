@@ -8,6 +8,8 @@
 import UIKit
 
 final class ProductAddingViewController: FFBaseViewController {
+    // MARK: - Properties
+
     private var isFavourite = false {
         didSet {
             if isFavourite {
@@ -23,6 +25,11 @@ final class ProductAddingViewController: FFBaseViewController {
             }
         }
     }
+
+    var product: FFProduct?
+    private var weight = 0
+    private var error = ""
+    private var userData: FFUser?
 
     // MARK: - Subviews
 
@@ -45,6 +52,12 @@ final class ProductAddingViewController: FFBaseViewController {
 
         configureViews()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        getUserData()
+    }
 }
 
 // MARK: - Layout
@@ -66,7 +79,7 @@ private extension ProductAddingViewController {
     }
 
     func configureNameLabel() {
-        nameLabel.text = "Fruit salad"
+        nameLabel.text = product?.name ?? ""
         nameLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         nameLabel.textColor = Asset.Colors.label
         view.addSubview(nameLabel)
@@ -81,7 +94,6 @@ private extension ProductAddingViewController {
         tableView.backgroundColor = Asset.Colors.secondaryBackground
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
-        tableView.contentInset = Constants.TableView.contentInset
         tableView.backgroundColor = .black
         tableView.register(
             TextFieldTableViewCell.self,
@@ -93,7 +105,8 @@ private extension ProductAddingViewController {
         tableView.snp.makeConstraints {
             $0.height.equalTo(Constants.TableView.height)
             $0.top.equalTo(nameLabel.snp.bottom).offset(Constants.TableView.top)
-            $0.left.right.equalToSuperview()
+            $0.left.equalToSuperview().offset(Constants.TableView.side)
+            $0.right.equalToSuperview().offset(-Constants.TableView.side)
         }
     }
 
@@ -109,7 +122,7 @@ private extension ProductAddingViewController {
     }
 
     func configureProteinLabel() {
-        proteinLabel.text = "30"
+        proteinLabel.text = "\(product?.protein ?? 0.0)"
         proteinLabel.font = .systemFont(ofSize: 14, weight: .regular)
         proteinLabel.textColor = Asset.Colors.lightGray
         view.addSubview(proteinLabel)
@@ -131,7 +144,7 @@ private extension ProductAddingViewController {
     }
 
     func configureFatLabel() {
-        fatLabel.text = "30"
+        fatLabel.text = "\(product?.fat ?? 0.0)"
         fatLabel.font = .systemFont(ofSize: 14, weight: .regular)
         fatLabel.textColor = Asset.Colors.lightGray
         view.addSubview(fatLabel)
@@ -153,7 +166,7 @@ private extension ProductAddingViewController {
     }
 
     func configureCarbsLabel() {
-        carbsLabel.text = "30"
+        carbsLabel.text = "\(product?.carbs ?? 0.0)"
         carbsLabel.font = .systemFont(ofSize: 14, weight: .regular)
         carbsLabel.textColor = Asset.Colors.lightGray
         view.addSubview(carbsLabel)
@@ -183,7 +196,7 @@ private extension ProductAddingViewController {
     }
     
     func configureKcalLabel() {
-        kcalLabel.text = "47 kcal"
+        kcalLabel.text = "\(product?.calories ?? 0.0)"
         kcalLabel.textColor = Asset.Colors.lightGray
         kcalLabel.font = .systemFont(ofSize: 17, weight: .regular)
         kcalLabel.textAlignment = .right
@@ -195,6 +208,26 @@ private extension ProductAddingViewController {
     }
 
     func configureDoneButton() {
+        doneButton.addAction(
+            UIAction { [weak self] _ in
+                guard let self else { return }
+
+                if self.weight == 0 {
+                    self.error = Asset.Strings.fillTheField
+                    self.tableView.reloadData()
+                } else {
+                    guard let product else {
+                        self.navigationController?.popViewController(animated: true)
+                        return
+                    }
+
+                    var eatenProduct = product
+                    eatenProduct.eatenWeight = weight
+                    userData?.lunch.append(eatenProduct)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }, for: .touchUpInside
+        )
         doneButton.setTitle(Asset.Strings.done, for: .normal)
         doneButton.layer.cornerRadius = Constants.DoneButton.radius
         doneButton.backgroundColor = Asset.Colors.green
@@ -217,6 +250,22 @@ extension ProductAddingViewController {
     @objc
     private func favouritesAction() {
         isFavourite = !isFavourite
+    }
+
+    private func getUserData() {
+        guard let data = UserDefaults.standard.value(forKey: "UserData") as? Data else {
+            return
+        }
+
+        userData = try? PropertyListDecoder().decode(FFUser.self, from: data)
+    }
+
+    private func setUserData() {
+        guard let userData else {
+            return
+        }
+
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(userData), forKey: "UserData")
     }
 }
 
@@ -243,6 +292,12 @@ extension ProductAddingViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
+        cell.configure(placeholderText: "Weight(g)")
+        cell.onTextDidChange = { [weak self] text in
+            guard let self else { return }
+            self.weight = Int(text) ?? 0
+        }
+
         return cell
     }
 }
@@ -259,7 +314,7 @@ private extension ProductAddingViewController {
             static let top = 24
             static let height = 60
             static let cellHeight = 60.0
-            static let contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: -20)
+            static let side = 20
         }
         enum DoneButton {
             static let top = 24

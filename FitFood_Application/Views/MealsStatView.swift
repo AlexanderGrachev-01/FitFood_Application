@@ -67,10 +67,10 @@ private extension MealsStatView {
     }
     
     func configurerRightStackView() {
-        breakfastCountLabel.text = "600 kcal"
-        lunchCountLabel.text = "720 kcal"
+        breakfastCountLabel.text = "0 kcal"
+        lunchCountLabel.text = "0 kcal"
         dinnerCountLabel.text = "0 kcal"
-        snackCountLabel.text = "234 kcal"
+        snackCountLabel.text = "0 kcal"
         
         let labels = [breakfastCountLabel, lunchCountLabel, dinnerCountLabel, snackCountLabel]
         for label in labels {
@@ -88,6 +88,17 @@ private extension MealsStatView {
             $0.right.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
+    }
+}
+
+// MARK: - Public configure
+
+extension MealsStatView {
+    func configure(breakfast: Int, lunch: Int, dinner: Int, snakck: Int) {
+        breakfastCountLabel.text = "\(breakfast) kcal"
+        lunchCountLabel.text = "\(lunch) kcal"
+        dinnerCountLabel.text = "\(dinner) kcal"
+        snackCountLabel.text = "\(snakck) kcal"
     }
 }
 

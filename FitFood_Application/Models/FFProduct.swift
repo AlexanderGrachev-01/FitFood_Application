@@ -15,4 +15,5 @@ struct FFProduct: Codable {
     var fat: Double
     var protein: Double
     var averageWeight: Int?
+    var eatenWeight: Int?
 }

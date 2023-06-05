@@ -11,6 +11,15 @@ final class FFDailyStatCollectionViewCell: UICollectionViewCell {
     // MARK: - Identifier
     
     static let identifier = "DailyStatCollectionViewCell"
+
+    // MARK: - Properties
+
+    private var totalKcal = 0
+    private var eatenKcal = 0
+    private var breakfastKcal = 0
+    private var lunchKcal = 0
+    private var dinerKcal = 0
+    private var snacksKcal = 0
     
     // MARK: - Subviews
     
@@ -54,7 +63,7 @@ private extension FFDailyStatCollectionViewCell {
     }
     
     func configureArcProgressBarView() {
-        arcProgressBarView.resetProgressBar(ratio: 0.7)
+        arcProgressBarView.resetProgressBar(ratio: 0.0)
         contentView.addSubview(arcProgressBarView)
         arcProgressBarView.snp.makeConstraints {
             $0.height.equalTo(Constants.arcProgressBarViewSize)
@@ -65,7 +74,6 @@ private extension FFDailyStatCollectionViewCell {
     }
     
     func configureRemainedCountLabel() {
-        remainedCountLabel.text = "1100 kcal"
         remainedCountLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         remainedCountLabel.textColor = Asset.Colors.label
         remainedCountLabel.textAlignment = .center
@@ -111,7 +119,6 @@ private extension FFDailyStatCollectionViewCell {
     }
     
     func configureEatenCountLabel() {
-        eatenCountLabel.text = "1534 kcal"
         eatenCountLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         eatenCountLabel.textColor = Asset.Colors.label
         contentView.addSubview(eatenCountLabel)
@@ -139,6 +146,73 @@ private extension FFDailyStatCollectionViewCell {
             $0.left.equalToSuperview().offset(Constants.foodContentsViewSideOffset)
             $0.right.equalToSuperview().offset(-Constants.foodContentsViewSideOffset)
         }
+    }
+}
+
+// MARK: - Public configure
+
+extension FFDailyStatCollectionViewCell {
+    func configure(data: FFUser?) {
+        guard let data else { return }
+
+        var protein = 0.0
+        var fat = 0.0
+        var carbs = 0.0
+
+        for product in data.breakfast {
+            breakfastKcal = breakfastKcal + Int(product.calories) * (product.eatenWeight ?? 0)
+            protein = protein + product.protein * Double(product.eatenWeight ?? 0)
+            fat = fat + product.fat * Double(product.eatenWeight ?? 0)
+            carbs = carbs + product.carbs * Double(product.eatenWeight ?? 0)
+        }
+        for product in data.lunch {
+            lunchKcal = lunchKcal + Int(product.calories) * (product.eatenWeight ?? 0)
+            protein = protein + product.protein * Double(product.eatenWeight ?? 0)
+            fat = fat + product.fat * Double(product.eatenWeight ?? 0)
+            carbs = carbs + product.carbs * Double(product.eatenWeight ?? 0)
+        }
+        for product in data.diner {
+            dinerKcal = dinerKcal + Int(product.calories) * (product.eatenWeight ?? 0)
+            protein = protein + product.protein * Double(product.eatenWeight ?? 0)
+            fat = fat + product.fat * Double(product.eatenWeight ?? 0)
+            carbs = carbs + product.carbs * Double(product.eatenWeight ?? 0)
+        }
+        for product in data.snaks {
+            snacksKcal = snacksKcal + Int(product.calories) * (product.eatenWeight ?? 0)
+            protein = protein + product.protein * Double(product.eatenWeight ?? 0)
+            fat = fat + product.fat * Double(product.eatenWeight ?? 0)
+            carbs = carbs + product.carbs * Double(product.eatenWeight ?? 0)
+        }
+        eatenKcal = breakfastKcal + lunchKcal + dinerKcal + snacksKcal
+
+        eatenCountLabel.text = "\(eatenKcal) kcal"
+        if data.gender == .female {
+            totalKcal = 655 + Int(9.6 * data.weight) + 2 * data.height - 5 * data.age
+        } else {
+            totalKcal = 66 + Int(13.7 * data.weight) + 5 * data.height - 7 * data.age
+        }
+
+        let remainedKcal = totalKcal - eatenKcal < 0 ? 0 : totalKcal - eatenKcal
+        remainedCountLabel.text = "\(remainedKcal) kcal"
+
+        if eatenKcal != 0 {
+            let progressPercent = Double(remainedKcal) / Double(totalKcal)
+            arcProgressBarView.resetProgressBar(ratio: progressPercent)
+        }
+
+        mealsStatView.configure(
+            breakfast: breakfastKcal,
+            lunch: lunchKcal,
+            dinner: dinerKcal,
+            snakck: snacksKcal
+        )
+
+        let proteinAim = data.weight * 2.0
+        let fatAim = data.weight * 1.5
+        let carbsAim = data.weight * 3.0
+
+        foodContentsView.setAim(protein: proteinAim, fat: fatAim, carbs: carbsAim)
+        foodContentsView.setCurrent(protein: protein, fat: fat, carbs: carbs)
     }
 }
 

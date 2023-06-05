@@ -29,12 +29,17 @@ final class FFSmsCodeViewController: FFBaseAuthViewController {
             return
         }
 
-        if code == "111111" {
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-               let sceneDelegate = windowScene.delegate as? SceneDelegate {
-                sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
-            }
-        }
+//        if code == "111111" {
+//
+//            AuthorizationManager.shared.getUser("testId1234") { _ in
+//                print("")
+//            }
+//            
+//            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//               let sceneDelegate = windowScene.delegate as? SceneDelegate {
+//                sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
+//            }
+//        }
         
         DispatchQueue.main.async {
             self.button.alpha = 0.5
@@ -43,6 +48,11 @@ final class FFSmsCodeViewController: FFBaseAuthViewController {
         
         AuthorizationManager.shared.verifyCode(code) { [weak self] success in
             guard success else { return }
+
+            AuthorizationManager.shared.getUser("testId1234") { _ in
+                print("")
+            }
+            
             DispatchQueue.main.async {
                 self?.textField.resignFirstResponder()
                 if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

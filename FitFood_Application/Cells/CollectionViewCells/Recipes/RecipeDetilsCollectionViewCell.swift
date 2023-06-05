@@ -11,6 +11,10 @@ final class RecipeDetilsCollectionViewCell: UICollectionViewCell {
     // MARK: - Identifier
     
     static let identifier = "RecipeInfoCollectionViewCell"
+
+    // MARK: - Properties
+
+    private var userData: FFUser?
     
     // MARK: - Subviews
     
@@ -134,6 +138,7 @@ extension RecipeDetilsCollectionViewCell {
     func configure(recipe: FFRecipe?) {
         guard let recipe else { return }
 
+        getUserData()
         nameLabel.text = recipe.name
         kcalLabel.text = "\(recipe.kcal) kcal"
         foodContentsView.setCurrent(
@@ -141,6 +146,19 @@ extension RecipeDetilsCollectionViewCell {
             fat: recipe.fat,
             carbs:  recipe.carbs
         )
+    }
+
+    private func getUserData() {
+        guard let data = UserDefaults.standard.value(forKey: "UserData") as? Data,
+              let userData = try? PropertyListDecoder().decode(FFUser.self, from: data)else {
+            return
+        }
+
+        let proteinAim = userData.weight * 2.0
+        let fatAim = userData.weight * 1.5
+        let carbsAim = userData.weight * 3.0
+
+        foodContentsView.setAim(protein: proteinAim, fat: fatAim, carbs: carbsAim)
     }
 }
 

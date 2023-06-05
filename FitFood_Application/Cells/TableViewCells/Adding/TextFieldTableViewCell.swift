@@ -12,8 +12,13 @@ final class TextFieldTableViewCell: UITableViewCell {
 
     static let identifier = "TextFieldTableViewCell"
 
+    // MARK: - Handlers
+
+    var onTextDidChange: ((_ text: String) -> Void)?
+
     // MARK: - Subviews
 
+    var error = ""
     private var textField = UITextField()
     private var errorLabel = UILabel()
 
@@ -27,6 +32,12 @@ final class TextFieldTableViewCell: UITableViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        errorLabel.text = ""
     }
 }
 
@@ -55,7 +66,7 @@ private extension TextFieldTableViewCell {
     }
 
     func configureErrorLabel() {
-        errorLabel.text = Asset.Strings.fillTheField
+        errorLabel.text = error
         errorLabel.font = .systemFont(ofSize: 14, weight: .regular)
         errorLabel.textColor = Asset.Colors.errorRed
         errorLabel.textAlignment = .right
@@ -74,6 +85,17 @@ extension TextFieldTableViewCell {
         textField.placeholder = placeholderText
     }
 }
+
+// MARK: - TextFieldDidChange
+
+extension TextFieldTableViewCell {
+    @objc
+    func textFieldDidChange(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        onTextDidChange?(text)
+    }
+}
+
 
 // MARK: - Constants
 

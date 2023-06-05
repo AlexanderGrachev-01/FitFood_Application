@@ -8,6 +8,10 @@
 import UIKit
 
 final class ProductCreatingViewController: FFBaseViewController {
+    // MARK: - Properties
+
+    private var product = FFProduct(id: "", name: "", calories: 0.0, carbs: 0.0, fat: 0.0, protein: 0.0)
+
     // MARK: - Subviews
 
     private var infoLabel = UILabel()
@@ -49,7 +53,6 @@ private extension ProductCreatingViewController {
         tableView.backgroundColor = Asset.Colors.secondaryBackground
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
-        tableView.contentInset = Constants.TableView.contentInset
         tableView.register(
             TextFieldTableViewCell.self,
             forCellReuseIdentifier: TextFieldTableViewCell.identifier
@@ -60,11 +63,19 @@ private extension ProductCreatingViewController {
         tableView.snp.makeConstraints {
             $0.height.equalTo(Constants.TableView.height)
             $0.top.equalTo(infoLabel.snp.bottom).offset(Constants.TableView.top)
-            $0.left.right.equalToSuperview()
+            $0.left.equalToSuperview().offset(Constants.TableView.side)
+            $0.right.equalToSuperview().offset(-Constants.TableView.side)
         }
     }
 
     func configureDoneButton() {
+        doneButton.addAction(
+            UIAction { [weak self] _ in
+                guard let self else { return }
+
+                self.navigationController?.popViewController(animated: true)
+            }, for: .touchUpInside
+        )
         doneButton.setTitle(Asset.Strings.done, for: .normal)
         doneButton.layer.cornerRadius = Constants.DoneButton.radius
         doneButton.backgroundColor = Asset.Colors.green
@@ -104,6 +115,41 @@ extension ProductCreatingViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
+        switch indexPath.row {
+        case 0:
+            cell.configure(placeholderText: "Name")
+            cell.onTextDidChange = { [weak self] text in
+                guard let self else { return }
+                self.product.name = text
+            }
+        case 1:
+            cell.configure(placeholderText: "Protein (per 100 gr.)")
+            cell.onTextDidChange = { [weak self] text in
+                guard let self else { return }
+                self.product.protein = Double(text) ?? 0.0
+            }
+        case 2:
+            cell.configure(placeholderText: "Fats (per 100 gr..)")
+            cell.onTextDidChange = { [weak self] text in
+                guard let self else { return }
+                self.product.fat = Double(text) ?? 0.0
+            }
+        case 3:
+            cell.configure(placeholderText: "Carbs (per 100 gr..)")
+            cell.onTextDidChange = { [weak self] text in
+                guard let self else { return }
+                self.product.carbs = Double(text) ?? 0.0
+            }
+        case 4:
+            cell.configure(placeholderText: "Kcal (per 100 gr..)")
+            cell.onTextDidChange = { [weak self] text in
+                guard let self else { return }
+                self.product.calories = Double(text) ?? 0.0
+            }
+        default:
+            break
+        }
+
         return cell
     }
 }
@@ -120,7 +166,7 @@ private extension ProductCreatingViewController {
             static let top = 24
             static let height = 300
             static let cellHeight = 60.0
-            static let contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+            static let side = 20
         }
         enum DoneButton {
             static let top = 16

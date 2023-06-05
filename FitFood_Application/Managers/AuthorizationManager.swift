@@ -12,12 +12,15 @@ protocol AuthorizationProtocol: AnyObject {
     var verificationID: String? { get }
     func verifyPhone(_ phoneNumber: String, completion: @escaping (Bool) -> Void)
     func verifyCode(_ smsCode: String, completion: @escaping (Bool) -> Void)
+    func getUser(_ userId: String, completion: @escaping (Bool) -> Void)
+    func saveUser(_ user: FFUser, completion: @escaping (Bool) -> Void)
 }
 
 final class AuthorizationManager: AuthorizationProtocol {
     static let shared: AuthorizationProtocol = AuthorizationManager()
     
     var verificationID: String?
+    var user: FFUser?
     
     func verifyPhone(
         _ phoneNumber: String,
@@ -57,6 +60,36 @@ final class AuthorizationManager: AuthorizationProtocol {
             }
             
             completion(true)
+        }
+    }
+
+    func saveUser(_ user: FFUser, completion: @escaping (Bool) -> Void) {
+        NetworkingClient.request(
+            endpoint: Endpoints.saveUser,
+            parameters: ["user": user]
+        ) { res, error in
+            guard let res else {
+                completion(false)
+                return
+            }
+
+            completion(true)
+            return
+        }
+    }
+
+    func getUser(_ userId: String, completion: @escaping (Bool) -> Void) {
+        NetworkingClient.request(
+            endpoint: Endpoints.getUser(id: userId)
+        ) { res, error in
+            guard let res else {
+                completion(false)
+                return
+            }
+
+            self.user = res
+            completion(true)
+            return
         }
     }
 }
