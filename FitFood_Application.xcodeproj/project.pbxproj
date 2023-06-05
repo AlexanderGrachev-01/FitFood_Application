@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F601331929FADF2500AE5C2A /* RecepiesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601331829FADF2500AE5C2A /* RecepiesDetailViewController.swift */; };
+		F64633A32A2D589B00842998 /* RecipesCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64633A22A2D589B00842998 /* RecipesCategoryViewController.swift */; };
+		F64633A52A2D598700842998 /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64633A42A2D598700842998 /* RecipeCategory.swift */; };
 		F65727F329E1A7DB00FA7B57 /* FoodContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */; };
 		F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */; };
 		F65727F729E1B84500FA7B57 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F629E1B84500FA7B57 /* ProgressView.swift */; };
@@ -104,6 +106,8 @@
 
 /* Begin PBXFileReference section */
 		F601331829FADF2500AE5C2A /* RecepiesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepiesDetailViewController.swift; sourceTree = "<group>"; };
+		F64633A22A2D589B00842998 /* RecipesCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCategoryViewController.swift; sourceTree = "<group>"; };
+		F64633A42A2D598700842998 /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
 		F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodContentsView.swift; sourceTree = "<group>"; };
 		F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsStatView.swift; sourceTree = "<group>"; };
 		F65727F629E1B84500FA7B57 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				F601331829FADF2500AE5C2A /* RecepiesDetailViewController.swift */,
+				F64633A22A2D589B00842998 /* RecipesCategoryViewController.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				F69E69A829F04CCB0032068E /* Meals.swift */,
 				F6FFD2612A2A7A3A001615D5 /* FastingType.swift */,
 				F6FFD2A92A2CBBD3001615D5 /* NetworkingError.swift */,
+				F64633A42A2D598700842998 /* RecipeCategory.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -397,8 +403,6 @@
 			isa = PBXGroup;
 			children = (
 				F6FFD25E2A2A773E001615D5 /* Fasting */,
-				F6F1425E29FB18A5004960EB /* Recipes */,
-				F6EFDA13298185AC00FC3CCB /* Adding */,
 				F6B701282974B5D40066B975 /* Daily */,
 				F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */,
 				F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */,
@@ -473,13 +477,6 @@
 			path = Adding;
 			sourceTree = "<group>";
 		};
-		F6EFDA13298185AC00FC3CCB /* Adding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Adding;
-			sourceTree = "<group>";
-		};
 		F6EFDA142981887D00FC3CCB /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,13 +507,6 @@
 				F6622A4429D21E3E0097694F /* Base */,
 			);
 			path = Authorization;
-			sourceTree = "<group>";
-		};
-		F6F1425E29FB18A5004960EB /* Recipes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Recipes;
 			sourceTree = "<group>";
 		};
 		F6FF10602984345E00BD72CF /* Calendar */ = {
@@ -678,6 +668,7 @@
 				F6622A4D29D22AD80097694F /* FFDailyStatCollectionViewCell.swift in Sources */,
 				F6FFD29B2A2CA636001615D5 /* HeaderTableViewCell.swift in Sources */,
 				F6FFD2982A2CA636001615D5 /* TextFieldUnderlineTableViewCell.swift in Sources */,
+				F64633A32A2D589B00842998 /* RecipesCategoryViewController.swift in Sources */,
 				F6B700EF297199390066B975 /* FFDailyViewController.swift in Sources */,
 				F66DBA482A1BCC1B002C57DD /* FFProduct.swift in Sources */,
 				F65727FB29E2F20300FA7B57 /* RoundProgressBarView.swift in Sources */,
@@ -699,6 +690,7 @@
 				F6BB3FFD2A23D1C1002883D1 /* ProductCreatingViewController.swift in Sources */,
 				F6B700EB297199390066B975 /* AppDelegate.swift in Sources */,
 				F6FF10692984738100BD72CF /* FFUserInfoTableViewCell.swift in Sources */,
+				F64633A52A2D598700842998 /* RecipeCategory.swift in Sources */,
 				F69E69AD29F061080032068E /* RecipesCategoriesCollectionViewCell.swift in Sources */,
 				F6B7010B2971A18B0066B975 /* FFFastingViewController.swift in Sources */,
 				F6FFD2992A2CA636001615D5 /* CheckboxTableViewCell.swift in Sources */,

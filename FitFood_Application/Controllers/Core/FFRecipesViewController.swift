@@ -14,7 +14,7 @@ final class FFRecipesViewController: FFBaseViewController {
     private var isPopularCovered = true
     private var isСategoriesCovered = true
 
-    private var recipe: [FFRecipe] = []
+    private var recipes: [FFRecipe] = []
     private var popularRecipe: [FFRecipe] = []
     
     // MARK: - Subviews
@@ -42,7 +42,7 @@ final class FFRecipesViewController: FFBaseViewController {
                 return
             }
 
-            self.recipe = res
+            self.recipes = res
             self.popularRecipe = res.filter { $0.category == "Popular"}
             collectionView.reloadData()
             collectionView.isHidden = false
@@ -120,6 +120,13 @@ extension FFRecipesViewController: UICollectionViewDelegate {
             navigationController?.pushViewController(vc, animated: true)
             return
         case .categories:
+            let category = RecipeCategory.allCases[indexPath.item].rawValue
+            let vc = RecipesCategoryViewController()
+
+            vc.title = category
+            vc.recipes = recipes.filter { $0.category == category }
+
+            navigationController?.pushViewController(vc, animated: true)
             return
         case .recently:
             guard indexPath.item != 0 else { return }
@@ -152,7 +159,7 @@ extension FFRecipesViewController: UICollectionViewDataSource {
 
             return isPopularCovered ? 5 : popularRecipe.count + 1
         case .categories:
-            return isСategoriesCovered ? 5 : Categories.allCases.count
+            return isСategoriesCovered ? 5 : RecipeCategory.allCases.count
         case .recently:
             return 5
         }
@@ -198,7 +205,7 @@ extension FFRecipesViewController: UICollectionViewDataSource {
             
             return cell
         case .categories:
-            let categories = Categories.allCases[indexPath.item]
+            let categories = RecipeCategory.allCases[indexPath.item]
 
             guard let titleCell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: HeaderCollectionViewCell.identifier,
@@ -377,21 +384,5 @@ private extension FFRecipesViewController {
         case popular = 0
         case categories = 1
         case recently = 2
-    }
-
-    enum Categories: String, CaseIterable {
-        case title
-        case fruits
-        case meat
-        case vegetables
-        case bread
-        case nuts
-        case fish
-        case mushrooms
-        case eggs
-        case milk
-        case dessert
-        case pasta
-        case legumes
     }
 }
