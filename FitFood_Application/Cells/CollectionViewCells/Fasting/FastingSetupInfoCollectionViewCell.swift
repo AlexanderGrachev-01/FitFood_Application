@@ -131,19 +131,21 @@ private extension FastingSetupInfoCollectionViewCell {
 
 extension FastingSetupInfoCollectionViewCell {
     func configure(fastingType: FastingType) {
-        fastingTypeLabel.text = fastingType.rawValue
-
         switch fastingType {
         case .first:
+            fastingTypeLabel.text = "14-10"
             startTimeLabel.text = "19:00"
             complexityView.configure(raiting: 1)
         case .second:
+            fastingTypeLabel.text = "16-8"
             startTimeLabel.text = "17:00"
             complexityView.configure(raiting: 3)
         case .third:
+            fastingTypeLabel.text = "18-6"
             startTimeLabel.text = "15:00"
             complexityView.configure(raiting: 4)
         case .fourth:
+            fastingTypeLabel.text = "20-4"
             startTimeLabel.text = "13:00"
             complexityView.configure(raiting: 5)
         }

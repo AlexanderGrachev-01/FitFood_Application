@@ -74,19 +74,19 @@ private extension FastingStatCollectionViewCell {
 
     func configureStatViews() {
         let curStatView = ImageTwoLabelsView()
-        curStatView.configure(image: Asset.Images.fireCur, info: "2 Days", name: Asset.Strings.curent)
+        curStatView.configure(image: Asset.Images.fireCur, info: "0 Days", name: Asset.Strings.curent)
         stackView.addArrangedSubview(curStatView)
 
         let longStatView = ImageTwoLabelsView()
-        longStatView.configure(image: Asset.Images.biceps, info: "31 Days", name: Asset.Strings.longest)
+        longStatView.configure(image: Asset.Images.biceps, info: "0 Days", name: Asset.Strings.longest)
         stackView.addArrangedSubview(longStatView)
 
         let allStatView = ImageTwoLabelsView()
-        allStatView.configure(image: Asset.Images.checkMark, info: "44 Days", name: Asset.Strings.all)
+        allStatView.configure(image: Asset.Images.checkMark, info: "0 Days", name: Asset.Strings.all)
         stackView.addArrangedSubview(allStatView)
 
         let totalStatView = ImageTwoLabelsView()
-        totalStatView.configure(image: Asset.Images.clock, info: "704 hr", name: Asset.Strings.total)
+        totalStatView.configure(image: Asset.Images.clock, info: "0 hr", name: Asset.Strings.total)
         stackView.addArrangedSubview(totalStatView)
     }
 }

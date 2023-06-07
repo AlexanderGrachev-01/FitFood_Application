@@ -17,6 +17,7 @@ final class FFDailyViewController: FFBaseViewController {
     private var stepGoal = 0.0
     private var stepCount = 0.0
     private var userData: FFUser?
+    private var fastingType: FastingType?
     
     // MARK: - Subviews
     
@@ -45,6 +46,7 @@ final class FFDailyViewController: FFBaseViewController {
         super.viewWillAppear(animated)
 
         getUserData()
+        getFastingType()
         guard HKHealthStore.isHealthDataAvailable(),
               let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
             return
@@ -186,6 +188,15 @@ extension FFDailyViewController {
         userData = try? PropertyListDecoder().decode(FFUser.self, from: data)
         collectionView.reloadData()
     }
+
+    private func getFastingType() {
+        guard let data = UserDefaults.standard.value(forKey: "FastingType") as? Data else {
+            return
+        }
+
+        fastingType = try? PropertyListDecoder().decode(FastingType.self, from: data)
+        collectionView.reloadData()
+    }
 }
 
 // MARK: - UICollectionViewDelegate
@@ -198,7 +209,7 @@ extension FFDailyViewController: UICollectionViewDelegate {
 
 extension FFDailyViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        fastingType != nil ? 4 : 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -240,6 +251,7 @@ extension FFDailyViewController: UICollectionViewDataSource {
             ) as? FFDailyFastingTimerCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            cell.configure(fastingType: fastingType)
             return cell
         default:
             return UICollectionViewCell()

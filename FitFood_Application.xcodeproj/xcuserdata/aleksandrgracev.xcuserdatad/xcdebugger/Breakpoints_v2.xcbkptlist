@@ -3,4 +3,294 @@
    uuid = "9BCE6EE9-5925-466D-A2A5-8445B854E0BF"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BAEA00F4-2A44-4567-A6E4-5B4D556737F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitFood_Application/Controllers/Core/FFFastingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "getFastingType()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BAEA00F4-2A44-4567-A6E4-5B4D556737F1 - 1421b707e8f1a0ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.FFFastingViewController.getFastingType() -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Controllers/Core/FFFastingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "524">
+               </Location>
+               <Location
+                  uuid = "BAEA00F4-2A44-4567-A6E4-5B4D556737F1 - 1421b707e8f1a0ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.FFFastingViewController.getFastingType() -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Controllers/Core/FFFastingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "712">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "685C72E6-427A-41F0-91F8-D46829029658"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitFood_Application/Controllers/Core/FFFastingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "685C72E6-427A-41F0-91F8-D46829029658 - 656721d650c984ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.FFFastingViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Controllers/Core/FFFastingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "685C72E6-427A-41F0-91F8-D46829029658 - 656721d650c98433"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.FFFastingViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Controllers/Core/FFFastingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "832BFC9F-F458-44E9-B8C0-BF6F1E9AAD76"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitFood_Application/Controllers/Core/FFFastingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "getFastingType()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "832BFC9F-F458-44E9-B8C0-BF6F1E9AAD76 - 1421b707e8f1a001"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.FFFastingViewController.getFastingType() -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Controllers/Core/FFFastingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "832BFC9F-F458-44E9-B8C0-BF6F1E9AAD76 - 1421b707e8f1a001"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.FFFastingViewController.getFastingType() -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Controllers/Core/FFFastingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "1212">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B6BFD7D-4DC0-43D3-9308-A0545280F8D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitFood_Application/Controllers/Fasting/SetupFastingInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "setFastingType()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6B6BFD7D-4DC0-43D3-9308-A0545280F8D7 - b8a3300ba77c2121"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.SetupFastingInfoViewController.setFastingType() -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Controllers/Fasting/SetupFastingInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "6B6BFD7D-4DC0-43D3-9308-A0545280F8D7 - b8a3300ba77c2102"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.SetupFastingInfoViewController.setFastingType() -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Controllers/Fasting/SetupFastingInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DA6443B-24BE-40D7-BE28-A2D5AA130A2A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitFood_Application/Cells/CollectionViewCells/Fasting/FastingMainCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "configure(fastingType:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8DA6443B-24BE-40D7-BE28-A2D5AA130A2A - 60718c38c8538e3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.FastingMainCollectionViewCell.configure(fastingType: FitFood_Application.FastingType) -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Cells/CollectionViewCells/Fasting/FastingMainCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "8DA6443B-24BE-40D7-BE28-A2D5AA130A2A - d989d3235ae59fb2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitFood_Application.FastingMainCollectionViewCell.configure(fastingType: Swift.Optional&lt;FitFood_Application.FastingType&gt;) -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Cells/CollectionViewCells/Fasting/FastingMainCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDB22380-B9F1-46B6-9857-7ECAB956F157"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitFood_Application/Cells/CollectionViewCells/Fasting/FastingMainCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
+            landmarkName = "setTimer(startTime:endTime:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DDB22380-B9F1-46B6-9857-7ECAB956F157 - b17fb310f397796d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (__C.NSTimer) -&gt; () in FitFood_Application.FastingMainCollectionViewCell.setTimer(startTime: Swift.Int, endTime: Swift.Int) -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Cells/CollectionViewCells/Fasting/FastingMainCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "325"
+                  endingLineNumber = "325"
+                  offsetFromSymbolStart = "2216">
+               </Location>
+               <Location
+                  uuid = "DDB22380-B9F1-46B6-9857-7ECAB956F157 - b17fb310f39779c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (__C.NSTimer) -&gt; () in FitFood_Application.FastingMainCollectionViewCell.setTimer(startTime: Swift.Int, endTime: Swift.Int) -&gt; ()"
+                  moduleName = "FitFood_Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrgracev/Development/Coursework_2023/FitFood_Application/FitFood_Application/Cells/CollectionViewCells/Fasting/FastingMainCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "322"
+                  endingLineNumber = "322"
+                  offsetFromSymbolStart = "2140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

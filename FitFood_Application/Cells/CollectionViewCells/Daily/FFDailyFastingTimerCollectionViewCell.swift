@@ -83,6 +83,7 @@ private extension FFDailyFastingTimerCollectionViewCell {
     
     func configureMoreIcon() {
         moreIcon.image = Asset.Images.rightChevron.withTintColor(Asset.Colors.lightGreen)
+        moreIcon.isHidden = true
         backView.addSubview(moreIcon)
         moreIcon.snp.makeConstraints {
             $0.height.equalTo(Constants.moreIconSize)
@@ -114,6 +115,81 @@ private extension FFDailyFastingTimerCollectionViewCell {
             $0.top.equalTo(infoLabel.snp.bottom).offset(Constants.timerLabelTopOffset)
             $0.centerX.equalToSuperview()
         }
+    }
+}
+
+// MARK: Public configure
+
+extension FFDailyFastingTimerCollectionViewCell {
+    func configure(fastingType: FastingType?) {
+        guard let fastingType else { return }
+
+        switch fastingType {
+        case .first:
+            setTimer(startTime: 19, endTime: 9)
+        case .second:
+            setTimer(startTime: 17, endTime: 9)
+        case .third:
+            setTimer(startTime: 15, endTime: 9)
+        case .fourth:
+            setTimer(startTime: 13, endTime: 9)
+        }
+    }
+}
+
+// MARK: - Utils
+
+extension FFDailyFastingTimerCollectionViewCell {
+    private func setTimer(startTime: Int, endTime: Int) {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let currentComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentDate)
+
+        var desiredComponents = DateComponents()
+        var startTimeComponents = DateComponents()
+        var endTimeComponents = DateComponents()
+
+        desiredComponents.minute = 0
+        desiredComponents.second = 0
+        desiredComponents.year = currentComponents.year
+        desiredComponents.month = currentComponents.month
+
+        if  currentComponents.hour ?? 0 >= 9, startTime >= currentComponents.hour ?? 0 {
+            desiredComponents.hour = startTime
+            desiredComponents.day = currentComponents.day
+            infoLabel.text = "Time to eat"
+        } else if currentComponents.hour ?? 0 >= 9 {
+            desiredComponents.hour = endTime
+            desiredComponents.day = (currentComponents.day ?? 0) + 1
+            infoLabel.text = "Time to faste"
+        } else {
+            desiredComponents.hour = endTime
+            desiredComponents.day = currentComponents.day
+            infoLabel.text = "Time to faste"
+        }
+
+        let desiredDate = calendar.date(from: desiredComponents)!
+        let timeInterval = desiredDate.timeIntervalSince(currentDate)
+
+        let timer = Timer(timeInterval: 1.0, repeats: true) { [weak self] timer in
+            guard let self else { return }
+
+            let timeRemaining = Int(desiredDate.timeIntervalSinceNow)
+
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm:ss"
+            let formattedTime = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(timeRemaining)))
+
+            self.timerLabel.text = formattedTime
+
+            if timeRemaining <= 0 {
+                timer.invalidate()
+                print("Таймер завершился!")
+            }
+        }
+
+        RunLoop.main.add(timer, forMode: .common)
+        timer.fire()
     }
 }
 

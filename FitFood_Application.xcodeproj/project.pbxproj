@@ -10,6 +10,7 @@
 		F601331929FADF2500AE5C2A /* RecepiesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601331829FADF2500AE5C2A /* RecepiesDetailViewController.swift */; };
 		F64633A32A2D589B00842998 /* RecipesCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64633A22A2D589B00842998 /* RecipesCategoryViewController.swift */; };
 		F64633A52A2D598700842998 /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64633A42A2D598700842998 /* RecipeCategory.swift */; };
+		F64EE99C2A3105210070EC4D /* MealType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EE99B2A3105210070EC4D /* MealType.swift */; };
 		F65727F329E1A7DB00FA7B57 /* FoodContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */; };
 		F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */; };
 		F65727F729E1B84500FA7B57 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F629E1B84500FA7B57 /* ProgressView.swift */; };
@@ -108,6 +109,7 @@
 		F601331829FADF2500AE5C2A /* RecepiesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepiesDetailViewController.swift; sourceTree = "<group>"; };
 		F64633A22A2D589B00842998 /* RecipesCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCategoryViewController.swift; sourceTree = "<group>"; };
 		F64633A42A2D598700842998 /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
+		F64EE99B2A3105210070EC4D /* MealType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealType.swift; sourceTree = "<group>"; };
 		F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodContentsView.swift; sourceTree = "<group>"; };
 		F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsStatView.swift; sourceTree = "<group>"; };
 		F65727F629E1B84500FA7B57 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				F6FFD2612A2A7A3A001615D5 /* FastingType.swift */,
 				F6FFD2A92A2CBBD3001615D5 /* NetworkingError.swift */,
 				F64633A42A2D598700842998 /* RecipeCategory.swift */,
+				F64EE99B2A3105210070EC4D /* MealType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				F6B701202974A1FE0066B975 /* Date+ext.swift in Sources */,
 				F65727F729E1B84500FA7B57 /* ProgressView.swift in Sources */,
 				F6D08D8F29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift in Sources */,
+				F64EE99C2A3105210070EC4D /* MealType.swift in Sources */,
 				F6FFD2602A2A77AA001615D5 /* FastingArcProgressBarView.swift in Sources */,
 				F69E69B029F06B770032068E /* ProductInfoTableViewCell.swift in Sources */,
 				F6EFDA2E2981E22100FC3CCB /* FFPhoneNumberViewController.swift in Sources */,

@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum FastingType: String {
-    case first = "14-10"
-    case second = "16-8"
-    case third = "18-6"
-    case fourth = "20-4"
+enum FastingType: Codable {
+    case first
+    case second
+    case third
+    case fourth
 }

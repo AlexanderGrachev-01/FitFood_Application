@@ -11,6 +11,7 @@ final class FFFastingViewController: FFBaseViewController {
     // MARK: - Properties
 
     var isActive = false
+    var fastingType: FastingType?
 
     // MARK: - Subviews
 
@@ -23,6 +24,12 @@ final class FFFastingViewController: FFBaseViewController {
         super.viewDidLoad()
         
         configureViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        getFastingType()
     }
 }
 
@@ -72,6 +79,24 @@ private extension FFFastingViewController {
     }
 }
 
+// MARK: - Utils
+
+extension FFFastingViewController {
+    func getFastingType() {
+        guard let data = UserDefaults.standard.value(forKey: "FastingType") as? Data else {
+            return
+        }
+        fastingType = try? PropertyListDecoder().decode(FastingType.self, from: data)
+        if fastingType != nil {
+            isActive = true
+            collectionView.reloadData()
+        } else {
+            isActive = false
+            collectionView.reloadData()
+        }
+    }
+}
+
 // MARK: - UICollectionViewDelegate
 
 extension FFFastingViewController: UICollectionViewDelegate {
@@ -86,7 +111,12 @@ extension FFFastingViewController: UICollectionViewDelegate {
                 SetupFastingViewController(),
                 animated: true
             )
+            return
         case .main:
+            navigationController?.pushViewController(
+                SetupFastingViewController(),
+                animated: true
+            )
             return
         case .statistic:
             return
@@ -143,7 +173,7 @@ extension FFFastingViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
 
-            cell.configure(fastingType: .fourth)
+            cell.configure(fastingType: fastingType)
 
             return cell
         case .statistic:

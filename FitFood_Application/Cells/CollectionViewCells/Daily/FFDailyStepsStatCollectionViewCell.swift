@@ -85,6 +85,7 @@ private extension FFDailyStepsStatCollectionViewCell {
     
     func configureMoreIcon() {
         moreIcon.image = Asset.Images.rightChevron.withTintColor(Asset.Colors.primary50)
+        moreIcon.isHidden = true
         backView.addSubview(moreIcon)
         moreIcon.snp.makeConstraints {
             $0.height.equalTo(Constants.moreIconSize)

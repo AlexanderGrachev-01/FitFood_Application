@@ -67,6 +67,15 @@ extension SetupFastingInfoViewController {
     }
 }
 
+// MARK: - Utils
+
+extension SetupFastingInfoViewController {
+    private func setFastingType() {
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(fastingType), forKey: "FastingType")
+        navigationController?.popToRootViewController(animated: false)
+    }
+}
+
 // MARK: - UICollectionViewDelegate
 
 extension SetupFastingInfoViewController: UICollectionViewDelegate {
@@ -130,8 +139,8 @@ extension SetupFastingInfoViewController: UICollectionViewDataSource {
 
             cell.configure(buttonTitle: Asset.Strings.startFasting)
 
-            cell.onTapped = {
-                print("Tapped")
+            cell.onTapped = { [weak self] in
+                self?.setFastingType()
             }
             
             return cell

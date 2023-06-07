@@ -95,6 +95,7 @@ private extension FFDailyWaterStatCollectionViewCell {
     
     func configureMoreIcon() {
         moreIcon.image = Asset.Images.rightChevron.withTintColor(Asset.Colors.blue)
+        moreIcon.isHidden = true
         backView.addSubview(moreIcon)
         moreIcon.snp.makeConstraints {
             $0.height.equalTo(Constants.moreIconSize)

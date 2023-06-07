@@ -15,6 +15,7 @@ final class FastingMainCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
 
     private var fastingType: FastingType = .first
+    private var mealType: MealType = .fasting
 
     // MARK: - Subviews
 
@@ -69,8 +70,6 @@ private extension FastingMainCollectionViewCell {
     }
 
     func configureFastingInfoView() {
-        fastingInfoView.resetFastingType(fastingType: fastingType)
-        fastingInfoView.resetProgressBar(fastingRation: 1.0, eatingRetio: 0.4)
         contentView.addSubview(fastingInfoView)
         fastingInfoView.snp.makeConstraints {
             $0.height.width.equalTo(Constants.FastingInfoView.size)
@@ -80,7 +79,6 @@ private extension FastingMainCollectionViewCell {
     }
 
     func configureTimeToLabel() {
-        timeToLabel.text = "Time to eat"
         timeToLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         timeToLabel.textColor = Asset.Colors.lightGray
         timeToLabel.textAlignment = .center
@@ -104,7 +102,6 @@ private extension FastingMainCollectionViewCell {
     }
 
     func configureTimerLabel() {
-        timerLabel.text = "0:40:31"
         timerLabel.font = .systemFont(ofSize: 24, weight: .semibold)
         timerLabel.textColor = Asset.Colors.label
         timerLabel.textAlignment = .center
@@ -128,7 +125,6 @@ private extension FastingMainCollectionViewCell {
     }
 
     func configureFastingTypeLabel() {
-        fastingTypeLabel.text = fastingType.rawValue
         fastingTypeLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         fastingTypeLabel.textColor = Asset.Colors.green
         fastingTypeLabel.textAlignment = .center
@@ -196,7 +192,6 @@ private extension FastingMainCollectionViewCell {
     }
 
     func configureFinishTimeLabel() {
-        finishTimeLabel.text = "09:00"
         finishTimeLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         finishTimeLabel.textColor = Asset.Colors.green
         finishTimeLabel.textAlignment = .right
@@ -219,7 +214,6 @@ private extension FastingMainCollectionViewCell {
     }
 
     func configureStartTimeLabel() {
-        startTimeLabel.text = "19:00"
         startTimeLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         startTimeLabel.textColor = Asset.Colors.green
         startTimeLabel.textAlignment = .right
@@ -234,27 +228,122 @@ private extension FastingMainCollectionViewCell {
 // MARK: - Public configure
 
 extension FastingMainCollectionViewCell {
-    func configure(fastingType: FastingType) {
-        fastingTypeLabel.text = fastingType.rawValue
+    func configure(fastingType: FastingType?) {
+        guard let fastingType else { return }
+
         fastingInfoView.resetFastingType(fastingType: fastingType)
         fastingInfoView.resetProgressBar(fastingRation: 1.0, eatingRetio: 0.4)
 
         switch fastingType {
         case .first:
+            fastingTypeLabel.text = "14-10"
             startTimeLabel.text = "19:00"
             finishTimeLabel.text = "09:00"
+            setTimer(startTime: 19, endTime: 9)
         case .second:
+            fastingTypeLabel.text = "16-8"
             startTimeLabel.text = "17:00"
             finishTimeLabel.text = "09:00"
+            setTimer(startTime: 17, endTime: 9)
         case .third:
+            fastingTypeLabel.text = "18-6"
             startTimeLabel.text = "15:00"
             finishTimeLabel.text = "09:00"
+            setTimer(startTime: 15, endTime: 9)
         case .fourth:
+            fastingTypeLabel.text = "20-4"
             startTimeLabel.text = "13:00"
             finishTimeLabel.text = "09:00"
+            setTimer(startTime: 13, endTime: 9)
         }
     }
 }
+
+// MARK: - Utils
+
+extension FastingMainCollectionViewCell {
+    private func setTimer(startTime: Int, endTime: Int) {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let currentComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentDate)
+
+        var desiredComponents = DateComponents()
+        var startTimeComponents = DateComponents()
+        var endTimeComponents = DateComponents()
+
+        desiredComponents.minute = 0
+        desiredComponents.second = 0
+        desiredComponents.year = currentComponents.year
+        desiredComponents.month = currentComponents.month
+
+        if  currentComponents.hour ?? 0 >= 9, startTime >= currentComponents.hour ?? 0 {
+            desiredComponents.hour = startTime
+            desiredComponents.day = currentComponents.day
+            mealType = .eating
+        } else if currentComponents.hour ?? 0 >= 9 {
+            desiredComponents.hour = endTime
+            desiredComponents.day = (currentComponents.day ?? 0) + 1
+            mealType = .fasting
+        } else {
+            desiredComponents.hour = endTime
+            desiredComponents.day = currentComponents.day
+            mealType = .morningFasting
+        }
+
+        let desiredDate = calendar.date(from: desiredComponents)!
+        let timeInterval = desiredDate.timeIntervalSince(currentDate)
+
+        let timer = Timer(timeInterval: 1.0, repeats: true) { [weak self] timer in
+            guard let self else { return }
+
+            let timeRemaining = Int(desiredDate.timeIntervalSinceNow)
+
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm:ss"
+            let formattedTime = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(timeRemaining)))
+
+            self.timerLabel.text = formattedTime
+            switch self.mealType {
+            case .morningFasting:
+                timeToLabel.text = "Time to faste"
+                fastingInfoView.resetProgressBar(
+                    fastingRation: 1.0,
+                    eatingRetio: Double(timeRemaining) / Double(timeInterval)
+                )
+            case .eating:
+                timeToLabel.text = "Time to eat"
+                fastingInfoView.resetProgressBar(
+                    fastingRation: 0.0,
+                    eatingRetio:  Double(timeRemaining) / Double(timeInterval)
+                )
+            case .fasting:
+                timeToLabel.text = "Time to faste"
+                fastingInfoView.resetProgressBar(
+                    fastingRation:  (Double(timeInterval) - Double(timeRemaining)) / Double(timeInterval)
+                    , eatingRetio: 1.0
+                )
+            }
+
+            if timeRemaining <= 0 {
+                timer.invalidate()
+                print("Таймер завершился!")
+            }
+        }
+
+        RunLoop.main.add(timer, forMode: .common)
+        timer.fire()
+    }
+}
+
+//startTimeComponents.minute = 0
+//startTimeComponents.second = 0
+//startTimeComponents.year = currentComponents.year
+//startTimeComponents.month = currentComponents.month
+//
+//endTimeComponents.minute = 0
+//endTimeComponents.second = 0
+//endTimeComponents.year = currentComponents.year
+//endTimeComponents.month = currentComponents.month
 
 // MARK: - Constants
 

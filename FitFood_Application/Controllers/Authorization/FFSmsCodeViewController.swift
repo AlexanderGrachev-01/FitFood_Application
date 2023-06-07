@@ -29,17 +29,17 @@ final class FFSmsCodeViewController: FFBaseAuthViewController {
             return
         }
 
-//        if code == "111111" {
-//
-//            AuthorizationManager.shared.getUser("testId1234") { _ in
-//                print("")
-//            }
-//            
-//            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//               let sceneDelegate = windowScene.delegate as? SceneDelegate {
-//                sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
-//            }
-//        }
+        if code == "111111" {
+
+            AuthorizationManager.shared.getUser("testId1234") { _ in
+                print("")
+            }
+            
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let sceneDelegate = windowScene.delegate as? SceneDelegate {
+                sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
+            }
+        }
         
         DispatchQueue.main.async {
             self.button.alpha = 0.5

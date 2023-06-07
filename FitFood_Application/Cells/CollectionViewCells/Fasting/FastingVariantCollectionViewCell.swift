@@ -89,21 +89,26 @@ private extension FastingVariantCollectionViewCell {
 
 extension FastingVariantCollectionViewCell {
     func configure(fastingType: FastingType) {
-        fastingTypeLabel.text = fastingType.rawValue
-        fastingTimeLabel.text = "\(String(fastingType.rawValue.prefix(2))) \(Asset.Strings.hOfFasting)"
-
         switch fastingType {
         case .first:
-            mealTimeLabel.text = "\(String(fastingType.rawValue.suffix(2))) \(Asset.Strings.hOfMeal)"
+            fastingTypeLabel.text = "14-10"
+            fastingTimeLabel.text = "14"
+            mealTimeLabel.text = "10"
             complexityView.configure(raiting: 1)
         case .second:
-            mealTimeLabel.text = "\(String(fastingType.rawValue.suffix(1))) \(Asset.Strings.hOfMeal)"
+            fastingTypeLabel.text = "16-8"
+            fastingTimeLabel.text = "16"
+            mealTimeLabel.text = "8"
             complexityView.configure(raiting: 3)
         case .third:
-            mealTimeLabel.text = "\(String(fastingType.rawValue.suffix(1))) \(Asset.Strings.hOfMeal)"
+            fastingTypeLabel.text = "18-6"
+            fastingTimeLabel.text = "18"
+            mealTimeLabel.text = "6"
             complexityView.configure(raiting: 4)
         case .fourth:
-            mealTimeLabel.text = "\(String(fastingType.rawValue.suffix(1))) \(Asset.Strings.hOfMeal)"
+            fastingTypeLabel.text = "20-4"
+            fastingTimeLabel.text = "20"
+            mealTimeLabel.text = "4"
             complexityView.configure(raiting: 5)
         }
     }
