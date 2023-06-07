@@ -112,6 +112,7 @@ private extension ProductInfoTableViewCell {
         nameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(Constants.nameLabelTopOffset)
             $0.left.equalToSuperview().offset(Constants.cellSafeOffset)
+            $0.right.equalTo(kcalLabel.snp.left).offset(-Constants.cellSafeOffset)
         }
     }
     

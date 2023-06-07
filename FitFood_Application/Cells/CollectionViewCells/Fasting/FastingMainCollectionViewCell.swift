@@ -317,7 +317,7 @@ extension FastingMainCollectionViewCell {
             switch self.mealType {
             case .morningFasting:
                 timeToLabel.text = "Time to faste"
-                let percent = Double(timeRemaining) / Double((endTime + (24 - startTime)) * 3600)
+                let percent = (Double((endTime + (24 - startTime)) * 3600) - Double(timeRemaining)) / Double((endTime + (24 - startTime)) * 3600)
                 percentLabel.text = "\(Int(percent * 100))%"
                 fastingInfoView.resetProgressBar(
                     fastingRation: percent,
@@ -325,7 +325,7 @@ extension FastingMainCollectionViewCell {
                 )
             case .eating:
                 timeToLabel.text = "Time to eat"
-                let percent = Double(timeRemaining) / Double((startTime - endTime) * 3600)
+                let percent = (Double((startTime - endTime) * 3600) - Double(timeRemaining)) / Double((startTime - endTime) * 3600)
                 percentLabel.text = "\(Int(percent * 100))%"
                 fastingInfoView.resetProgressBar(
                     fastingRation: 0.0,
@@ -333,7 +333,7 @@ extension FastingMainCollectionViewCell {
                 )
             case .fasting:
                 timeToLabel.text = "Time to faste"
-                let percent = Double(timeRemaining) / Double((endTime + (24 - startTime)) * 3600)
+                let percent = (Double((endTime + (24 - startTime)) * 3600) - Double(timeRemaining)) / Double((endTime + (24 - startTime)) * 3600)
                 percentLabel.text = "\(Int(percent * 100))%"
                 fastingInfoView.resetProgressBar(
                     fastingRation: percent

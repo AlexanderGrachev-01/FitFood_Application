@@ -12,7 +12,9 @@ final class FFAddingViewController: FFBaseViewController {
 
     private let segmentsArray = [Asset.Strings.recent, Asset.Strings.favorites]
     private var products: [FFProduct] = []
+    private var filteredProducts: [FFProduct] = []
     private var mealType: MealType = .breakfast
+    private var isSearching = false
     
     // MARK: - Subviews
     
@@ -32,8 +34,15 @@ final class FFAddingViewController: FFBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        title = ""
+        title = "Add"
+        navigationController?.setNavigationBarHidden(true, animated: false)
         mealTypeView.isHidden = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        title = "Add"
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -125,6 +134,7 @@ private extension FFAddingViewController {
 
             self.mealType = mealType
             self.mealTypeView.isHidden = true
+            navigationController?.setNavigationBarHidden(false, animated: true)
 
             switch mealType {
             case .breakfast:
@@ -139,7 +149,8 @@ private extension FFAddingViewController {
         }
         view.addSubview(mealTypeView)
         mealTypeView.snp.makeConstraints {
-            $0.top.left.right.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.left.right.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
@@ -177,7 +188,7 @@ extension FFAddingViewController: UITableViewDelegate {
 
 extension FFAddingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        products.count
+        isSearching ? filteredProducts.count : products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -191,7 +202,7 @@ extension FFAddingViewController: UITableViewDataSource {
             print(isFavourite)
         }
 
-        cell.configure(product: products[indexPath.item])
+        cell.configure(product: isSearching ?  filteredProducts[indexPath.item] : products[indexPath.item])
         
         return cell
     }
@@ -202,21 +213,25 @@ extension FFAddingViewController: UITableViewDataSource {
 
 extension FFAddingViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        //        guard let text = searchController.searchBar.text else {
-        //            return
-        //        }
+        isSearching = searchController.isActive
 
+        if let searchText = searchController.searchBar.text {
+            filteredProducts = products.filter { $0.name.contains(searchText) }
+            tableView.reloadData()
+        }
     }
 }
 
 // MARK: - UISearchResultsUpdating
 
 extension FFAddingViewController: UISearchControllerDelegate {
-    
 }
 
 private extension FFAddingViewController {
     enum Constants {
+        enum mealTypeView {
+            static let top = 100
+        }
         static let segmentedControlOffset = 16
         static let segmentedControlHeight = 32
         

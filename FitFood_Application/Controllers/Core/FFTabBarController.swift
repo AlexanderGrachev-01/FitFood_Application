@@ -55,7 +55,7 @@ final class FFTabBarController: UITabBarController {
             tag: 0
         )
         addingNav.tabBarItem = UITabBarItem(
-            title: Asset.Strings.lunch,
+            title: "Add",
             image: UIImage(systemName: "plus.circle.fill"),
             tag: 0
         )

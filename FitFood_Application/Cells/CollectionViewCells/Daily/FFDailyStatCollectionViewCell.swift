@@ -159,29 +159,34 @@ extension FFDailyStatCollectionViewCell {
         var fat = 0.0
         var carbs = 0.0
 
+        breakfastKcal = 0
+        lunchKcal = 0
+        dinerKcal = 0
+        snacksKcal = 0
+
         for product in data.breakfast {
-            breakfastKcal = Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
-            protein = product.protein * 0.01 * Double(product.eatenWeight ?? 0)
-            fat = product.fat * 0.01 * Double(product.eatenWeight ?? 0)
-            carbs = product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
+            breakfastKcal += Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
+            protein += product.protein * 0.01 * Double(product.eatenWeight ?? 0)
+            fat += product.fat * 0.01 * Double(product.eatenWeight ?? 0)
+            carbs += product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
         }
         for product in data.lunch {
-            lunchKcal = Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
-            protein = product.protein * 0.01 * Double(product.eatenWeight ?? 0)
-            fat = product.fat * 0.01 * Double(product.eatenWeight ?? 0)
-            carbs = product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
+            lunchKcal += Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
+            protein += product.protein * 0.01 * Double(product.eatenWeight ?? 0)
+            fat += product.fat * 0.01 * Double(product.eatenWeight ?? 0)
+            carbs += product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
         }
         for product in data.diner {
-            dinerKcal = Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
-            protein = product.protein * 0.01 * Double(product.eatenWeight ?? 0)
-            fat = product.fat * 0.01 * Double(product.eatenWeight ?? 0)
-            carbs = product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
+            dinerKcal += Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
+            protein += product.protein * 0.01 * Double(product.eatenWeight ?? 0)
+            fat += product.fat * 0.01 * Double(product.eatenWeight ?? 0)
+            carbs += product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
         }
         for product in data.snaks {
-            snacksKcal = Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
-            protein = product.protein * 0.01 * Double(product.eatenWeight ?? 0)
-            fat = product.fat * 0.01 * Double(product.eatenWeight ?? 0)
-            carbs =  product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
+            snacksKcal += Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
+            protein += product.protein * 0.01 * Double(product.eatenWeight ?? 0)
+            fat += product.fat * 0.01 * Double(product.eatenWeight ?? 0)
+            carbs +=  product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
         }
         eatenKcal = breakfastKcal + lunchKcal + dinerKcal + snacksKcal
 
