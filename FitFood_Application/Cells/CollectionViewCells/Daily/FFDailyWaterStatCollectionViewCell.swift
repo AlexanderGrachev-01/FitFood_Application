@@ -11,6 +11,10 @@ final class FFDailyWaterStatCollectionViewCell: UICollectionViewCell {
     // MARK: - Identifier
     
     static let identifier = "DailyWaterStatCollectionViewCell"
+
+    // MARK: - Properties
+
+    private var amountOfWater = 0
     
     // MARK: - Handlers
     
@@ -35,6 +39,7 @@ final class FFDailyWaterStatCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        getWaterData()
         configureViews()
     }
     
@@ -106,7 +111,7 @@ private extension FFDailyWaterStatCollectionViewCell {
     }
     
     func configureTotalLabel() {
-        totalLabel.text = "900"
+        totalLabel.text = "\(amountOfWater)"
         totalLabel.textColor = Asset.Colors.label
         totalLabel.textAlignment = .center
         totalLabel.font = .systemFont(ofSize: 24, weight: .semibold)
@@ -167,17 +172,43 @@ private extension FFDailyWaterStatCollectionViewCell {
     }
 }
 
+// MARK: - Utils
+
+extension FFDailyWaterStatCollectionViewCell {
+    private func getWaterData() {
+        guard let data = UserDefaults.standard.value(forKey: "WaterData") as? Data else {
+            return
+        }
+
+        guard let amount = try? PropertyListDecoder().decode(Int.self, from: data) else {
+            amountOfWater = 0
+            return
+        }
+
+        amountOfWater = amount
+    }
+
+    private func setWaterData() {
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(amountOfWater), forKey: "WaterData")
+    }
+}
+
 // MARK: - Actions
 
 extension FFDailyWaterStatCollectionViewCell {
     @objc
     private func minusButtonAction() {
-        onMinusButton?()
+        amountOfWater -= 250
+        if amountOfWater < 0 {
+            amountOfWater = 0
+        }
+        totalLabel.text = "\(amountOfWater)"
     }
     
     @objc
     private func plusButtonAction() {
-        onPlusButton?()
+        amountOfWater += 250
+        totalLabel.text = "\(amountOfWater)"
     }
 }
 

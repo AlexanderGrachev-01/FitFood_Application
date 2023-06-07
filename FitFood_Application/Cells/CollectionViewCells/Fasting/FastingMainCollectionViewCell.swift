@@ -45,6 +45,19 @@ final class FastingMainCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        timerLabel.text = ""
+        timeToLabel.text = ""
+        percentLabel.text = ""
+        fastingInfoView.resetProgressBar(
+            fastingRation: 0.0,
+            eatingRetio: 0.0
+        )
+
+    }
 }
 
 // MARK: - Layout
@@ -90,7 +103,6 @@ private extension FastingMainCollectionViewCell {
     }
 
     func configurePercentLabel() {
-        percentLabel.text = "40%"
         percentLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         percentLabel.textColor = Asset.Colors.orange
         percentLabel.textAlignment = .center
@@ -306,20 +318,26 @@ extension FastingMainCollectionViewCell {
             switch self.mealType {
             case .morningFasting:
                 timeToLabel.text = "Time to faste"
+                let percent = Double(timeRemaining) / Double((endTime + (24 - startTime)) * 3600)
+                percentLabel.text = "\(Int(percent * 100))%"
                 fastingInfoView.resetProgressBar(
                     fastingRation: 1.0,
-                    eatingRetio: Double(timeRemaining) / Double(timeInterval)
+                    eatingRetio: percent
                 )
             case .eating:
                 timeToLabel.text = "Time to eat"
+                let percent = Double(timeRemaining) / Double((startTime - endTime) * 3600)
+                percentLabel.text = "\(Int(percent * 100))%"
                 fastingInfoView.resetProgressBar(
                     fastingRation: 0.0,
-                    eatingRetio:  Double(timeRemaining) / Double(timeInterval)
+                    eatingRetio: percent
                 )
             case .fasting:
                 timeToLabel.text = "Time to faste"
+                let percent = Double(timeRemaining) / Double((endTime + (24 - startTime)) * 3600)
+                percentLabel.text = "\(Int(percent * 100))%"
                 fastingInfoView.resetProgressBar(
-                    fastingRation:  (Double(timeInterval) - Double(timeRemaining)) / Double(timeInterval)
+                    fastingRation: percent
                     , eatingRetio: 1.0
                 )
             }

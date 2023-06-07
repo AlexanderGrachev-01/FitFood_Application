@@ -206,8 +206,8 @@
             filePath = "FitFood_Application/Cells/CollectionViewCells/Fasting/FastingMainCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "configure(fastingType:)"
             landmarkType = "7">
             <Locations>
@@ -254,8 +254,8 @@
             filePath = "FitFood_Application/Cells/CollectionViewCells/Fasting/FastingMainCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "setTimer(startTime:endTime:)"
             landmarkType = "7">
             <Locations>
