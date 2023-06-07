@@ -16,6 +16,7 @@ final class FFRecipesViewController: FFBaseViewController {
 
     private var recipes: [FFRecipe] = []
     private var popularRecipe: [FFRecipe] = []
+    private var resentRecipes: [FFRecipe] = []
     
     // MARK: - Subviews
     
@@ -115,6 +116,7 @@ extension FFRecipesViewController: UICollectionViewDelegate {
 
             let vc = RecepiesDetailViewController()
 
+            resentRecipes.insert(popularRecipe[indexPath.item - 1], at: 0)
             vc.recipe = popularRecipe[indexPath.item - 1]
 
             navigationController?.pushViewController(vc, animated: true)
@@ -132,6 +134,8 @@ extension FFRecipesViewController: UICollectionViewDelegate {
             guard indexPath.item != 0 else { return }
 
             let vc = RecepiesDetailViewController()
+
+            vc.recipe = resentRecipes[indexPath.item - 1]
 
             navigationController?.pushViewController(vc, animated: true)
             return
@@ -161,7 +165,11 @@ extension FFRecipesViewController: UICollectionViewDataSource {
         case .categories:
             return isСategoriesCovered ? 5 : RecipeCategory.allCases.count
         case .recently:
-            return 5
+            if resentRecipes.count < 4 {
+                return resentRecipes.count != 0 ? resentRecipes.count + 1 : 0
+            } else {
+                return 5
+            }
         }
     }
     
@@ -276,6 +284,8 @@ extension FFRecipesViewController: UICollectionViewDataSource {
             ) as? RecipeInfoCollectionViewCell else {
                 return UICollectionViewCell()
             }
+
+            cell.configure(recipe: resentRecipes[indexPath.item - 1])
             
             return cell
         }

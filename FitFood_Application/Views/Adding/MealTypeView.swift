@@ -51,7 +51,7 @@ private extension MealTypeView {
             for: .touchUpInside
         )
         breakfastButton.setTitle(Asset.Strings.breakfast, for: .normal)
-        breakfastButton.setTitleColor(Asset.Colors.label, for: .normal)
+        breakfastButton.setTitleColor(Asset.Colors.white, for: .normal)
         breakfastButton.backgroundColor = Asset.Colors.green
         breakfastButton.layer.cornerRadius = Constants.Button.cornerRadius
         addSubview(breakfastButton)
@@ -71,7 +71,7 @@ private extension MealTypeView {
             for: .touchUpInside
         )
         lunchButton.setTitle(Asset.Strings.lunch, for: .normal)
-        lunchButton.setTitleColor(Asset.Colors.label, for: .normal)
+        lunchButton.setTitleColor(Asset.Colors.white, for: .normal)
         lunchButton.backgroundColor = Asset.Colors.green
         lunchButton.layer.cornerRadius = Constants.Button.cornerRadius
         addSubview(lunchButton)
@@ -91,7 +91,7 @@ private extension MealTypeView {
             for: .touchUpInside
         )
         dinerButton.setTitle(Asset.Strings.dinner, for: .normal)
-        dinerButton.setTitleColor(Asset.Colors.label, for: .normal)
+        dinerButton.setTitleColor(Asset.Colors.white, for: .normal)
         dinerButton.backgroundColor = Asset.Colors.green
         dinerButton.layer.cornerRadius = Constants.Button.cornerRadius
         addSubview(dinerButton)
@@ -111,7 +111,7 @@ private extension MealTypeView {
             for: .touchUpInside
         )
         snacksButton.setTitle(Asset.Strings.snack, for: .normal)
-        snacksButton.setTitleColor(Asset.Colors.label, for: .normal)
+        snacksButton.setTitleColor(Asset.Colors.white, for: .normal)
         snacksButton.backgroundColor = Asset.Colors.green
         snacksButton.layer.cornerRadius = Constants.Button.cornerRadius
         addSubview(snacksButton)

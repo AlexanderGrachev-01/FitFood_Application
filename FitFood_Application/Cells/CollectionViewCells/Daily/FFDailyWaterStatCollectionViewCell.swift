@@ -14,7 +14,7 @@ final class FFDailyWaterStatCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
 
-    private var amountOfWater = 0
+    private var amountOfWater: Int = 0
     
     // MARK: - Handlers
     
@@ -186,6 +186,7 @@ extension FFDailyWaterStatCollectionViewCell {
         }
 
         amountOfWater = amount
+        totalLabel.text = "\(amountOfWater)"
     }
 
     private func setWaterData() {
@@ -202,12 +203,14 @@ extension FFDailyWaterStatCollectionViewCell {
         if amountOfWater < 0 {
             amountOfWater = 0
         }
+        setWaterData()
         totalLabel.text = "\(amountOfWater)"
     }
     
     @objc
     private func plusButtonAction() {
         amountOfWater += 250
+        setWaterData()
         totalLabel.text = "\(amountOfWater)"
     }
 }
