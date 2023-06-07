@@ -160,28 +160,28 @@ extension FFDailyStatCollectionViewCell {
         var carbs = 0.0
 
         for product in data.breakfast {
-            breakfastKcal = breakfastKcal + Int(product.calories) * (product.eatenWeight ?? 0)
-            protein = protein + product.protein * Double(product.eatenWeight ?? 0)
-            fat = fat + product.fat * Double(product.eatenWeight ?? 0)
-            carbs = carbs + product.carbs * Double(product.eatenWeight ?? 0)
+            breakfastKcal = Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
+            protein = product.protein * 0.01 * Double(product.eatenWeight ?? 0)
+            fat = product.fat * 0.01 * Double(product.eatenWeight ?? 0)
+            carbs = product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
         }
         for product in data.lunch {
-            lunchKcal = lunchKcal + Int(product.calories) * (product.eatenWeight ?? 0)
-            protein = protein + product.protein * Double(product.eatenWeight ?? 0)
-            fat = fat + product.fat * Double(product.eatenWeight ?? 0)
-            carbs = carbs + product.carbs * Double(product.eatenWeight ?? 0)
+            lunchKcal = Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
+            protein = product.protein * 0.01 * Double(product.eatenWeight ?? 0)
+            fat = product.fat * 0.01 * Double(product.eatenWeight ?? 0)
+            carbs = product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
         }
         for product in data.diner {
-            dinerKcal = dinerKcal + Int(product.calories) * (product.eatenWeight ?? 0)
-            protein = protein + product.protein * Double(product.eatenWeight ?? 0)
-            fat = fat + product.fat * Double(product.eatenWeight ?? 0)
-            carbs = carbs + product.carbs * Double(product.eatenWeight ?? 0)
+            dinerKcal = Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
+            protein = product.protein * 0.01 * Double(product.eatenWeight ?? 0)
+            fat = product.fat * 0.01 * Double(product.eatenWeight ?? 0)
+            carbs = product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
         }
         for product in data.snaks {
-            snacksKcal = snacksKcal + Int(product.calories) * (product.eatenWeight ?? 0)
-            protein = protein + product.protein * Double(product.eatenWeight ?? 0)
-            fat = fat + product.fat * Double(product.eatenWeight ?? 0)
-            carbs = carbs + product.carbs * Double(product.eatenWeight ?? 0)
+            snacksKcal = Int(product.calories * 0.01 * Double(product.eatenWeight ?? 0))
+            protein = product.protein * 0.01 * Double(product.eatenWeight ?? 0)
+            fat = product.fat * 0.01 * Double(product.eatenWeight ?? 0)
+            carbs =  product.carbs * 0.01 * Double(product.eatenWeight ?? 0)
         }
         eatenKcal = breakfastKcal + lunchKcal + dinerKcal + snacksKcal
 
@@ -196,7 +196,7 @@ extension FFDailyStatCollectionViewCell {
         remainedCountLabel.text = "\(remainedKcal) kcal"
 
         if eatenKcal != 0 {
-            let progressPercent = Double(remainedKcal) / Double(totalKcal)
+            let progressPercent = Double(eatenKcal) / Double(totalKcal)
             arcProgressBarView.resetProgressBar(ratio: progressPercent)
         }
 

@@ -15,7 +15,7 @@ final class FastingMainCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
 
     private var fastingType: FastingType = .first
-    private var mealType: MealType = .fasting
+    private var mealType: FastingState = .fasting
 
     // MARK: - Subviews
 
@@ -56,7 +56,6 @@ final class FastingMainCollectionViewCell: UICollectionViewCell {
             fastingRation: 0.0,
             eatingRetio: 0.0
         )
-
     }
 }
 
@@ -280,15 +279,13 @@ extension FastingMainCollectionViewCell {
         let currentComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentDate)
 
         var desiredComponents = DateComponents()
-        var startTimeComponents = DateComponents()
-        var endTimeComponents = DateComponents()
 
         desiredComponents.minute = 0
         desiredComponents.second = 0
         desiredComponents.year = currentComponents.year
         desiredComponents.month = currentComponents.month
 
-        if  currentComponents.hour ?? 0 >= 9, startTime >= currentComponents.hour ?? 0 {
+        if currentComponents.hour ?? 0 >= 9, startTime >= currentComponents.hour ?? 0 {
             desiredComponents.hour = startTime
             desiredComponents.day = currentComponents.day
             mealType = .eating
@@ -310,9 +307,11 @@ extension FastingMainCollectionViewCell {
 
             let timeRemaining = Int(desiredDate.timeIntervalSinceNow)
 
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm:ss"
-            let formattedTime = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(timeRemaining)))
+            let hours = timeRemaining / 3600
+            let minutes = (timeRemaining % 3600) / 60
+            let seconds = (timeRemaining % 3600) % 60
+
+            let formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
 
             self.timerLabel.text = formattedTime
             switch self.mealType {
@@ -321,8 +320,8 @@ extension FastingMainCollectionViewCell {
                 let percent = Double(timeRemaining) / Double((endTime + (24 - startTime)) * 3600)
                 percentLabel.text = "\(Int(percent * 100))%"
                 fastingInfoView.resetProgressBar(
-                    fastingRation: 1.0,
-                    eatingRetio: percent
+                    fastingRation: percent,
+                    eatingRetio: 0.0
                 )
             case .eating:
                 timeToLabel.text = "Time to eat"

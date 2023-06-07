@@ -176,9 +176,11 @@ extension FFDailyFastingTimerCollectionViewCell {
 
             let timeRemaining = Int(desiredDate.timeIntervalSinceNow)
 
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm:ss"
-            let formattedTime = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(timeRemaining)))
+            let hours = timeRemaining / 3600
+            let minutes = (timeRemaining % 3600) / 60
+            let seconds = (timeRemaining % 3600) % 60
+
+            let formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
 
             self.timerLabel.text = formattedTime
 

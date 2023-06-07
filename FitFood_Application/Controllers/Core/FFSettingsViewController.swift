@@ -144,6 +144,9 @@ extension FFSettingsViewController {
         alert.addAction(cancel)
         let logout = UIAlertAction(title: "Log out", style: .default) {_ in
             try? Auth.auth().signOut()
+            UserDefaults.standard.removeObject(forKey: "UserData")
+            UserDefaults.standard.removeObject(forKey: "FastingType")
+            UserDefaults.standard.removeObject(forKey: "WaterData")
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let sceneDelegate = windowScene.delegate as? SceneDelegate {
                 sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: FFWelcomePageViewController())

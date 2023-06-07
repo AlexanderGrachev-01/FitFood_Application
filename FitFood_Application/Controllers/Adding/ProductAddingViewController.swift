@@ -25,6 +25,8 @@ final class ProductAddingViewController: FFBaseViewController {
             }
         }
     }
+    
+    var mealType: MealType = .breakfast
 
     var product: FFProduct?
     private var weight = 0
@@ -223,7 +225,17 @@ private extension ProductAddingViewController {
 
                     var eatenProduct = product
                     eatenProduct.eatenWeight = weight
-                    userData?.lunch.append(eatenProduct)
+                    switch mealType {
+                    case .breakfast:
+                        userData?.breakfast.append(eatenProduct)
+                    case .lunch:
+                        userData?.lunch.append(eatenProduct)
+                    case .diner:
+                        userData?.diner.append(eatenProduct)
+                    case .snacks:
+                        userData?.snaks.append(eatenProduct)
+                    }
+                    setUserData()
                     self.navigationController?.popViewController(animated: true)
                 }
             }, for: .touchUpInside

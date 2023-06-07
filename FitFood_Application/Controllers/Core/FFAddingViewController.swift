@@ -8,11 +8,11 @@
 import UIKit
 
 final class FFAddingViewController: FFBaseViewController {
-    
     // MARK: - Properties
 
     private let segmentsArray = [Asset.Strings.recent, Asset.Strings.favorites]
     private var products: [FFProduct] = []
+    private var mealType: MealType = .breakfast
     
     // MARK: - Subviews
     
@@ -20,6 +20,7 @@ final class FFAddingViewController: FFBaseViewController {
     private lazy var segmentedControl = UISegmentedControl(items: segmentsArray)
     private var addDishButton = UIButton()
     private var tableView = UITableView(frame: .zero)
+    private var mealTypeView = MealTypeView()
     
     // MARK: - LifeCycle
     
@@ -27,6 +28,12 @@ final class FFAddingViewController: FFBaseViewController {
         super.viewDidLoad()
         
         configureViews()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        title = ""
+        mealTypeView.isHidden = false
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -50,16 +57,17 @@ final class FFAddingViewController: FFBaseViewController {
     
 private extension FFAddingViewController {
     func configureViews() {
-        title = Asset.Strings.lunch
         view.backgroundColor = Asset.Colors.secondaryBackground
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         configureSegmentedControl()
         configureAddDishButton()
         configureTableView()
+        configureMealTypeView()
     }
     
     func configureSegmentedControl() {
+        segmentedControl.isHidden = true
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
@@ -90,7 +98,7 @@ private extension FFAddingViewController {
         addDishButton.snp.makeConstraints {
             $0.height.equalTo(Constants.addDishButtonHeight)
             $0.width.equalTo(Constants.addDishButtonWidth)
-            $0.top.equalTo(segmentedControl.snp.bottom).offset(Constants.addDishButtonTopOffset)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(Constants.addDishButtonTopOffset)
             $0.left.equalToSuperview().offset(Constants.addDishButtonSideOffset)
         }
     }
@@ -108,6 +116,31 @@ private extension FFAddingViewController {
             $0.top.equalTo(addDishButton.snp.bottom).offset(Constants.tableViewTopOffset)
             $0.left.right.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(Constants.tableViewBottomOffset)
+        }
+    }
+
+    func configureMealTypeView() {
+        mealTypeView.onSelectType = { [weak self] mealType in
+            guard let self else { return }
+
+            self.mealType = mealType
+            self.mealTypeView.isHidden = true
+
+            switch mealType {
+            case .breakfast:
+                title = Asset.Strings.breakfast
+            case .lunch:
+                title = Asset.Strings.lunch
+            case .diner:
+                title = Asset.Strings.dinner
+            case .snacks:
+                title = Asset.Strings.snack
+            }
+        }
+        view.addSubview(mealTypeView)
+        mealTypeView.snp.makeConstraints {
+            $0.top.left.right.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
@@ -136,6 +169,7 @@ extension FFAddingViewController: UITableViewDelegate {
         let vc =  ProductAddingViewController()
 
         vc.product = products[indexPath.item]
+        vc.mealType = mealType
 
         navigationController?.pushViewController(vc, animated: true)
     }

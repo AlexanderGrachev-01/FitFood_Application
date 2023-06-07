@@ -56,6 +56,7 @@ private extension TextFieldTableViewCell {
         textField.layer.borderWidth = Constants.TextField.borderWidth
         textField.layer.cornerRadius = Constants.TextField.cornerRadius
         textField.layer.borderColor = Asset.Colors.green.cgColor
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         contentView.addSubview(textField)
         textField.snp.makeConstraints {
             $0.height.equalTo(Constants.TextField.height)
