@@ -92,7 +92,7 @@ class NetworkingClient {
     }
 
     func url(path: String) -> URL? {
-        let baseURL = URL(string: "http://192.168.31.64:9080")
+        let baseURL = URL(string: "http://172.20.10.3:9080")
 
         let urlString = (baseURL?.absoluteString ?? "") + path
 

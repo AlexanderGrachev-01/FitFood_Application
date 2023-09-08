@@ -109,6 +109,15 @@
       }
     },
     {
+      "identity" : "nivelir?ysclid=lmajs6xjyu292906372",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hhru/Nivelir?ysclid=lmajs6xjyu292906372",
+      "state" : {
+        "revision" : "28f419c29bf2d8c28b94efb0508a8e464aea78e7",
+        "version" : "1.6.3"
+      }
+    },
+    {
       "identity" : "promises",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/promises.git",
