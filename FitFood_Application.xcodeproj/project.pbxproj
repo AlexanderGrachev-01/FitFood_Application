@@ -22,6 +22,12 @@
 		F64EE99C2A3105210070EC4D /* FastingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EE99B2A3105210070EC4D /* FastingState.swift */; };
 		F64EE99F2A3124940070EC4D /* MealTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EE99E2A3124940070EC4D /* MealTypeView.swift */; };
 		F64EE9A12A3125680070EC4D /* MealType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EE9A02A3125680070EC4D /* MealType.swift */; };
+		F6545CCF2AB2148C0033E684 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6545CCE2AB2148C0033E684 /* MainScreen.swift */; };
+		F6545CD12AB214980033E684 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6545CD02AB214980033E684 /* MainView.swift */; };
+		F6545CD42AB216270033E684 /* RecipesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6545CD32AB216270033E684 /* RecipesScreen.swift */; };
+		F6545CD72AB218C40033E684 /* AddingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6545CD62AB218C40033E684 /* AddingScreen.swift */; };
+		F6545CDA2AB219AD0033E684 /* FastingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6545CD92AB219AD0033E684 /* FastingScreen.swift */; };
+		F6545CDD2AB21AA60033E684 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6545CDC2AB21AA60033E684 /* SettingsScreen.swift */; };
 		F65727F329E1A7DB00FA7B57 /* FoodContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */; };
 		F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */; };
 		F65727F729E1B84500FA7B57 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65727F629E1B84500FA7B57 /* ProgressView.swift */; };
@@ -46,7 +52,6 @@
 		F6B700EF297199390066B975 /* FFDailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B700EE297199390066B975 /* FFDailyViewController.swift */; };
 		F6B700F42971993B0066B975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B700F32971993B0066B975 /* Assets.xcassets */; };
 		F6B700F72971993B0066B975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B700F52971993B0066B975 /* LaunchScreen.storyboard */; };
-		F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7010429719B900066B975 /* FFTabBarController.swift */; };
 		F6B701072971A0E60066B975 /* FFRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701062971A0E60066B975 /* FFRecipesViewController.swift */; };
 		F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B701082971A1590066B975 /* FFAddingViewController.swift */; };
 		F6B7010B2971A18B0066B975 /* FFFastingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B7010A2971A18B0066B975 /* FFFastingViewController.swift */; };
@@ -76,7 +81,7 @@
 		F6C83F542AAB4A6500ECCA3B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83F532AAB4A6500ECCA3B /* SplashView.swift */; };
 		F6C83F562AAB4A8B00ECCA3B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83F552AAB4A8B00ECCA3B /* SplashViewController.swift */; };
 		F6C83F5B2AAB4ECD00ECCA3B /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83F5A2AAB4ECD00ECCA3B /* HomeScreen.swift */; };
-		F6C83F5F2AAB4EFF00ECCA3B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83F5E2AAB4EFF00ECCA3B /* HomeViewController.swift */; };
+		F6C83F5F2AAB4EFF00ECCA3B /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83F5E2AAB4EFF00ECCA3B /* HomeTabBarController.swift */; };
 		F6C83F612AAB4F9100ECCA3B /* HomeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83F602AAB4F9100ECCA3B /* HomeTabBarItem.swift */; };
 		F6D08D8F29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */; };
 		F6EFDA17298188D200FC3CCB /* FFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDA16298188D200FC3CCB /* FFBaseViewController.swift */; };
@@ -164,6 +169,12 @@
 		F64EE99B2A3105210070EC4D /* FastingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingState.swift; sourceTree = "<group>"; };
 		F64EE99E2A3124940070EC4D /* MealTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTypeView.swift; sourceTree = "<group>"; };
 		F64EE9A02A3125680070EC4D /* MealType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealType.swift; sourceTree = "<group>"; };
+		F6545CCE2AB2148C0033E684 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		F6545CD02AB214980033E684 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F6545CD32AB216270033E684 /* RecipesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesScreen.swift; sourceTree = "<group>"; };
+		F6545CD62AB218C40033E684 /* AddingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingScreen.swift; sourceTree = "<group>"; };
+		F6545CD92AB219AD0033E684 /* FastingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingScreen.swift; sourceTree = "<group>"; };
+		F6545CDC2AB21AA60033E684 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		F65727F229E1A7DB00FA7B57 /* FoodContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodContentsView.swift; sourceTree = "<group>"; };
 		F65727F429E1ABBF00FA7B57 /* MealsStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsStatView.swift; sourceTree = "<group>"; };
 		F65727F629E1B84500FA7B57 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -189,7 +200,6 @@
 		F6B700F32971993B0066B975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6B700F62971993B0066B975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6B700F82971993B0066B975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F6B7010429719B900066B975 /* FFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTabBarController.swift; sourceTree = "<group>"; };
 		F6B701062971A0E60066B975 /* FFRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFRecipesViewController.swift; sourceTree = "<group>"; };
 		F6B701082971A1590066B975 /* FFAddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFAddingViewController.swift; sourceTree = "<group>"; };
 		F6B7010A2971A18B0066B975 /* FFFastingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFFastingViewController.swift; sourceTree = "<group>"; };
@@ -218,7 +228,7 @@
 		F6C83F532AAB4A6500ECCA3B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F6C83F552AAB4A8B00ECCA3B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F6C83F5A2AAB4ECD00ECCA3B /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		F6C83F5E2AAB4EFF00ECCA3B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F6C83F5E2AAB4EFF00ECCA3B /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		F6C83F602AAB4F9100ECCA3B /* HomeTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarItem.swift; sourceTree = "<group>"; };
 		F6D08D8E29FB27D0004BDA3B /* CheckBoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6EFDA16298188D200FC3CCB /* FFBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFBaseViewController.swift; sourceTree = "<group>"; };
@@ -289,13 +299,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F601331729FADD9600AE5C2A /* Recipes */ = {
+		F601331729FADD9600AE5C2A /* RecipesChange */ = {
 			isa = PBXGroup;
 			children = (
 				F601331829FADF2500AE5C2A /* RecepiesDetailViewController.swift */,
 				F64633A22A2D589B00842998 /* RecipesCategoryViewController.swift */,
 			);
-			path = Recipes;
+			path = RecipesChange;
 			sourceTree = "<group>";
 		};
 		F64B27802A682F24007F7641 /* Frameworks */ = {
@@ -326,6 +336,52 @@
 				F64EE99E2A3124940070EC4D /* MealTypeView.swift */,
 			);
 			path = Adding;
+			sourceTree = "<group>";
+		};
+		F6545CCD2AB2146A0033E684 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F6545CCE2AB2148C0033E684 /* MainScreen.swift */,
+				F6545CD02AB214980033E684 /* MainView.swift */,
+				F6B700EE297199390066B975 /* FFDailyViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F6545CD22AB215E60033E684 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				F6545CD32AB216270033E684 /* RecipesScreen.swift */,
+				F6B701062971A0E60066B975 /* FFRecipesViewController.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		F6545CD52AB218920033E684 /* Adding */ = {
+			isa = PBXGroup;
+			children = (
+				F6545CD62AB218C40033E684 /* AddingScreen.swift */,
+				F6B701082971A1590066B975 /* FFAddingViewController.swift */,
+			);
+			path = Adding;
+			sourceTree = "<group>";
+		};
+		F6545CD82AB219950033E684 /* Fasting */ = {
+			isa = PBXGroup;
+			children = (
+				F6545CD92AB219AD0033E684 /* FastingScreen.swift */,
+				F6B7010A2971A18B0066B975 /* FFFastingViewController.swift */,
+			);
+			path = Fasting;
+			sourceTree = "<group>";
+		};
+		F6545CDB2AB21A770033E684 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F6545CDC2AB21AA60033E684 /* SettingsScreen.swift */,
+				F6B7010C2971A1C70066B975 /* FFSettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		F65727FC29E2FADF00FA7B57 /* Recipes */ = {
@@ -562,13 +618,13 @@
 			path = Fasting;
 			sourceTree = "<group>";
 		};
-		F6BB3FF92A23D0ED002883D1 /* Adding */ = {
+		F6BB3FF92A23D0ED002883D1 /* AddingChange */ = {
 			isa = PBXGroup;
 			children = (
 				F6BB3FFA2A23D10D002883D1 /* ProductAddingViewController.swift */,
 				F6BB3FFC2A23D1C1002883D1 /* ProductCreatingViewController.swift */,
 			);
-			path = Adding;
+			path = AddingChange;
 			sourceTree = "<group>";
 		};
 		F6C83F492AAB460200ECCA3B /* App */ = {
@@ -586,13 +642,17 @@
 			children = (
 				F6C83F502AAB498000ECCA3B /* Splash */,
 				F6C83F592AAB4EB000ECCA3B /* Home */,
+				F6545CCD2AB2146A0033E684 /* Main */,
+				F6545CD22AB215E60033E684 /* Recipes */,
+				F6545CD52AB218920033E684 /* Adding */,
+				F6545CD82AB219950033E684 /* Fasting */,
+				F6545CDB2AB21A770033E684 /* Settings */,
 				F6EFDA142981887D00FC3CCB /* Base */,
-				F6EFDA15298188A300FC3CCB /* Core */,
 				F6EFDA2A2981CDEE00FC3CCB /* Authorization */,
-				F601331729FADD9600AE5C2A /* Recipes */,
+				F601331729FADD9600AE5C2A /* RecipesChange */,
 				F6FFD2A02A2CA74A001615D5 /* Onboarding */,
-				F6BB3FF92A23D0ED002883D1 /* Adding */,
-				F6FFD2652A2B8F86001615D5 /* Fasting */,
+				F6BB3FF92A23D0ED002883D1 /* AddingChange */,
+				F6FFD2652A2B8F86001615D5 /* FastingChange */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -627,7 +687,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C83F5A2AAB4ECD00ECCA3B /* HomeScreen.swift */,
-				F6C83F5E2AAB4EFF00ECCA3B /* HomeViewController.swift */,
+				F6C83F5E2AAB4EFF00ECCA3B /* HomeTabBarController.swift */,
 				F6C83F602AAB4F9100ECCA3B /* HomeTabBarItem.swift */,
 			);
 			path = Home;
@@ -639,19 +699,6 @@
 				F6EFDA16298188D200FC3CCB /* FFBaseViewController.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		F6EFDA15298188A300FC3CCB /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				F6B700EE297199390066B975 /* FFDailyViewController.swift */,
-				F6B701062971A0E60066B975 /* FFRecipesViewController.swift */,
-				F6B701082971A1590066B975 /* FFAddingViewController.swift */,
-				F6B7010A2971A18B0066B975 /* FFFastingViewController.swift */,
-				F6B7010C2971A1C70066B975 /* FFSettingsViewController.swift */,
-				F6B7010429719B900066B975 /* FFTabBarController.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		F6EFDA2A2981CDEE00FC3CCB /* Authorization */ = {
@@ -684,13 +731,13 @@
 			path = Fasting;
 			sourceTree = "<group>";
 		};
-		F6FFD2652A2B8F86001615D5 /* Fasting */ = {
+		F6FFD2652A2B8F86001615D5 /* FastingChange */ = {
 			isa = PBXGroup;
 			children = (
 				F6FFD2662A2B8FAC001615D5 /* SetupFastingViewController.swift */,
 				F6FFD26E2A2B9FE3001615D5 /* SetupFastingInfoViewController.swift */,
 			);
-			path = Fasting;
+			path = FastingChange;
 			sourceTree = "<group>";
 		};
 		F6FFD28F2A2CA636001615D5 /* Onboarding */ = {
@@ -875,7 +922,7 @@
 				F6B701222974A2B90066B975 /* FFCalendarModel.swift in Sources */,
 				F6C83F542AAB4A6500ECCA3B /* SplashView.swift in Sources */,
 				F6FFD2972A2CA636001615D5 /* InformationTableViewCell.swift in Sources */,
-				F6C83F5F2AAB4EFF00ECCA3B /* HomeViewController.swift in Sources */,
+				F6C83F5F2AAB4EFF00ECCA3B /* HomeTabBarController.swift in Sources */,
 				F6C83F562AAB4A8B00ECCA3B /* SplashViewController.swift in Sources */,
 				F6C83F5B2AAB4ECD00ECCA3B /* HomeScreen.swift in Sources */,
 				F6B7011E297475280066B975 /* FFCalendarCollectionViewCell.swift in Sources */,
@@ -888,6 +935,7 @@
 				F6FFD2602A2A77AA001615D5 /* FastingArcProgressBarView.swift in Sources */,
 				F69E69B029F06B770032068E /* ProductInfoTableViewCell.swift in Sources */,
 				F6EFDA2E2981E22100FC3CCB /* FFPhoneNumberViewController.swift in Sources */,
+				F6545CD42AB216270033E684 /* RecipesScreen.swift in Sources */,
 				F6FFD2732A2BA61D001615D5 /* WarningCollectionViewCell.swift in Sources */,
 				F6FFD2712A2BA5A5001615D5 /* FastingSetupInfoCollectionViewCell.swift in Sources */,
 				F6B701092971A1590066B975 /* FFAddingViewController.swift in Sources */,
@@ -898,6 +946,7 @@
 				F6B700EB297199390066B975 /* AppDelegate.swift in Sources */,
 				F6FF10692984738100BD72CF /* FFUserInfoTableViewCell.swift in Sources */,
 				F64633A52A2D598700842998 /* RecipeCategory.swift in Sources */,
+				F6545CCF2AB2148C0033E684 /* MainScreen.swift in Sources */,
 				F69E69AD29F061080032068E /* RecipesCategoriesCollectionViewCell.swift in Sources */,
 				F6B7010B2971A18B0066B975 /* FFFastingViewController.swift in Sources */,
 				F6FFD2992A2CA636001615D5 /* CheckboxTableViewCell.swift in Sources */,
@@ -911,12 +960,14 @@
 				F6FF105C2982C68900BD72CF /* FFBaseAuthViewController.swift in Sources */,
 				F6FFD2AE2A2CC12A001615D5 /* Endpoints.swift in Sources */,
 				F6C83F522AAB4A5A00ECCA3B /* SplashScreen.swift in Sources */,
+				F6545CD72AB218C40033E684 /* AddingScreen.swift in Sources */,
 				F6B7010D2971A1C70066B975 /* FFSettingsViewController.swift in Sources */,
 				F6FFD2AA2A2CBBD3001615D5 /* NetworkingError.swift in Sources */,
 				F6EFDA292981C8B500FC3CCB /* AuthorizationManager.swift in Sources */,
 				F64EE99F2A3124940070EC4D /* MealTypeView.swift in Sources */,
 				F6622A4F29D22BF50097694F /* FFDailyWaterStatCollectionViewCell.swift in Sources */,
 				F6FFD2622A2A7A3A001615D5 /* FastingType.swift in Sources */,
+				F6545CDA2AB219AD0033E684 /* FastingScreen.swift in Sources */,
 				F6FFD2672A2B8FAC001615D5 /* SetupFastingViewController.swift in Sources */,
 				F65F9D2C29EDCB3500CBF1D2 /* PopularMenusHeaderCell.swift in Sources */,
 				F6FFD29F2A2CA6B4001615D5 /* OnboardingType.swift in Sources */,
@@ -925,14 +976,15 @@
 				F6B701072971A0E60066B975 /* FFRecipesViewController.swift in Sources */,
 				F6622A5329D22C5B0097694F /* FFDailyFastingTimerCollectionViewCell.swift in Sources */,
 				F64EE9A12A3125680070EC4D /* MealType.swift in Sources */,
+				F6545CDD2AB21AA60033E684 /* SettingsScreen.swift in Sources */,
 				F6FFD2A22A2CA74A001615D5 /* OnboardingViewController.swift in Sources */,
 				F6F647DC29A108FA0028F76D /* Asset.swift in Sources */,
 				F65F9D2A29EDBED800CBF1D2 /* RecipeInfoCollectionViewCell.swift in Sources */,
+				F6545CD12AB214980033E684 /* MainView.swift in Sources */,
 				F6FFD2752A2BA699001615D5 /* ButtonCollectionViewCell.swift in Sources */,
 				F65727F529E1ABBF00FA7B57 /* MealsStatView.swift in Sources */,
 				F6FFD2642A2AA943001615D5 /* ImageTwoLabelsView.swift in Sources */,
 				F6EFDA302981E28300FC3CCB /* FFSmsCodeViewController.swift in Sources */,
-				F6B7010529719B900066B975 /* FFTabBarController.swift in Sources */,
 				F69E69A629F046F10032068E /* FFButton.swift in Sources */,
 				F6FFD25D2A2A4872001615D5 /* FastingMainCollectionViewCell.swift in Sources */,
 				F6BB3FF62A23C791002883D1 /* СookingStepCollectionViewCell.swift in Sources */,

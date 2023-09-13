@@ -132,6 +132,7 @@ enum Asset {
         static let authBackground = UIImage(named: "authBackground") ?? UIImage()
         static let launchBackground = UIImage(named: "launchBackground") ?? UIImage()
         static let drinkBackground = UIImage(named: "drinkBackground") ?? UIImage()
+        static let splashBackground = UIImage(named: "splashBackground") ?? UIImage()
         
         // Icons
         static let backButton = UIImage(named: "iconBackButton") ?? UIImage()

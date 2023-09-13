@@ -18,6 +18,9 @@ struct SplashScreen: Screen {
     let screens: SplashScreens
 
     func build(navigator: ScreenNavigator) -> UIViewController {
-        UIViewController()
+        SplashViewController(
+            screens: screens,
+            screenNavigator: navigator
+        )
     }
 }

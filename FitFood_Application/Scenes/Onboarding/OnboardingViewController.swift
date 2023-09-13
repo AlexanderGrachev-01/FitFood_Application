@@ -148,7 +148,7 @@ extension OnboardingViewController {
             safeUserData()
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let sceneDelegate = windowScene.delegate as? SceneDelegate {
-                sceneDelegate.window?.rootViewController = FFTabBarController()
+                sceneDelegate.window?.rootViewController = HomeTabBarController()
             }
         } else {
             let controller = OnboardingViewController()

@@ -30,4 +30,39 @@ extension Screens: SplashScreens {
     }
 }
 
-extension Screens: HomeScreens {}
+extension Screens: HomeScreens {
+    func mainScreen() -> AnyModalScreen {
+        MainScreen(screens: self)
+            .eraseToAnyScreen()
+    }
+
+    func recipesScreen() -> AnyModalScreen {
+        RecipesScreen(screens: self)
+            .eraseToAnyScreen()
+    }
+
+    func addScreen() -> AnyModalScreen {
+        AddingScreen(screens: self)
+            .eraseToAnyScreen()
+    }
+
+    func fastingScreen() -> AnyModalScreen {
+        FastingScreen(screens: self)
+            .eraseToAnyScreen()
+    }
+
+    func settingsScreen() -> AnyModalScreen {
+        SettingsScreen(screens: self)
+            .eraseToAnyScreen()
+    }
+}
+
+extension Screens: MainScreens {}
+
+extension Screens: RecipesScreens {}
+
+extension Screens: AddingScreens {}
+
+extension Screens: FastingScreens {}
+
+extension Screens: SettingsScreens {}
